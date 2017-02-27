@@ -39,10 +39,6 @@ These data are freely available for scientific research purposes, as a service o
 
 Anderson-Teixeira KJ, Davies SJ, Bennett AC et al. (2015) CTFS-ForestGEO: a worldwide network monitoring forests in an era of global change. Global Change Biology, 21, 528–549.
 
-Harris I, Jones PD, Osborn TJ, Lister DH (2014) Updated high-resolution grids of monthly climatic observations - the CRU TS3.10 Dataset: UPDATED HIGH-RESOLUTION GRIDS OF MONTHLY CLIMATIC OBSERVATIONS. International Journal of Climatology, 34, 623–642.
-
-Hijmans RJ, Cameron SE, Parra JL, Jones PG, Jarvis A (2005) Very high resolution interpolated climate surfaces for global land areas. International Journal of Climatology, 25, 1965–1978.
-
 Liu Z, Ostrenga D, Teng W, Kempler S (2012) Tropical Rainfall Measuring Mission (TRMM) Precipitation Data and Services for Research and Applications. Bulletin of the American Meteorological Society, 93, 1317–1325.
 
 

@@ -30,12 +30,17 @@ Comparison of available local weather station data (Table 2 in Anderson-Teixeira
 ##Data files and contents.
 Described in `CTFS_ForestGEO_Historical_Climate_Metadata.pdf`
 
-##How to cite:
-Publications using these data should cite Anderson-Teixeira et al. (2015), the CRU-TS v3.10.01 Historic Climate Database for GIS (http://www.cgiar-csi.org/data/uea-cru-ts-v3-10-01-historic-climate-database), and, for PET measurements only, the Global Potential Evapo-Transpiration (Global-PET) dataset (http://www.cgiar-csi.org/data/global-aridity-and-pet-database; Zomer, 2007; Zomer et al., 2008).
+##Data use:
 
-##Citations:
+Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. The CRU data product is described in Harris et al. (2014). The Global Potential Evapo-Transpiration (Global-PET) dataset is described in  Zomer (2007) and Zomer et al. (2008).
+
+Publications using these data should cite Anderson-Teixeira et al. (2015), the CRU-TS v3.23 Historic Climate Database, and, for PET measurements only, the Global Potential Evapo-Transpiration (Global-PET) dataset (http://www.cgiar-csi.org/data/global-aridity-and-pet-database; Zomer, 2007; Zomer et al., 2008).
+
+##References:
 
 Anderson-Teixeira KJ, Davies SJ, Bennett AC et al. (2015) CTFS-ForestGEO: a worldwide network monitoring forests in an era of global change. Global Change Biology, 21, 528–549.
+
+Harris I, Jones PD, Osborn TJ, Lister DH (2014) Updated high-resolution grids of monthly climatic observations - the CRU TS3.10 Dataset: UPDATED HIGH-RESOLUTION GRIDS OF MONTHLY CLIMATIC OBSERVATIONS. International Journal of Climatology, 34, 623–642.
 
 Zomer RJ (2007) Trees and water: smallholder agroforestry on irrigated lands in Northern India. IWMI, 50 pp.
 

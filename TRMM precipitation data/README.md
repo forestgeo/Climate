@@ -43,6 +43,6 @@ These data are freely available for scientific research purposes, as a service o
 
 Anderson-Teixeira KJ, Davies SJ, Bennett AC et al. (2015) CTFS-ForestGEO: a worldwide network monitoring forests in an era of global change. Global Change Biology, 21, 528–549.
 
-Liu Z, Ostrenga D, Teng W, Kempler S (2012) Tropical Rainfall Measuring Mission (TRMM) Precipitation Data and Services for Research and Applications. Bulletin of the American Meteorological Society, 93, 1317–1325.
+Liu Z, Ostrenga D, Teng W, Kempler S (2012) Tropical Rainfall Measuring Mission (TRMM) Precipitation Data and Services for Research and Applications. Bulletin of the American Meteorological Society, 93, 1317–1325. http://journals.ametsoc.org/doi/abs/10.1175/BAMS-D-11-00152.1
 
 

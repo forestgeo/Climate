@@ -21,7 +21,14 @@ These data are an updated version of those presented in Anderson-Teixeira et al.
 
 Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2014) to WorldClim data revealed close correlation for MAT (R2 >97%). However, WorldClim data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, WorldClim precipitation values for high precipitation sites should be considered probable underestimates.
 
-##Data files and contents.
+##Data files
+•	`CTFS-ForestGEO_WorldClim.csv`: Recent climate (1960-1990)
+
+•	`CTFS-ForestGEO_HADGEM2_RCP26.csv`: year 2050 climate projections under lowest emissions scenario considered in IPCC5 (RCP 2.6)
+
+•	`CTFS-ForestGEO_HADGEM2_RCP85.csv`: year 2050 climate projections under highest emissions scenario considered in IPCC5 (RCP 8.5)
+
+##Data file contents
 Described in `CTFS_ForestGEO_WorldClim_Metadata.pdf`
 
 ##Data use:

@@ -11,13 +11,16 @@
 **Variables**: 19 bioclimatic variables: http://www.worldclim.org/bioclim
 
 ##Data set description
-For all ForestGEO sites (current as of Jan. 2017), we extracted 19 bioclimatic variables from WorldClim v. 1.4, downloaded November 2013 from http://www.worldclim.org/.
+For all CTFS-ForestGEO sites (current as of Jan. 2017), we extracted 19 bioclimatic variables from WorldClim v. 1.4, downloaded November 2013 from http://www.worldclim.org/.
+
+For 59 CTFS-ForestGEO sites (current as of fall 2013), projected future climate data were downloaded from WorldClim (http://www.worldclim.org; Hijmans et al., 2005) in November 2013. Future projections are based on predictions of the HadGEM2-ES model as part of the CMIP5 (IPPC Fifth Assessment) for the year 2050 (2041-2060 climatic average) under the lowest and highest emissions scenarios (RCP 2.6 and RCP 8.5, respectively). These data have been downscaled and calibrated using WorldClim’s current climate (v. 1.4) as a baseline, which makes it appropriate to compare current and future climate data from these sources (e.g., Fig. 2 in Anderson-Teixeira et al., 2015).
 
 ##Notes
 
 These data are an updated version of those presented in Anderson-Teixeira et al. (2015), which used the same WorldClim version (1.4) but included fewer CTFS-ForestGEO sites.
 
 Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2014) to WorldClim data revealed close correlation for MAT (R2 >97%). However, WorldClim data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, WorldClim precipitation values for high precipitation sites should be considered probable underestimates.
+
 ##Data files and contents.
 Described in `CTFS_ForestGEO_WorldClim_Metadata.pdf`
 

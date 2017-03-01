@@ -1,4 +1,4 @@
-#Historical climate data for CTFS-ForestGEO Sites
+#Historical Climate Data for CTFS-ForestGEO Sites
 
 **Temporal coverage**: 1901 - 2014 (ongoing)
 

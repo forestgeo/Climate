@@ -11,9 +11,9 @@
 **Variables**: 19 bioclimatic variables: http://www.worldclim.org/bioclim
 
 ##Data set description
-For all CTFS-ForestGEO sites (current as of Jan. 2017), we extracted 19 bioclimatic variables from WorldClim v. 1.4, downloaded November 2013 from http://www.worldclim.org/.
+For all CTFS-ForestGEO sites (current as of Jan. 2017), we extracted 19 bioclimatic variables from WorldClim v. 1.4 (Hijmans et al., 2005), downloaded November 2013 from http://www.worldclim.org/.
 
-For 59 CTFS-ForestGEO sites (current as of fall 2013), projected future climate data were downloaded from WorldClim (http://www.worldclim.org; Hijmans et al., 2005) in November 2013. Future projections are based on predictions of the HadGEM2-ES model as part of the CMIP5 (IPPC Fifth Assessment) for the year 2050 (2041-2060 climatic average) under the lowest and highest emissions scenarios (RCP 2.6 and RCP 8.5, respectively). These data have been downscaled and calibrated using WorldClim’s current climate (v. 1.4) as a baseline, which makes it appropriate to compare current and future climate data from these sources (e.g., Fig. 2 in Anderson-Teixeira et al., 2015).
+For 59 CTFS-ForestGEO sites (current as of fall 2013), projected future climate data were extracted from WorldClim data downloaded in November 2013. Future projections are based on predictions of the HadGEM2-ES model as part of the CMIP5 (IPPC Fifth Assessment) for the year 2050 (2041-2060 climatic average) under the lowest and highest emissions scenarios (RCP 2.6 and RCP 8.5, respectively). These data have been downscaled and calibrated using WorldClim’s current climate (v. 1.4) as a baseline, which makes it appropriate to compare current and future climate data from these sources (e.g., Fig. 2 in Anderson-Teixeira et al., 2015).
 
 ##Notes
 

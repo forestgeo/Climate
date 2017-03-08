@@ -2,7 +2,7 @@
 
 **Temporal coverage**: 1901 - 2014 (ongoing)
 
-**Temporal resolution**: monthly, annual
+**Temporal resolution**: monthly, annual, climatic means
 
 **Geographic coverage**: global
 
@@ -21,6 +21,8 @@
 
 ##Data set description:
 In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded in February 2017. Specifically, we retrieved monthly data for 1951 – 2014 for ten variables: daily mean temperature (°C), monthly average daily minimum temperature (°C), monthly average daily maximum temperature (°C), diurnal temperature range (°C), frost day frequency (days), precipitation (mm), wet day frequency (days), cloud cover (%), and vapour pressure (hecta-Pascals) from the CRU-TS v3.23 Historic Climate Database for GIS (badc.nerc.ac.uk/data/cru/). In addition, potential evapotranspiration (PET; mm day-1) estimates were obtained from the Global Potential Evapo-Transpiration (Global-PET) dataset (Zomer, 2007; Zomer et al., 2008). 
+
+Annual values and climatic means were calculated using Matlab by K. Anderson-Teixeira.
 
 ##Notes:
 These data are an updated version of those presented in Anderson-Teixeira et al. (2015), which included data through 2012 from the CRU-TS v3.10.01 database.

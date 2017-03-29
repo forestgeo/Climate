@@ -1,9 +1,9 @@
 
-#Climate data for CTFS-ForestGEO sites
+# Climate data for CTFS-ForestGEO sites
 
 Contact: Kristina Anderson-Teixeira, Leader of CTFS-ForestGEO Ecosystems & Climate Initiative (teixeirak@si.edu)
 
-##About this repository
+## About this repository
 This repository is designed to serve as a portal for climate data and information for CTFS-ForestGEO sites. The CTFS-ForestGEO Ecosystems & Climate Initiative aims to:
 
 1. Provide information on the climate data sources that are available for CTFS-ForestGEO sites.

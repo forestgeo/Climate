@@ -1,4 +1,4 @@
-# CTFS-ForestGEO Weather Station @ SCBI
+# CTFS-ForestGEO Weather Station @ Khao Chong
 
 **Temporal coverage**: 06/13/2010 - present 
 

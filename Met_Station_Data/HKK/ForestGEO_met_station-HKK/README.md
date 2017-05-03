@@ -1,4 +1,4 @@
-# CTFS-ForestGEO Weather Station @ SCBI
+# CTFS-ForestGEO Weather Station @ Huai Kha Khaeng (HKK)
 
 **Temporal coverage**: 06/16/2010 - present 
 

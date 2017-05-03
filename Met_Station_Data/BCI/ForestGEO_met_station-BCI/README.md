@@ -1,4 +1,4 @@
-# CTFS-ForestGEO Weather Station @ BCI
+# CTFS-ForestGEO Weather Station @ Barro Colorado Island (BCI)
 
 **Temporal coverage**: 03/10/2011 - present 
 

@@ -24,4 +24,12 @@ Metadata: `METADATA.pdf`
 
 The data are freely available to the CTFS-ForestGEO community for research and educational (non-commercial) purposes.
 
-Papers using the data should acknowledge the CTFS-ForestGEO meteorological monitoring program and funding from the Smithsonian Institutions's ForestGEO program.
+Papers using the data should acknowledge the CTFS-ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program.
+
+## Data contacts:
+
+Kristina Anderson-Teixeira
+
+Erika Gonzalez-Akre
+
+Matteo Detto

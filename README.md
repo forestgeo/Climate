@@ -20,11 +20,11 @@ This site archives and distributes two types of data:
 ## Contributing to this repository
 We strongly encourage researchers in the CTFS-ForestGEO community to contribute relevant information and data to this repository:
 
-*Updates regarding available climate data are of great value to the research community and will facilitate collaborations. 
+* Updates regarding available climate data are of great value to the research community and will facilitate collaborations. 
 
-*Site managers/ meteorological data owners may use this portal as a stable repository to archive and distribute their data (if data are not already hosted elsewhere).
+* Site managers/ meteorological data owners may use this portal as a stable repository to archive and distribute their data (if data are not already hosted elsewhere).
 
-*Researchers who create new data products (e.g., cleaned or gap-filled data sets, extracts from gridded databases) are encouraged to deposit those here.
+* Researchers who create new data products (e.g., cleaned or gap-filled data sets, extracts from gridded databases) are encouraged to deposit those here.
 
 Contributions may be submitted directly by creating a [Github pull request](https://help.github.com/articles/about-pull-requests/) (preferred) or by contacting Kristina Anderson-Teixeira.
 

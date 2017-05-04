@@ -16,7 +16,7 @@ In 2009 CTFS-ForestGEO started its own meteorological program. Four standardized
 4)	Solar radiometer CMP11 (Kipp&Zonen), plus a secondary radiometer LI-290 (LiCOR biogeoscience)
 
 ## Data files and contents:
-Data files: `SCB_Metdata_5min_[YEAR].csv.`
+Data files: `SCB_Metdata_5min_[YEAR].csv`
 
 Metadata: `METADATA.pdf`
 

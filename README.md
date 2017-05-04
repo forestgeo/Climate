@@ -2,7 +2,7 @@
 # CTFS-ForestGEO Climate Data Portal  
 
 ## About this repository
-This public repository is a portal for climate data and information for CTFS-ForestGEO sites. It has two primary functions:
+This public repository is a portal for climate data and information for [CTFS-ForestGEO](http://www.forestgeo.si.edu/) sites. It has two primary functions:
 
 ### 1. Source of information on available climate data- 
 We are compiling a database of climate data sources that are available for CTFS-ForestGEO sites. It will soon be available on this site, and until then is available upon request from Kristina Anderson-Teixeira.

@@ -1,10 +1,10 @@
 # Daily data from Front Royal Weather Station (near SCBI)
 
-**Temporal coverage**: 12/01/21995 - 11/16/2015 / present (see data set description) 
+**Temporal coverage**: 12/01/1995 - 11/16/2015 / present (see data set description) 
 
 **Temporal resolution**: 1 day (see data set description) 
 
-**Location**: Off-site meteorological station in Front Royal, VA (38.9039, -78.1822;	283.5 m. elevation)
+**Location**: nearby meteorological station in Front Royal, VA (38.9039, -78.1822;	283.5 m. elevation). In a non-forested area.
 
 **Weather station name**: Front Royal/ USC00443229
 

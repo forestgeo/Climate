@@ -2,7 +2,7 @@
 
 **Temporal coverage**: 12/01/21995 - 11/16/2015 / present (see data set description) 
 
-*Temporal resolution**: 1 day (see data set description) 
+**Temporal resolution**: 1 day (see data set description) 
 
 **Location**: Off-site meteorological station in Front Royal, VA (38.9039, -78.1822;	283.5 m. elevation)
 

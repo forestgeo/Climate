@@ -11,3 +11,6 @@ For studies requiring data prior to 2009, we recommend:
 3- **Front Royal weather station**. This is a nearby off-site weather station, with records going back to 1995. Data are available through [NOAA](http://www.ncdc.noaa.gov/cdo-web/datatools/findstation), with some records archived [here](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data/SCBI/Front%20Royal%20weather%20station) for convenience.
 
 4- [**PRISM climate data**](http://prism.oregonstate.edu/). We have monthly data for 1930-2015 at 800m spatial resolution, which are available upon request from Kristina Anderson-Teixeira. 
+
+### Contact:
+Kristina Anderson-Teixeira (Smithsonian)

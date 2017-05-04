@@ -6,6 +6,8 @@ SCBI currently has extensive meteorological monitoring, including:
 
 2- **National Ecological Observatory Network (NEON) terrestrial and aquatic monitoring stations**, starting 2015. Monitoring stations include an above-canopy tower just outside the ForestGEO plot, with measurements at a variety of heights above/within/below the canopy (terrestrial site - "SCBI"), and below-canopy stations along a stream within the plot (aquatic site - "POSE"). All data are archived and freely available on [NEON's data portal](http://data.neonscience.org/home). 
 
-Prior to 2009, the closest weather station was the [**Front Royal weather station**](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data/SCBI/Front%20Royal%20weather%20station). These records go back to 1995.
+For studies requiring data prior to 2009, we recommend:
 
-We also have monthly [**PRISM**](http://prism.oregonstate.edu/) data at 800m. resolution for 1930-2015. These data are is available upon request from Kristina Anderson-Teixeira. 
+3- **Front Royal weather station**. This is a nearby off-site weather station, with records going back to 1995. Data are available through [NOAA](http://www.ncdc.noaa.gov/cdo-web/datatools/findstation), with some records archived [here](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data/SCBI/Front%20Royal%20weather%20station) for convenience.
+
+4- [**PRISM climate data**](http://prism.oregonstate.edu/). We have monthly data for 1930-2015 at 800m spatial resolution, which are available upon request from Kristina Anderson-Teixeira. 

@@ -1,5 +1,6 @@
 # Meteorological Station Data for Smithsonian Conservation Biology Institute (SCBI)
 
+## Overview of available data products
 SCBI currently has extensive meteorological monitoring, including:
 
 1- **CTFS-ForestGEO meteorological station**, starting 2009. All data are archived [here](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI).
@@ -12,5 +13,5 @@ For studies requiring data prior to 2009, we recommend:
 
 4- [**PRISM climate data**](http://prism.oregonstate.edu/). We have monthly data for 1930-2015 at 800m spatial resolution, which are available upon request from Kristina Anderson-Teixeira. 
 
-### Contact:
+## Contact
 Kristina Anderson-Teixeira (Smithsonian)

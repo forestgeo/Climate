@@ -6,7 +6,7 @@
 
 **Location**: San Lorenzo (Fort Sherman), Panama (9° 16' 51.71" N, 79° 58' 28.27" W). Instruments located on a canopy crane tower.
 
-**Weather station name**: Parque Natural Metropolitano Canopy Crane
+**Weather station name**: San Lorenzo/ Fort Sherman Canopy Crane
 
 **Variables**: precipitaiton, air temperature
 

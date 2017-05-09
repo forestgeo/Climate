@@ -11,7 +11,7 @@
 **Variables**: precipitaiton, air temperature
 
 ## Data set description:
-This is a gap-filled version of data from the San Lorenzo canopy crane, whose description and data are available [here](http://biogeodb.stri.si.edu/physical_monitoring/research/shermank). 
+This is a gap-filled version of data from the San Lorenzo canopy crane, whose description and data are available [here](http://biogeodb.stri.si.edu/physical_monitoring/research/sherman). 
 
 Data were gap filled by Victoria Meakem using a method developed by Steve Paton (Director of the Smithsonian Tropical Research Insitute's Physical Monitoring program). Missing values were filled by averaging data from two nearby ACP (Panama Canal Authority) stations (detailed in metadata). This dataset was used in Meakem et al. (2017).
 

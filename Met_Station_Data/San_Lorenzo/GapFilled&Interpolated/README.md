@@ -13,7 +13,7 @@
 ## Data set description:
 This data set characterizes precipitation and temperature at San Lorenzo back to 1981. It is based upon data from the [San Lorenzo canopy crane weather station](http://biogeodb.stri.si.edu/physical_monitoring/research/sherman) (established 1997), which has been gap-filled  and interpolated back to 1981 based on the observed relationship between records from this site and those from two nearby ACP (Panama Canal Authority) stations (detailed in metadata). The gap-filling method was developed by Steve Paton (Director of the Smithsonian Tropical Research Insitute's Physical Monitoring program), and is used to gap-fill the monthly summary values available [here](http://biogeodb.stri.si.edu/physical_monitoring/research/sherman) (which match this dataset).
 
-This dataset was created for and used in Meakem et al. (2017).
+This dataset was created by Tori Meakem and used in Meakem et al. (2017).
 
 ## Data files and contents:
 Data files: `SanLorenzo_gap-filled&interpolated.csv`

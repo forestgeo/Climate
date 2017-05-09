@@ -1,6 +1,6 @@
-# Gap-filled Meteorological Data from Parque Natural Metropolitano Canopy Crane (near Cocoli)
+# Gap-filled & Interpolated Meteorological Data from Parque Natural Metropolitano Canopy Crane (near Cocoli)
 
-**Temporal coverage**: 01/1995 - 12/2014
+**Temporal coverage**: 01/1979 - 12/2014
 
 **Temporal resolution**: monthly
 
@@ -11,14 +11,14 @@
 **Variables**: precipitaiton, air temperature
 
 ## Data set description:
-This is a gap-filled version of data from the Parque Natural Metropolitano canopy crane, whose description and data are available [here](http://biogeodb.stri.si.edu/physical_monitoring/research/metpark). 
+This data set characterizes precipitation and temperature at PNM back to 1981. It is based upon data from the [Parque Natural Metropolitano canopy crane](http://biogeodb.stri.si.edu/physical_monitoring/research/metpark) (established 1995), which has been gap-filled  and interpolated back to 1981 based on the observed relationship between records from this site and those from two nearby ACP (Panama Canal Authority) stations (detailed in metadata). The gap-filling method was developed by Steve Paton (Director of the Smithsonian Tropical Research Insitute's Physical Monitoring program), and is used to gap-fill the monthly summary values available [here](http://biogeodb.stri.si.edu/physical_monitoring/research/metpark) (which match this dataset). 
 
-Data were gap filled by Victoria Meakem using a method developed by Steve Paton (Director of the Smithsonian Tropical Research Insitute's Physical Monitoring program). Missing values were filled by averaging data from two nearby ACP (Panama Canal Authority) stations – Albrook Airbase and Balboa Heights, located 4-5 km away (detailed in metadata). This dataset was used in Meakem et al. (2017).
+This dataset was created by Tori Meakem and used in Meakem et al. (2017).
 
 ## Data files and contents:
-Data files: `PNM_gap-filled.csv`
+Data files: `PNM_gap-filled&interpolated.csv`
 
-Metadata: `PNM_gap-filled_Metadata.pdf` / `PNM_gap-filled_Metadata.docx`
+Metadata: `PNM_gap-filled&interpolated_Metadata.pdf` / `PNM_gap-filled&interpolated_Metadata.docx`
 
 ## Contact:
 Victoria Meakem (vmmeakem@gmail.com)

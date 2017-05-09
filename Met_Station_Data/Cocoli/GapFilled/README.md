@@ -4,7 +4,7 @@
 
 **Temporal resolution**: monthly
 
-**Location**: Parque Natural Metropolitano (NW edge of Panama City), Panama (8°59' 41.55'' N, 79°32' 35.22'' W). Forested area
+**Location**: Parque Natural Metropolitano (NW edge of Panama City), Panama (8°59' 41.55'' N, 79°32' 35.22'' W). Instruments located on canopy crane tower, approximately at the level of the forest canopy.
 
 **Weather station name**: Parque Natural Metropolitano Canopy Crane
 

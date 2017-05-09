@@ -1,4 +1,4 @@
-# Gap-filled Meteorological Data for San Lorenzo (Fort Sherman)
+# Gap-filled & Interpolated Meteorological Data for San Lorenzo (Fort Sherman)
 
 **Temporal coverage**: 01/1981 - 12/2014
 
@@ -11,14 +11,14 @@
 **Variables**: precipitaiton, air temperature
 
 ## Data set description:
-This is a gap-filled version of data from the San Lorenzo canopy crane, whose description and data are available [here](http://biogeodb.stri.si.edu/physical_monitoring/research/sherman). 
+This data set characterizes precipitation and temperature at San Lorenzo back to 1981. It is based upon data from the [San Lorenzo canopy crane weather station](http://biogeodb.stri.si.edu/physical_monitoring/research/sherman) (established 1997), which has been gap-filled  and interpolated back to 1981 based on the observed relationship between records from this site and those from two nearby ACP (Panama Canal Authority) stations (detailed in metadata). The gap-filling method was developed by Steve Paton (Director of the Smithsonian Tropical Research Insitute's Physical Monitoring program), and is used to gap-fill the monthly summary values available [here](http://biogeodb.stri.si.edu/physical_monitoring/research/sherman) (which match this dataset).
 
-Data were gap filled by Victoria Meakem using a method developed by Steve Paton (Director of the Smithsonian Tropical Research Insitute's Physical Monitoring program). Missing values were filled by averaging data from two nearby ACP (Panama Canal Authority) stations (detailed in metadata). This dataset was used in Meakem et al. (2017).
+This dataset was used in Meakem et al. (2017).
 
 ## Data files and contents:
-Data files: `SanLorenzo_gap-filled.csv`
+Data files: `SanLorenzo_gap-filled&interpolated.csv`
 
-Metadata: `SanLorenzo_gap-filled_Metadata.pdf` / `SanLorenzo_gap-filled_Metadata.docx`
+Metadata: `SanLorenzo_gap-filled&interpolated_Metadata.pdf` / `SanLorenzo_gap-filled&interpolated_Metadata.docx`
 
 ## Contact:
 Victoria Meakem (vmmeakem@gmail.com)

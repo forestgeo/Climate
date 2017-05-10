@@ -26,7 +26,7 @@ We strongly encourage researchers in the CTFS-ForestGEO community to contribute 
 
 * Researchers who create new data products (e.g., cleaned or gap-filled data sets, extracts from gridded databases) are encouraged to deposit those here.
 
-Contributions may be submitted directly by creating a [Github pull request](https://help.github.com/articles/about-pull-requests/) (preferred) or by contacting Kristina Anderson-Teixeira.
+For instrunctions on contributing to this repository, please see [`CONTRIBUTING.md`](https://github.com/forestgeo/Climate/blob/master/CONTRIBUTING.md). 
 
 ## Contact 
 

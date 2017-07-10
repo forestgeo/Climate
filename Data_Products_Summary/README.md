@@ -16,4 +16,4 @@ This information was originally compiled by Kristina Anderson-Teixeira and membe
 ## Contact 
 Kristina Anderson-Teixeira (Smithsonian)
 
-Erika Gonzalez-Akre (Smithsonian).
+Erika Gonzalez-Akre (Smithsonian)

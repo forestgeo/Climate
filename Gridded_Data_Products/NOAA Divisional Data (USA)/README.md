@@ -29,4 +29,4 @@ NOAA divisional data for the US are available [here](https://www7.ncdc.noaa.gov/
 
 ## Notes:
 
-Some NOAA Divisional Data files are stashed in this folder for convenience, but data the [NOAA site](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#) is the best source for downloading new or updated data.
+Some NOAA Divisional Data files are stashed in this folder for convenience, but  the [NOAA site](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#) is the best source for new or updated data.

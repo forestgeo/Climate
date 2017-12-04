@@ -13,5 +13,7 @@ For studies requiring data prior to 2009, we recommend:
 
 4- [**PRISM climate data**](http://prism.oregonstate.edu/). We have purchased monthly data for 1930-2015 at 800m spatial resolution, which are available upon request from Kristina Anderson-Teixeira. 
 
+5- **NOAA Divisional Data**. NOAA data for N. Virginia, downloaded from [this site](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#) in December 2017 are posted [here](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data/SCBI/NOAA%20Divisional%20Data). Variables include Palmer Drought Severity Index and others.
+
 ## Contact
 Kristina Anderson-Teixeira (Smithsonian)

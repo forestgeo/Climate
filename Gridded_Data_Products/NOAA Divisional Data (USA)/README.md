@@ -1,8 +1,8 @@
 # NOAA Divisional Climate Data for Northern Virginia 
 
-NOAA divisional data are availabel [here](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#). 
+NOAA divisional data are available [here](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#). 
 
-This data file was downloaded in December 2017. 
+Data files in this folder are stashed for convenience, but data for any site and more recent data is readily available.
 
 ## Variables 
 

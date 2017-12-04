@@ -1,10 +1,15 @@
-# NOAA Divisional Climate Data for Northern Virginia 
+# NOAA Divisional Climate Data 
 
-NOAA divisional data are available [here](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#). 
 
-Data files in this folder are stashed for convenience, but data for any site and more recent data is readily available.
+**Temporal coverage**: 1895 - present 
 
-## Variables 
+**Temporal resolution**: monthly
+
+**Geographic coverage**: US
+
+**Spatial resolution**: by [climate division](https://www.ncdc.noaa.gov/monitoring-references/maps/images/us-climate-divisions-names.jpg)
+
+**Variables**: 
 
 * PCP - Precipitation Index
 * TAVG - Temperature Index
@@ -18,3 +23,10 @@ Data files in this folder are stashed for convenience, but data for any site and
 * HDD - Heating Degree Days
 * SPnn - Standard Precipitation Index
 
+## Data set description:
+
+NOAA divisional data for the US are available [here](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#). Please see this site for details on the data. 
+
+## Notes:
+
+Some NOAA Divisional Data files are stashed in this folder for convenience, but data the [NOAA site](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#) is the best source for downloading new or updated data.

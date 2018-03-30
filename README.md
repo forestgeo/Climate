@@ -1,5 +1,5 @@
 
-# CTFS-ForestGEO Climate Data Portal  
+# ForestGEO Climate Data Portal  
 
 ## About this repository
 This public repository is a portal for climate data and information for [CTFS-ForestGEO](http://www.forestgeo.si.edu/) sites. It has two primary functions:

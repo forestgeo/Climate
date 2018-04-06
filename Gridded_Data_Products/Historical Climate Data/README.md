@@ -20,7 +20,7 @@
                Potential evapotranspiration
 
 ## Data set description:
-In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded in February 2017. Specifically, we retrieved monthly data for 1951 – 2014 for ten variables: daily mean temperature (°C), monthly average daily minimum temperature (°C), monthly average daily maximum temperature (°C), diurnal temperature range (°C), frost day frequency (days), precipitation (mm), wet day frequency (days), cloud cover (%), and vapour pressure (hecta-Pascals) from the CRU-TS v3.23 Historic Climate Database for GIS (badc.nerc.ac.uk/data/cru/). In addition, potential evapotranspiration (PET; mm day-1) estimates were obtained from the Global Potential Evapo-Transpiration (Global-PET) dataset (Zomer, 2007; Zomer et al., 2008). 
+In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded in February 2017. Specifically, we retrieved monthly data for 1951 – 2014 for ten variables: daily mean temperature (°C), monthly average daily minimum temperature (°C), monthly average daily maximum temperature (°C), diurnal temperature range (°C), frost day frequency (days), precipitation (mm), wet day frequency (days), cloud cover (%), and vapour pressure (hecta-Pascals) from the [CRU-TS v3.23 Historic Climate Database for GIS](badc.nerc.ac.uk/data/cru/). In addition, potential evapotranspiration (PET; mm day-1) estimates were obtained from the [Global Potential Evapo-Transpiration (Global-PET) dataset](http://www.cgiar-csi.org/data/global-aridity-and-pet-database) (Zomer, 2007; Zomer et al., 2008). 
 
 Annual values and climatic means were calculated using Matlab by K. Anderson-Teixeira.
 
@@ -30,7 +30,7 @@ These data are an updated version of those presented in Anderson-Teixeira et al.
 Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
 
 ## Data files and contents.
-Described in `CTFS_ForestGEO_Historical_Climate_Metadata.pdf`
+Described in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/CTFS-ForestGEO_historical_climate_metadata.pdf)
 
 ## Data use:
 

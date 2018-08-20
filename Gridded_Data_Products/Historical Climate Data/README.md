@@ -26,16 +26,16 @@
                
 
 ## Data set description:
-In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded in February 2017. Specifically, we retrieved monthly data for 1951 – 2014 for ten variables: daily mean temperature (°C), monthly average daily minimum temperature (°C), monthly average daily maximum temperature (°C), diurnal temperature range (°C), frost day frequency (days), precipitation (mm), wet day frequency (days), cloud cover (%), and vapour pressure (hecta-Pascals) from the [CRU-TS Historic Climate Database for GIS](badc.nerc.ac.uk/data/cru/). Potential evapotranspiration (PET; mm day-1) estimates were obtained from the [Global Potential Evapo-Transpiration (Global-PET) dataset](http://www.cgiar-csi.org/data/global-aridity-and-pet-database) (Zomer, 2007; Zomer et al., 2008). 
+In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded from the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/), most recently in August 2018.  
 
 Annual values and climatic means were calculated using Matlab by K. Anderson-Teixeira.
 
 ## Notes:
-These data are an updated version of those presented in Anderson-Teixeira et al. (2015), which included data through 2012 from the CRU-TS v3.10.01 database.
 
 Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
 
 ## Data files and contents.
+
 Described in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/CTFS-ForestGEO_historical_climate_metadata.pdf)
 
 ## Data use:
@@ -51,9 +51,5 @@ Anderson-Teixeira KJ, Davies SJ, Bennett AC et al. (2015) CTFS-ForestGEO: a worl
 Harris I, Jones PD, Osborn TJ, Lister DH (2014) Updated high-resolution grids of monthly climatic observations - the CRU TS3.10 Dataset: UPDATED HIGH-RESOLUTION GRIDS OF MONTHLY CLIMATIC OBSERVATIONS. International Journal of Climatology, 34, 623–642.
 
 University of East Anglia Climatic Research Unit; Jones, P.D.; Harris, I.C. (2008): Climatic Research Unit (CRU) time-series datasets of variations in climate with variations in other phenomena. NCAS British Atmospheric Data Centre, [date of citation]. http://catalogue.ceda.ac.uk/uuid/3f8944800cc48e1cbc29a5ee12d8542d
-
-Zomer RJ (2007) Trees and water: smallholder agroforestry on irrigated lands in Northern India. IWMI, 50 pp.
-
-Zomer RJ, Trabucco A, Bossio DA, Verchot LV (2008) Climate change mitigation: A spatial analysis of global land suitability for clean development mechanism afforestation and reforestation. Agriculture, Ecosystems & Environment, 126, 67–80.
 
 

@@ -1,66 +1,66 @@
-,CHELSA v. 1.1,CRU-TS v3.23 Historic Climate Database ,Global Potential Evapo-Transpiration (Global-PET) dataset,PRISM,Tropical Rainfall Measuring Mission (TRMM) precipitation,WorldClim v. 1.4,NOAA Divisional Data
-Korup,0,1,1,0,1,1,0
-Ituri,0,1,1,0,1,1,0
-Rabi,0,1,1,0,1,1,0
-Mpala,0,1,1,0,1,1,0
-Wanang,0,1,1,0,1,1,0
-Kuala Belalong,0,1,1,0,1,1,0
-Dinghushan,0,1,1,0,1,1,0
-Heishiding,0,1,1,0,1,1,0
-Hong Kong,0,1,1,0,1,1,0
-Jianfengling,0,1,1,0,1,1,0
-Nonggang,0,1,1,0,1,1,0
-Xishuangbanna,0,1,1,0,1,1,0
-Mudumalai,0,1,1,0,1,1,0
-Danum Valley,0,1,1,0,1,1,0
-Lambir,0,1,1,0,1,1,0
-Pasoh,0,1,1,0,1,1,0
-Palanan,0,1,1,0,1,1,0
-Bukit Timah,0,1,1,0,1,1,0
-Sinharaja,0,1,1,0,1,1,0
-Fushan,0,1,1,0,1,1,0
-Kenting,0,1,1,0,1,1,0
-Lienhuachih,0,1,1,0,1,1,0
-Nanjenshan,0,1,1,0,1,1,0
-Zenlun,0,1,1,0,1,1,0
-Doi Inthanon,0,1,1,0,1,1,0
-Huai Kha Khaeng,0,1,1,0,1,1,0
-Khao Chong,0,1,1,0,1,1,0
-Mo Singto,0,1,1,0,1,1,0
-Haliburton Forest,0,1,1,0,1,1,0
-Scotty Creek ,0,1,1,0,0,1,0
-Harvard Forest,0,1,1,1,1,1,0
-Lilly Dickey Woods,0,1,1,1,1,1,0
-Santa Cruz,0,1,1,1,1,1,0
-Smithsonian Conservation Biology Institute,0,1,1,1,1,1,1
-Smithsonian Environmental Research Center ,0,1,1,1,1,1,0
-Tyson Research Center,0,1,1,1,1,1,0
-Wabikon Lake Forest,0,1,1,1,1,1,0
-Wind River,0,1,1,1,1,1,0
-Yosemite National Park,0,1,1,1,1,1,0
-Ilha do Cardoso,0,1,1,0,1,1,0
-Manaus,0,1,1,0,1,1,0
-Amacayacu,0,1,1,0,1,1,0
-La Planada,0,1,1,0,1,1,0
-Yasuni,0,1,1,0,1,1,0
-Barro Colorado Island,0,1,1,0,1,1,0
-Cocoli,0,1,1,0,1,1,0
-San Lorenzo/ Sherman,0,1,1,0,1,1,0
-Luquillo,0,1,1,0,1,1,0
-Laupahoehoe ,0,1,1,0,1,1,0
-Palamanui,0,1,1,0,1,1,0
-Badagongshan,0,1,1,0,1,1,0
-Baotianman,0,1,1,0,1,1,0
-Changbaishan,0,1,1,0,1,1,0
-Donlingshan,0,1,1,0,1,1,0
-Gutianshan,0,1,1,0,1,1,0
-Tiantongshan,0,1,1,0,1,1,0
-Zofin,0,1,1,0,1,1,0
-Speulderbos,0,1,1,0,0,1,0
-Wytham Woods,0,1,1,0,0,1,0
-Utah Forest Dynamics Plot,0,1,1,1,1,1,0
-Michigan Big Woods,0,1,1,1,0,1,0
-"University of Maryland, Baltimore",0,1,1,1,1,1,0
-Ngel Nyaki,0,1,1,0,1,1,0
-Baishanzu,0,1,1,0,1,1,0
-Daxinganling,0,1,1,0,1,1,0
+,CHELSA v. 1.1,CRU-TS v3.23 Historic Climate Database ,CRU-TS v.4.01,Global Potential Evapo-Transpiration (Global-PET) dataset,PRISM,Tropical Rainfall Measuring Mission (TRMM) precipitation,WorldClim v. 1.4,NOAA Divisional Data
+Korup,0,1,1,1,0,1,1,0
+Ituri,0,1,1,1,0,1,1,0
+Rabi,0,1,1,1,0,1,1,0
+Mpala,0,1,1,1,0,1,1,0
+Wanang,0,1,1,1,0,1,1,0
+Kuala Belalong,0,1,1,1,0,1,1,0
+Dinghushan,0,1,1,1,0,1,1,0
+Heishiding,0,1,1,1,0,1,1,0
+Hong Kong,0,1,1,1,0,1,1,0
+Jianfengling,0,1,1,1,0,1,1,0
+Nonggang,0,1,1,1,0,1,1,0
+Xishuangbanna,0,1,1,1,0,1,1,0
+Mudumalai,0,1,1,1,0,1,1,0
+Danum Valley,0,1,1,1,0,1,1,0
+Lambir,0,1,1,1,0,1,1,0
+Pasoh,0,1,1,1,0,1,1,0
+Palanan,0,1,1,1,0,1,1,0
+Bukit Timah,0,1,1,1,0,1,1,0
+Sinharaja,0,1,1,1,0,1,1,0
+Fushan,0,1,1,1,0,1,1,0
+Kenting,0,1,1,1,0,1,1,0
+Lienhuachih,0,1,1,1,0,1,1,0
+Nanjenshan,0,1,1,1,0,1,1,0
+Zenlun,0,1,1,1,0,1,1,0
+Doi Inthanon,0,1,1,1,0,1,1,0
+Huai Kha Khaeng,0,1,1,1,0,1,1,0
+Khao Chong,0,1,1,1,0,1,1,0
+Mo Singto,0,1,1,1,0,1,1,0
+Haliburton Forest,0,1,1,1,0,1,1,0
+Scotty Creek ,0,1,1,1,0,0,1,0
+Harvard Forest,0,1,1,1,1,1,1,0
+Lilly Dickey Woods,0,1,1,1,1,1,1,0
+Santa Cruz,0,1,1,1,1,1,1,0
+Smithsonian Conservation Biology Institute,0,1,1,1,1,1,1,1
+Smithsonian Environmental Research Center ,0,1,1,1,1,1,1,0
+Tyson Research Center,0,1,1,1,1,1,1,0
+Wabikon Lake Forest,0,1,1,1,1,1,1,0
+Wind River,0,1,1,1,1,1,1,0
+Yosemite National Park,0,1,1,1,1,1,1,0
+Ilha do Cardoso,0,1,1,1,0,1,1,0
+Manaus,0,1,1,1,0,1,1,0
+Amacayacu,0,1,1,1,0,1,1,0
+La Planada,0,1,1,1,0,1,1,0
+Yasuni,0,1,1,1,0,1,1,0
+Barro Colorado Island,0,1,1,1,0,1,1,0
+Cocoli,0,1,1,1,0,1,1,0
+San Lorenzo/ Sherman,0,1,1,1,0,1,1,0
+Luquillo,0,1,1,1,0,1,1,0
+Laupahoehoe ,0,1,1,1,0,1,1,0
+Palamanui,0,1,1,1,0,1,1,0
+Badagongshan,0,1,1,1,0,1,1,0
+Baotianman,0,1,1,1,0,1,1,0
+Changbaishan,0,1,1,1,0,1,1,0
+Donlingshan,0,1,1,1,0,1,1,0
+Gutianshan,0,1,1,1,0,1,1,0
+Tiantongshan,0,1,1,1,0,1,1,0
+Zofin,0,1,1,1,0,1,1,0
+Speulderbos,0,1,1,1,0,0,1,0
+Wytham Woods,0,1,1,1,0,0,1,0
+Utah Forest Dynamics Plot,0,1,1,1,1,1,1,0
+Michigan Big Woods,0,1,1,1,1,0,1,0
+"University of Maryland, Baltimore",0,1,1,1,1,1,1,0
+Ngel Nyaki,0,1,1,1,0,1,1,0
+Baishanzu,0,1,1,1,0,1,1,0
+Daxinganling,0,1,1,1,0,1,1,0

@@ -1,8 +1,13 @@
 # Historical Climate Data for CTFS-ForestGEO Sites
 
-**Temporal coverage**: 1901 - 2014 (ongoing)
+**Versions**: 
+- v. 3.10 - values from this version are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712)
+- v. 3.23 - latest version with annual and climatic summary statistics calcualted.
+- v. 4.01 - latest version, supercedes others. Annual and climatic means have not yet been calculated.
 
-**Temporal resolution**: monthly, annual, climatic means
+**Temporal coverage**: 1901 - 2016 (ongoing)
+
+**Temporal resolution**: monthly, annual, climatic means 
 
 **Geographic coverage**: global
 
@@ -18,9 +23,10 @@
                Cloud cover,
                Vapour pressure,
                Potential evapotranspiration
+               
 
 ## Data set description:
-In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded in February 2017. Specifically, we retrieved monthly data for 1951 – 2014 for ten variables: daily mean temperature (°C), monthly average daily minimum temperature (°C), monthly average daily maximum temperature (°C), diurnal temperature range (°C), frost day frequency (days), precipitation (mm), wet day frequency (days), cloud cover (%), and vapour pressure (hecta-Pascals) from the [CRU-TS v3.23 Historic Climate Database for GIS](badc.nerc.ac.uk/data/cru/). In addition, potential evapotranspiration (PET; mm day-1) estimates were obtained from the [Global Potential Evapo-Transpiration (Global-PET) dataset](http://www.cgiar-csi.org/data/global-aridity-and-pet-database) (Zomer, 2007; Zomer et al., 2008). 
+In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded in February 2017. Specifically, we retrieved monthly data for 1951 – 2014 for ten variables: daily mean temperature (°C), monthly average daily minimum temperature (°C), monthly average daily maximum temperature (°C), diurnal temperature range (°C), frost day frequency (days), precipitation (mm), wet day frequency (days), cloud cover (%), and vapour pressure (hecta-Pascals) from the [CRU-TS Historic Climate Database for GIS](badc.nerc.ac.uk/data/cru/). Potential evapotranspiration (PET; mm day-1) estimates were obtained from the [Global Potential Evapo-Transpiration (Global-PET) dataset](http://www.cgiar-csi.org/data/global-aridity-and-pet-database) (Zomer, 2007; Zomer et al., 2008). 
 
 Annual values and climatic means were calculated using Matlab by K. Anderson-Teixeira.
 

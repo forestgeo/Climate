@@ -1,0 +1,46 @@
+RELEASE NOTES FOR CRU TS v3.25 / v4.01 OBSERVATIONS: September 2017
+
+The 3.25 and 4.01 releases of the CRU TS dataset cover the period
+1901-2016.
+They supercede all earlier releases. The reference to use is:
+
+Harris, I., Jones, P.D., Osborn, T.J. and Lister, D.H. (2014), Updated
+high-resolution grids of monthly climatic observations – the CRU TS3.10
+Dataset. Int. J. Climatol., 34: 623–642. doi: 10.1002/joc.3711
+
+Please read the Release Notes for v4.01 for additional information.
+
+The 'observations' directory contains the station observations used to
+build this release of the CRU TS dataset; they have been corrected as
+necessary. As various improvements have been made to individual
+variables, particularly TMP, TMN and TMX, a variety of time stamps are
+seen.
+
+Only the four main databases are presented, and they have been
+'cleaned' - in that observations not used in production of the dataset
+have been eliminated. This is usually due to the station having
+insufficient support between 1961 and 1990 (the period used to construct
+station anomalies).
+
+The four databases are:
+
+pre.1704241136.clean.dtb
+tmp.1708041519.clean.dtb
+tmn.1708171135.clean.dtb
+tmx.1708171215.clean.dtb
+
+Please refer to the published paper (above) to understand how they
+contribute to the dataset. The version release notes give more
+information about changes to the observational holdings.
+
+As always, please contact BADC in the first instance if you have any
+questions, obervations or suggestions.
+
+Ian Harris
+Climatic Research Unit
+School of Environmental Sciences
+University of East Anglia
+Norwich
+NR4 7TJ
+
+

@@ -1,0 +1,159 @@
+RELEASE NOTES FOR CRU TS v4.01: 15 September 2017
+
+The CRU TS dataset was developed and has been subsequently updated,
+improved and maintained with support from a number of funders,
+principally the UK's Natural Environment Research Council (NERC) and the
+US Department of Energy. Long-term support is currently provided by the
+UK National Centre for Atmospheric Science (NCAS), a NERC collaborative
+centre. 
+
+The 4.01 release of the CRU TS dataset covers the period 1901-2016, and
+supercedes the 4.00 release and all earlier releases. The reference to
+use (see caveat after) is:
+
+Harris, I., Jones, P.D., Osborn, T.J. and Lister, D.H. (2014), Updated
+high-resolution grids of monthly climatic observations – the CRU TS3.10
+Dataset. Int. J. Climatol., 34: 623–642. doi: 10.1002/joc.3711
+
+The above reference does not, of course, describe the new process being
+used for v4.xx releases. This document should be used as a guide to that
+process, until a new reference is available.
+
+This release covers the same temporal and spatial extents as v3.25,
+and uses the same source databases. Users may therefore satisfy
+themselves as to the differences between these two versions.
+
+It is the intention that CRU TS will move to this process exclusively
+from the next release (1901-2017) in Summer 2018.
+
+There is currently no published reference for this version; work is in
+progress to accomplish this. In the meantime the description below will
+need to suffice.
+
+
+1. The 4.xx Process, and how it differs from the previous process (3.xx).
+
+The main process change in version 4 is the move to Angular Distance
+Weighting (ADW) for gridding the monthly anomalies. Compared to the
+previous approach, which used IDL routines TRIANGULATE and TRIGRID to
+effect triangulated linear interpolation, ADW allows us total control
+over how station observations are selected for gridding, and complete
+traceability for every datum in the output files. For secondary
+variables, this means that observed and synthesised data values are used
+in the same way in the gridding process.
+
+ADW was previously used for the production of CRU TS 2.0:
+
+New, M., M. Hulme, and P. Jones, 2000: Representing Twentieth-Century
+Space–Time Climate Variability. Part II: Development of 1901–96 Monthly
+Grids of Terrestrial Surface Climate. J. Climate, 13, 2217–2238,
+http://dx.doi.org/10.1175/1520-0442(2000)013<2217:RTCSTC>2.0.CO;2
+
+The configuration for ADW in version 4 is largely based on that
+described in the above paper. Some aspects of that configuration are:
+
+• Between 1 and 8 stations contributing to a gridcell at any time step
+• The exponent in the distance weighting calculation is 4
+• Observations take precedence over synthetic data (where both present)
+• Synthetic data stations that lie within 45° of a 'real' data station
+  are not used
+• Gridcells with no stations in range are set to 0 anomaly (ie the
+  climatology)
+
+All the supporting code for CRU TS is now in Fortran, improving
+maintenance, speed and portability when compared to the previous mixture
+of IDL and Fortran.
+
+There have been changes to the synthetic variable generators. The most
+significant of these is that variables are now synthesised for discrete
+stations, whereas before they were produced as a lower-resolution (2.5°)
+grid. This enables them to be used by the ADW gridding process.
+Additionally, synthetic WET is now produced as an absolute number of wet
+days, (it was previously converted to an anomaly). It then passes
+through the same processes as regular observations and is thus
+anomalised using its own 1961-90 normals. This approach may be extended
+to other synthetic variables in the future.
+
+
+2. Differences in output files
+
+For now, the approach of issuing NetCDF and ASCII files in parallel will
+remain, as will the publications of decadal files as well as full-length
+versions. However, as stated above, this is likely to be the last
+parallel release.
+
+For version 4, station counts have changed:
+
+• In 3.xx it was effectively impossible to know which stations had
+  contributed to each datum, so two approximations were published: the
+  number of stations reporting within the CDD ('.stn'), and the number
+  of reporting stations in each gridcell ('.st0'). 
+
+• In 4.00 a count of observations, (including synthetic observations
+  where used), is produced by the gridder. These counts are published as
+  ASCII '.stn' files, and are also embedded into the NetCDF files as a
+  second variable ('stn'). It is anticipated that this will encourage
+  users to use this additional information to better understand the
+  dataset they are working with.
+
+
+3. Differences between 3.25 and 4.01
+
+The difference in approach affects coverage. The interpolation process
+in 3.xx runs could not prevent the triangulation exceeding the defined
+Correlation Decay Distance (CDD) for the variable being gridded (it
+merely ensured that 'dummy' stations were inserted in unobserved
+regions). In 4.00, gridcells outside the CDD of any observations (actual
+or synthetic) are set to the climatology, so discs of influence with
+sharp edges can appear in plots of sparsely-observed regions. This
+lacks aesthetic qualities but is more justifiable; it also
+highlights areas where more observations are needed. The same is true
+for numerous small islands, which will have lost cover either partly or
+completely.
+
+In terms of comparisons, the extent to which 4.01 agrees with 3.25
+varies with station density, unsurprisingly. Comparison plots of country
+averages have been made and are included in the release.
+
+The longstanding issue of discontinuous interpolation along the dateline
+in Eastern Siberia is resolved with the new process.
+
+
+4. Differences between 4.00 and 4.01
+
+In addition to updating the dataset with 2016 data, several specific
+areas have been addressed:
+
+• A bug in the way some CLIMAT 'WET' updates were processed was detected
+  and resolved; this has resulted in small changes for many areas from
+  2000 onwards.
+
+• In an effort to fill gaps in the observed record, particularly in the
+  first half of the C20th, observations from GHCN-M were selectively
+  added where they offered new coverage. This has resulted in some new
+  and noticeable cover for TMP, TMN and TMX, and thus DTR, VAP, FRS
+  (where applicable) and PET, in various parts of the world. These
+  include small islands, the Amazon Basin, and areas of central Africa.
+  It is interesting to see that in many cases, differences are not as
+  pronounced as for 3.25 vs 3.24.01 (see the 3.25 Release Notes). This
+  is likely due to distant stations (outside the CDD) being replaced
+  with nearer ones for 3.25, wheras 4.00 and 4.01 would not have used
+  stations outside the CDD in the first place.
+  Of course, there are still gaps to be filled, especially for PRE.
+
+
+
+Please contact me with any observations or questions. This is still a
+new dataset, and I want it to evolve.
+
+Ian Harris
+NCAS-Climate
+Climatic Research Unit
+School of Environmental Sciences
+University of East Anglia
+Norwich
+NR4 7TJ
+
+
+
+

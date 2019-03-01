@@ -1,12 +1,12 @@
 ##read in the met tower data and reformat
 
-setwd()
+setwd("C:/Users/mcgregori/Dropbox (Smithsonian)/Github_Ian/Climate/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI")
 
 #read and reformat met data ####
-data_2018 <- read.csv("E:/Github_SCBI/Climate/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/SCB_Metdata_5min_2018.csv", header=FALSE, stringsAsFactors = FALSE)
+data_2019 <- read.csv("C:/Users/mcgregori/Dropbox (Smithsonian)/Github_Ian/Climate/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/SCB_Metdata_5min_2019.csv", header=FALSE, stringsAsFactors = FALSE)
 
 #remove unnecessary rows
-test <- data_2018[-c(1,4),]
+test <- data_2019[-c(1,4),]
 
 #combine descriptor rows (variable and unit) into one, then make them the headers
 test <- rbind(paste0(test[1,], sep="_", test[2,]), test[3:nrow(test),], stringsAsFactors=FALSE)

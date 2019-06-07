@@ -1,9 +1,14 @@
-##read in the met tower data and reformat
+######################################################
+# Purpose: Read in met data and reformat to make plots
+# Developed by: Ian McGregor - mcgregori@si.edu
+# R version 3.5.1 - First created January 2019
+######################################################
 
-setwd("C:/Users/mcgregori/Dropbox (Smithsonian)/Github_Ian/Climate/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI")
+library(lubridate)
+library(ggplot2)
 
 #read and reformat met data ####
-data_2019 <- read.csv("C:/Users/mcgregori/Dropbox (Smithsonian)/Github_Ian/Climate/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/SCB_Metdata_5min_2019.csv", header=FALSE, stringsAsFactors = FALSE)
+data_2019 <- read.csv("Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/SCB_Metdata_5min_2019.csv", header=FALSE, stringsAsFactors = FALSE)
 
 #remove unnecessary rows
 test <- data_2019[-c(1,4),]
@@ -16,8 +21,7 @@ test <- test[-1,]
 
 #convert date into usable format
 #"tz" should be changed depending on the location source of the weather data
-library(lubridate)
-test$TIMESTAMP_TS <- mdy_hm(test$TIMESTAMP_TS, tz="EST")
+test$TIMESTAMP_TS <- ymd_hms(test$TIMESTAMP_TS, tz = "EST")
 
 #can also split timestamp into two different columns and format from there
 ##library(tidyr)
@@ -40,11 +44,8 @@ sapply(test, class)
 ## Numbers 8-9 are attempts at more complex graphs, with 9 using plot function. Both need more troubleshooting if going to use.
 
 #basic graphs of 5-minute averages:
-library(ggplot2)
-
 ##to make a pdf of any combination of graphs, simply do the following:
-setwd()
-pdf(file="2017_Weather_Stats.pdf", width=12) #before running the graph scripts
+pdf(file="Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/plots/2017_Weather_Stats.pdf", width=12) #before running the graph scripts
 
 dev.off() #after running the graph scripts
 

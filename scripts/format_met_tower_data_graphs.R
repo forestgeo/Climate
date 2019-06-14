@@ -6,12 +6,13 @@
 
 library(lubridate)
 library(ggplot2)
+library(dplyr)
 
 #read and reformat met data ####
-data_2019 <- read.csv("Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/SCB_Metdata_5min_2019.csv", header=FALSE, stringsAsFactors = FALSE)
+data_2018 <- read.csv("Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/SCB_Metdata_5min_2018.csv", header=FALSE, stringsAsFactors = FALSE)
 
 #remove unnecessary rows
-test <- data_2019[-c(1,4),]
+test <- data_2018[-c(1,4),]
 
 #combine descriptor rows (variable and unit) into one, then make them the headers
 test <- rbind(paste0(test[1,], sep="_", test[2,]), test[3:nrow(test),], stringsAsFactors=FALSE)
@@ -21,7 +22,8 @@ test <- test[-1,]
 
 #convert date into usable format
 #"tz" should be changed depending on the location source of the weather data
-test$TIMESTAMP_TS <- ymd_hms(test$TIMESTAMP_TS, tz = "EST")
+test$TIMESTAMP_TS <- mdy_hm(test$TIMESTAMP_TS, tz = "EST")
+# test$TIMESTAMP_TS <- ymd_hm(test$TIMESTAMP_TS, tz = "EST")
 
 #can also split timestamp into two different columns and format from there
 ##library(tidyr)
@@ -45,9 +47,15 @@ sapply(test, class)
 
 #basic graphs of 5-minute averages:
 ##to make a pdf of any combination of graphs, simply do the following:
-pdf(file="Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/plots/2017_Weather_Stats.pdf", width=12) #before running the graph scripts
 
-dev.off() #after running the graph scripts
+# pdf(file="Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/plots/2017_Weather_Stats.pdf", width=12) #before running the graph scripts
+# 
+# dev.off() #after running the graph scripts
+
+##split data to only show growing months (may - august)
+test$day <- as.Date(substr(test$TIMESTAMP_TS, 1, nchar(test$TIMESTAMP_TS)-0))
+test_grow <- test[test$day >= "2018-05-01" & test$day <= "2018-08-31", ]
+
 
 #1 solar radiation Kipp&Zonen ####
 ggplot(data = test) +
@@ -56,6 +64,10 @@ ggplot(data = test) +
   ggtitle("Solar radiation Kipp&Zonen in 5-min. average") +
   labs(x="Timestamp", y="Solar radiation (W/m2)") +
   theme_grey()
+
+q <- test_grow %>%
+  group_by(day) %>%
+  summarize(total_Rad = sum(`RadTot_Li_Avg_W/m2`))
 
 #2 solar radiation LiCOR ####
 ggplot(data = test) +

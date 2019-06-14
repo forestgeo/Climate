@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1559933044850.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1338943662",
+    "id" : "EA07274B",
+    "lastKnownWriteTime" : 1560527094,
+    "last_content_update" : 1560527094255,
+    "path" : "D:/Dropbox (Smithsonian)/Github_Ian/Climate/scripts/format_met_tower_data_graphs.R",
+    "project_path" : "scripts/format_met_tower_data_graphs.R",
+    "properties" : {
+        "cursorPosition" : "19,22",
+        "scrollLine" : "15"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

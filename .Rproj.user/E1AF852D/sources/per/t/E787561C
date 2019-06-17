@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560779754963.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E787561C",
+    "lastKnownWriteTime" : 4120854347824248373,
+    "last_content_update" : 1560779754963,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "3E6F25D1",
+        "caption" : "test_rad",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=test_rad&cache_key=3E6F25D1",
+        "displayedObservations" : "35422",
+        "environment" : "",
+        "expression" : "test_rad",
+        "object" : "test_rad",
+        "preview" : "0",
+        "totalObservations" : "35422",
+        "variables" : "3"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

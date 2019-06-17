@@ -160,3 +160,20 @@ axis(4, ylim=c(0,360), col="red",col.axis="red",las=1)
 ## Draw the time axis
 axis(1,pretty(range(test$TIMESTAMP_TS),10))
 mtext("Timestamp",side=1,col="black",line=2.5)  
+
+
+#distribution over specific timeframe subset ####
+test_rad <- test_grow[c(1,5)]
+test_rad$day <- substr(test_rad$TIMESTAMP_TS, 1, nchar(test_rad$TIMESTAMP_TS)-0)
+test_rad$day <- as.character(test_rad$day)
+test_rad <- test_rad[!is.na(test_rad$TIMESTAMP_TS), ]
+
+q <- test_rad %>%
+  group_by(day) %>%
+  summarize(total_Rad = sum(`RadTot_Li_Avg_W/m2`))
+
+q$day <- as.character(q$day)
+
+ggplot(q, aes(day, total_Rad)) +
+  geom_bar(stat="identity") +
+  theme_minimal()

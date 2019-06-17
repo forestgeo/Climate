@@ -170,10 +170,10 @@ test_rad <- test_rad[!is.na(test_rad$TIMESTAMP_TS), ]
 
 q <- test_rad %>%
   group_by(day) %>%
-  summarize(total_Rad = sum(`RadTot_Li_Avg_W/m2`))
+  summarize(mean_Rad = mean(`RadTot_Li_Avg_W/m2`))
 
 q$day <- as.character(q$day)
 
-ggplot(q, aes(day, total_Rad)) +
+ggplot(q, aes(day, mean_Rad)) +
   geom_bar(stat="identity") +
   theme_minimal()

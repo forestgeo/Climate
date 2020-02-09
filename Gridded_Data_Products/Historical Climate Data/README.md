@@ -13,16 +13,17 @@
 
 **Spatial resolution**: 0.5° by 0.5°
 
-**Variables**: Average daily mean temperature,
-               Average daily minimum temperature,
-               Average daily maximum temperature,
-               Diurnal temperature range,
-               Frost day frequency,
-               Precipitation,
-               Wet day frequency,
-               Cloud cover,
-               Vapour pressure,
-               Potential evapotranspiration
+**Variables**: All CSV's are prefixed with the following codes:
+* `cld`: cloud cover
+* `dtr`: diurnal temperate range i.e. temperature amplitude
+* `frs`: frost day frequency
+* `pet`: potential evapotranspiration
+* `pre`: precipitation
+* `tmn`: average daily minimal temperatures
+* `tmp`: average daily mean temperatures
+* `tmx`: average daily maximal temperatures
+* `vap`: vapour pressure
+* `wet`: wet day frequency
                
 
 ## Data set description:

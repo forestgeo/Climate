@@ -1,0 +1,27 @@
+variable,unit,5-minute stat,description
+TIMESTAMP,TS,,time in the format mm/dd/yyyy HH:MM
+RECORD,RN,,record number
+RadTot_KZ_Avg,W/m2,Average (mean measurement over 5 minutes),solar radiation Kipp&Zonen
+RadTot_KZ_Std,W/m2,"Standard deviation (how spread out the measurements within the 5 minutes are from the average. Higher # = more spread out, lower # = closer to average)",solar radiation Kipp&Zonen
+RadTot_Li_Avg,W/m2,Avg,solar radiation LiCOR
+RadTot_Li_Std,W/m2,Std,solar radiation LiCOR
+T_Air1_Avg,C,Avg,air temperature sensor 1
+T_Air1_Std,C,Std,air temperature sensor 1
+T_Air2_Avg,C,Avg,air temperature sensor 2
+T_Air2_Std,C,Std,air temperature sensor 2
+RH_Avg,%,Avg,relative humidity
+RH_Std,%,Std,relative humidity
+WS_WVc(1),m/s,WVc,mean horizontal wind speed
+WS_WVc(2),deg,WVc,wind direction
+WS_WVc(3),deg,WVc,std wind direction
+u_Avg,m/s,Avg,mean wind (speed) in the u direction
+v_Avg,m/s,Avg,mean wind (speed) in the v direction
+Prec_Tot,mm,Tot,precipitation
+Resis1_Avg,Ohm,Avg,resistance of temp sensor
+Resis1_Std,Ohm,Std,resistance of temp sensor
+Resis2_Avg,Ohm,Avg,resistance of temp sensor
+Resis2_Std,Ohm,Std,resistance of temp sensor
+Asp_Fan_Avg,,Avg,number of fan cycles
+BattV_Avg,V,Avg,battery voltage
+Tbox_Avg,C,Avg,datalogger temperature
+Batstat_Avg,,Avg,"battery status (1 above 12V, 0 below 12V)"

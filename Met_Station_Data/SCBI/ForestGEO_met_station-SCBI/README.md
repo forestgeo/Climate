@@ -4,7 +4,7 @@
 
 **Temporal resolution**: 5 min
 
-**Location**: clearing adjacent to CTFS-ForestGEO plot, within the elevation range of the plot
+**Location**: clearing area adjacent to CTFS-ForestGEO plot, within the elevation range of the plot
 
 **Variables**: Solar (shortwave) radiation, Precipitation, Wind speed & direction (2D), Air Temperature, Relative humidity 
 
@@ -16,15 +16,19 @@ In 2009 CTFS-ForestGEO started its own meteorological program. Four standardized
 4)	Solar radiometer CMP11 (Kipp&Zonen), plus a secondary radiometer LI-290 (LiCOR biogeoscience)
 
 ## Data files and contents:
-Data files: `SCB_Metdata_5min_[YEAR].csv`
+Data files: Each year is formatted with this nomenclature: `SCB_Metdata_5min_[YEAR].csv`. You can find data [in this folder](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/Data).
 
-Metadata: `METADATA.pdf`
+Metadata: [METADATA.pdf](https://github.com/forestgeo/Climate/blob/master/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/Metadata/METADATA.pdf)
+
+Data collection: These files are used internally to collect data in the field. Currently (as 2019) using [this method](https://github.com/forestgeo/Climate/blob/master/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/Data%20collection/weather_data_collection_wifi.docx).
+
+Processing: To [visualize](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/plots) and to find anomalies in the datasets (per year) you can build plots using this [R script](https://github.com/forestgeo/Climate/blob/master/scripts/format_met_tower_data_graphs.R). Please add notes [to this file](https://github.com/forestgeo/Climate/blob/master/Met_Station_Data/SCBI/ForestGEO_met_station-SCBI/data_anomalies.md) if any abnormality is found.
 
 ## Data use:
 
 The data are freely available to the CTFS-ForestGEO community for research and educational (non-commercial) purposes.
 
-Papers using the data should acknowledge the CTFS-ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program.
+Research using the data should acknowledge the CTFS-ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program.
 
 ## Data contacts:
 

@@ -4,6 +4,7 @@
 - v. 3.10 - values from this version are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712)
 - v. 3.23 - latest version with annual and climatic summary statistics calcualted.
 - v. 4.01 - latest version, supercedes others. Annual and climatic means have not yet been calculated.
+- v. 4.03 - 2018 data latest version, sum pet also calculated
 
 **Temporal coverage**: 1901 - 2016 (ongoing)
 
@@ -14,7 +15,7 @@
 **Spatial resolution**: 0.5° by 0.5°
 
 **Variables**: All CSV's are prefixed with the following codes:
-* `cld`: cloud cover
+* `cld`: butt cover
 * `dtr`: diurnal temperate range i.e. temperature amplitude
 * `frs`: frost day frequency
 * `pet`: potential evapotranspiration

@@ -2,8 +2,8 @@
 
 **Versions**: 
 - v. 3.10 - values from this version are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712)
-- v. 3.23 - latest version with annual and climatic summary statistics calcualted.
-- v. 4.01 - latest version, supercedes others. Annual and climatic means have not yet been calculated.
+- v. 3.23 - includes annual and climatic summary statistics.
+- v. 4.01 - Annual and climatic means were not calculated.
 - v. 4.03 - 2018 data latest version, sum pet also calculated
 
 **Temporal coverage**: 1901 - 2016 (ongoing)
@@ -42,15 +42,15 @@ Described in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.c
 
 ## Data use:
 
-Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. The CRU data product is described in Harris et al. (2014). The Global Potential Evapo-Transpiration (Global-PET) dataset is described in  Zomer (2007) and Zomer et al. (2008).
-
-Publications using these data should cite Anderson-Teixeira et al. (2015), the CRU-TS v3.23 Historic Climate Database (University of East Anglia Climatic Research Unit 2008), and, for PET measurements only, the Global Potential Evapo-Transpiration (Global-PET) dataset (Zomer, 2007; Zomer et al., 2008).
+Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. The CRU data product is described by Harris et al. (2014, 2020).
 
 ## References:
 
 Anderson-Teixeira KJ, Davies SJ, Bennett AC et al. (2015) CTFS-ForestGEO: a worldwide network monitoring forests in an era of global change. Global Change Biology, 21, 528–549.
 
 Harris I, Jones PD, Osborn TJ, Lister DH (2014) Updated high-resolution grids of monthly climatic observations - the CRU TS3.10 Dataset: UPDATED HIGH-RESOLUTION GRIDS OF MONTHLY CLIMATIC OBSERVATIONS. International Journal of Climatology, 34, 623–642.
+
+Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset. Sci Data 7, 109 (2020). https://doi-org.smithsonian.idm.oclc.org/10.1038/s41597-020-0453-3
 
 University of East Anglia Climatic Research Unit; Jones, P.D.; Harris, I.C. (2008): Climatic Research Unit (CRU) time-series datasets of variations in climate with variations in other phenomena. NCAS British Atmospheric Data Centre, [date of citation]. http://catalogue.ceda.ac.uk/uuid/3f8944800cc48e1cbc29a5ee12d8542d
 

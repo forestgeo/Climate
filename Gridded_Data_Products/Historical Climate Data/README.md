@@ -15,7 +15,7 @@
 **Spatial resolution**: 0.5° by 0.5°
 
 **Variables**: All CSV's are prefixed with the following codes:
-* `cld`: butt cover
+* `cld`: cloud cover
 * `dtr`: diurnal temperate range i.e. temperature amplitude
 * `frs`: frost day frequency
 * `pet`: potential evapotranspiration

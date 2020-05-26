@@ -30,4 +30,4 @@ For instrunctions on contributing to this repository, please see [`CONTRIBUTING.
 
 ## Contact 
 
-Kristina Anderson-Teixeira, Leader of CTFS-ForestGEO Ecosystems & Climate Initiative (teixeirak@si.edu; @teixeirak)
+Kristina Anderson-Teixeira, Leader of CTFS-ForestGEO Ecosystems & Climate Program (teixeirak@si.edu; @teixeirak)

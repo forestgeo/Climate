@@ -46,7 +46,7 @@ sites
 for(i in seq_along(objs)){
   
   #select only BCI records in clim data 
-  print(paste0("visualizing site ", sites[54])) ### CHANGE SITE INDEX HERE - for site of choice
+  print(paste0("visualizing site ", sites[54], " for  ", toupper(v[i]))) ### CHANGE SITE INDEX HERE - for site of choice
   df_sps[[i]] <- objs[[i]][match(sites[54], objs[[i]]$sites.sitename),] ### CHANGE SITE INDEX HERE - for site of choice
   
   # also add a col that will show the climate variable (ie cld or pet)
@@ -55,10 +55,7 @@ for(i in seq_along(objs)){
   # make into df objects to plot
   df<- as.data.frame(df_sps[[i]])
   
-  # select only one record per month for all years
-  
   #reshape data for plot
-  
   df_long<- reshape(df, 
                     times =gsub("X", "", names(df)[-1]),
                     timevar = "Date", #maybe has to be year?
@@ -75,7 +72,9 @@ for(i in seq_along(objs)){
   
   # fix format of this data 
   df_long$Date<- anytime::anydate(df_long$Date)
-  df_long[[i]]<- as.numeric(df_long[[i]])
+  
+  df_long[[3]]<- as.numeric(df_long[[3]]) #3 is the column of the clim var we need to convert to numeric! 
+
   
   ggplot(df_long, aes(x=Date, y=df$clim))+geom_point()
   

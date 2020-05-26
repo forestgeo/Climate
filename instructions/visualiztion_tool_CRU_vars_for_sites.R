@@ -1,10 +1,10 @@
 ##########
 
-### Investigate CRU data of Barrio Colorado Island (BCI)
+### Investigate CRU data of site of Choice!
 ### Developed by: Bianca Gonzalez, bianca.glez94@gmail.com
 
 ### OBJECTIVE:
-# make plots of all variables showing the variable over time 
+# make plots of all variables showing the variable over time for site of choice!
 # look at plots and see if there is any descrepancy in data 
 
 ##########
@@ -37,6 +37,8 @@ plot_list = list() # to save plots later
 ##### vector of sites to loop through ------- 
 
 sites <- objs[[1]]$sites.sitename
+
+### HOW TO VISUALIZE! CHANGE SITE INDEX!
 #If trying to use this tool to visualize the site of choice,  look at sites, pick index of the given site 
 # we are interested in -- and then change the site in the first & second line in the for loop
 
@@ -49,7 +51,7 @@ for(i in seq_along(objs)){
   print(paste0("visualizing site ", sites[54], " for  ", toupper(v[i]))) ### CHANGE SITE INDEX HERE - for site of choice
   df_sps[[i]] <- objs[[i]][match(sites[54], objs[[i]]$sites.sitename),] ### CHANGE SITE INDEX HERE - for site of choice
   
-  # also add a col that will show the climate variable (ie cld or pet)
+  # adding a col that will show the climate variable (ie cld or pet)
   df_sps[[i]]$clim<-  gsub(names(objs[i]), v[i], names(objs[i]), ignore.case = FALSE)
   
   # make into df objects to plot
@@ -58,7 +60,7 @@ for(i in seq_along(objs)){
   #reshape data for plot
   df_long<- reshape(df, 
                     times =gsub("X", "", names(df)[-1]),
-                    timevar = "Date", #maybe has to be year?
+                    timevar = "Date", 
                     varying = list(colnames(df[-1])), 
                     v.names = paste0(df$clim),
                     direction = "long",
@@ -70,16 +72,13 @@ for(i in seq_along(objs)){
   
   df_long<- df_long[grep("03|06|12",substr(df_long$Date,6,7)),] 
   
-  # fix format of this data 
+  # fix data formats
   df_long$Date<- anytime::anydate(df_long$Date)
-  
   df_long[[3]]<- as.numeric(df_long[[3]]) #3 is the column of the clim var we need to convert to numeric! 
 
   
   ggplot(df_long, aes(x=Date, y=df$clim))+geom_point()
-  
   p = ggplot(df_long, aes_string(x="Date", y=paste0(df$clim)))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))
-  
   
   plot_list[[i]] = p
   while (!is.null(dev.list()))  dev.off() ## online hack to cannot shut down null device 
@@ -94,16 +93,14 @@ for(i in seq_along(objs)){
 #### if we want to view the plots without saving them use plot_list[[i]] -- change i to a number between 1-11
 
 plot_list[[1]] # plot for CLD 
-
 plot_list[[9]] # plot for TMX
 
 ## if we want to view the graphs in more detail use ggplotly function for interactivity
-
 ggplotly(plot_list[[11]])
 
 ####  Summary for BCI ####
 
-#Clim var data was averaged for the first thirty years creating inconsistent data 
+#Clim var data was averaged for the ~ first thirty years creating inconsistent data 
 
 # CLD data: 1901 - 1932 the data for months are constant 
 # DTR: 1901 - 1940 constant and again from 1991 to 2010

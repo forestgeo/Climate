@@ -107,8 +107,8 @@ Background on Windows
 Example of CRU data of SCBI
 ---------------------------
 
-![image
-captionz](C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/instructions/SCBI_cld.png)
+<img src="instructions/SCBI_cld.png"> ![SCBI CLD
+plot](C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/instructions/SCBI_cld.png)
 
 Background on Mac:
 ------------------

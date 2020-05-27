@@ -44,8 +44,9 @@ wnd	     wind                             Speed	metres per second (m/s)
 -	See updated brick_CRU_BG script to decompress files
 
 ## Example of CRU data of SCBI 
+<img src="instructions/SCBI_cld.png">
+![SCBI CLD plot](C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/instructions/SCBI_cld.png)
 
-![image captionz](C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/instructions/SCBI_cld.png)
 
 
 ## Background on Mac: 

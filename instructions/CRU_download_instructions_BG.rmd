@@ -45,8 +45,6 @@ wnd	     wind                             Speed	metres per second (m/s)
 
 ## Example of CRU data of SCBI 
 <img src="https://github.com/forestgeo/Climate/blob/master/instructions/SCBI_cld.png">
-![SCBI CLD plot](C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/instructions/SCBI_cld.png)
-
 
 
 ## Background on Mac: 

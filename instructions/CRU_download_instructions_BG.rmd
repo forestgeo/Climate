@@ -86,4 +86,12 @@ other ftp commands here
 -	Also contains code to calculate monthly averages across all years
 -	If there are missing data, open the coordinates and .nc files in ArcMap (use the function ‘Make NetCDF Raster Layer’ in ArcMap). Locate the coordinates of the nearest point with data (if you mouse over the point, you can see the coordinates in the toolbar on the lower right). Then put those coordinates back in R to extract data.
 
+**Other Scripts**
+- see scripts folder here https://github.com/forestgeo/Climate/tree/master/scripts
+Visualization scripts to create plots! 
+- viz_tool_CRU_ALL_sites.R
+  - viz_tool_CRU_ALL_sites.R script to produce plots for CRU variables for ALL forest geo sites
+- viz_tool_CRU_single_site.R
+  - viz_tool_CRU_single_site.R script to produce plots for CRU variables for a single site
+
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

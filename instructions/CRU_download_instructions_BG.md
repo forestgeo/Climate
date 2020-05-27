@@ -108,8 +108,6 @@ Example of CRU data of SCBI
 ---------------------------
 
 <img src="https://github.com/forestgeo/Climate/blob/master/instructions/SCBI_cld.png">
-![SCBI CLD
-plot](C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/instructions/SCBI_cld.png)
 
 Background on Mac:
 ------------------
@@ -174,6 +172,14 @@ Current Scripts and Process
     Locate the coordinates of the nearest point with data (if you mouse
     over the point, you can see the coordinates in the toolbar on the
     lower right). Then put those coordinates back in R to extract data.
+
+**Other Scripts** - see scripts folder here
+<a href="https://github.com/forestgeo/Climate/tree/master/scripts" class="uri">https://github.com/forestgeo/Climate/tree/master/scripts</a>
+Visualization scripts to create plots! - viz\_tool\_CRU\_ALL\_sites.R -
+viz\_tool\_CRU\_ALL\_sites.R script to produce plots for CRU variables
+for ALL forest geo sites - viz\_tool\_CRU\_single\_site.R -
+viz\_tool\_CRU\_single\_site.R script to produce plots for CRU variables
+for a single site
 
 Note that the `echo = FALSE` parameter was added to the code chunk to
 prevent printing of the R code that generated the plot.

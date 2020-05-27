@@ -38,7 +38,7 @@ plot_list = list() # to save plots later
 
 sites <- objs[[1]]$sites.sitename
 
-### HOW TO VISUALIZE! CHANGE SITE INDEX!
+### HOW TO VISUALIZE! CHANGE SITE INDEX BELOW!
 #If trying to use this tool to visualize the site of choice,  look at sites, pick index of the given site 
 # we are interested in -- and then change the site in the first & second line in the for loop
 
@@ -48,8 +48,8 @@ sites
 for(i in seq_along(objs)){
   
   #select only BCI records in clim data 
-  print(paste0("visualizing site ", sites[54], " for  ", toupper(v[i]))) ### CHANGE SITE INDEX HERE - for site of choice
-  df_sps[[i]] <- objs[[i]][match(sites[54], objs[[i]]$sites.sitename),] ### CHANGE SITE INDEX HERE - for site of choice
+  print(paste0("visualizing site ", sites[5], " for  ", toupper(v[i]))) ### CHANGE SITE INDEX HERE - for site of choice
+  df_sps[[i]] <- objs[[i]][match(sites[5], objs[[i]]$sites.sitename),] ### CHANGE SITE INDEX HERE - for site of choice
   
   # adding a col that will show the climate variable (ie cld or pet)
   df_sps[[i]]$clim<-  gsub(names(objs[i]), v[i], names(objs[i]), ignore.case = FALSE)
@@ -68,9 +68,9 @@ for(i in seq_along(objs)){
   
   # months are already selected so we can do a spring, summer, fall readings
   ##### change the months (03 is march 06 is June) to see months you are interested in displayed 
-  ### makes it easier to read chart 
+  ### makes it easier to read chart - can comment out to view all data
   
-  df_long<- df_long[grep("03|06|12",substr(df_long$Date,6,7)),] 
+  #df_long<- df_long[grep("03|06|12",substr(df_long$Date,6,7)),] 
   
   # fix data formats
   df_long$Date<- anytime::anydate(df_long$Date)
@@ -78,7 +78,7 @@ for(i in seq_along(objs)){
 
   
   ggplot(df_long, aes(x=Date, y=df$clim))+geom_point()
-  p = ggplot(df_long, aes_string(x="Date", y=paste0(df$clim)))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))
+  p = ggplot(df_long, aes_string(x="Date", y=paste0(df$clim)))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+ggtitle(unique(df_long[,1]))
   
   plot_list[[i]] = p
   while (!is.null(dev.list()))  dev.off() ## online hack to cannot shut down null device 
@@ -92,11 +92,11 @@ for(i in seq_along(objs)){
 
 #### if we want to view the plots without saving them use plot_list[[i]] -- change i to a number between 1-11
 
-plot_list[[1]] # plot for CLD 
+plot_list[[2]] # plot for CLD 
 plot_list[[9]] # plot for TMX
 
 ## if we want to view the graphs in more detail use ggplotly function for interactivity
-ggplotly(plot_list[[11]])
+ggplotly(plot_list[[2]])
 
 ####  Summary for BCI ####
 
@@ -112,4 +112,12 @@ ggplotly(plot_list[[11]])
 # TMX: 1901 - 1914
 # VAP: 1901 - 1928
 # WET: 1901 - 1936
+
+####  Summary for Scotty Creek ####
+
+ggplotly(plot_list[[11]])
+# frs is averaged for March, Nov, Feb all years
+# wet filled with some averages 1908 -1940 
+
+
 

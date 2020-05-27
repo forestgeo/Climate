@@ -109,8 +109,8 @@ Example of CRU data of SCBI
 
 <img src="https://github.com/forestgeo/Climate/blob/master/instructions/SCBI_cld.png">
 
-Background on Mac:
-------------------
+Background on Mac
+-----------------
 
 -   register for an account as indicated above
     <a href="http://data.ceda.ac.uk/badc/cru/data/cru_ts/" class="uri">http://data.ceda.ac.uk/badc/cru/data/cru_ts/</a>
@@ -125,16 +125,11 @@ Background on Mac:
     and password
 -   use ls to list all directories
 -   cd into badc: `cd badc`
--   -   cd into cru: `cd cru`
-
--   -   cd into data folder: `cd data`  
-
--   -   cd into the relevant folder: `cd cru_ts`
-
--   -   cd to most recent cru: `cd cru_ts_4.03`
-
--   -   cd into data again: `cd data`
-
+-   cd into cru: `cd cru`
+-   cd into data folder: `cd data`  
+-   cd into the relevant folder: `cd cru_ts`
+-   cd to most recent cru: `cd cru_ts_4.03`
+-   cd into data again: `cd data`
 -   cd to the directory you’re interested in of below variables: ie
     `cd cld`
 -   use the ls command to list the files in the directory, ie: `ls`
@@ -173,13 +168,18 @@ Current Scripts and Process
     over the point, you can see the coordinates in the toolbar on the
     lower right). Then put those coordinates back in R to extract data.
 
-**Other Scripts** - see scripts folder here
-<a href="https://github.com/forestgeo/Climate/tree/master/scripts" class="uri">https://github.com/forestgeo/Climate/tree/master/scripts</a>
-Visualization scripts to create plots! - viz\_tool\_CRU\_ALL\_sites.R -
-viz\_tool\_CRU\_ALL\_sites.R script to produce plots for CRU variables
-for ALL forest geo sites - viz\_tool\_CRU\_single\_site.R -
-viz\_tool\_CRU\_single\_site.R script to produce plots for CRU variables
-for a single site
+To visualize CRU data:
+----------------------
+
+-   see scripts folder here
+    <a href="https://github.com/forestgeo/Climate/tree/master/scripts" class="uri">https://github.com/forestgeo/Climate/tree/master/scripts</a>
+    Visualization scripts to create plots!
+-   viz\_tool\_CRU\_ALL\_sites.R
+    -   viz\_tool\_CRU\_ALL\_sites.R script to produce plots for CRU
+        variables for ALL forest geo sites
+-   viz\_tool\_CRU\_single\_site.R
+    -   viz\_tool\_CRU\_single\_site.R script to produce plots for CRU
+        variables for a single site
 
 Note that the `echo = FALSE` parameter was added to the code chunk to
 prevent printing of the R code that generated the plot.

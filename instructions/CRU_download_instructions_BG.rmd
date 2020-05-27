@@ -2,7 +2,7 @@
 title: "CRU Download Instructions"
 author: "Original R code by Amy Bennett, updated by Valentine Hermann, Maria Wang, and Bianca Gonzalez"
 date: "5/22/2020"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
@@ -46,6 +46,8 @@ wnd	     wind                             Speed	metres per second (m/s)
 ## Example of CRU data of SCBI 
 
 ![image captionz](C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/instructions/SCBI_cld.png)
+
+
 ## Background on Mac: 
 
 -	register for an account as indicated above http://data.ceda.ac.uk/badc/cru/data/cru_ts/ 

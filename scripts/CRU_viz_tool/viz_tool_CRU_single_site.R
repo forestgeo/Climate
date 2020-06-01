@@ -75,10 +75,10 @@ for(i in seq_along(objs)){
   # fix data formats
   df_long$Date<- anytime::anydate(df_long$Date)
   df_long[[3]]<- as.numeric(df_long[[3]]) #3 is the column of the clim var we need to convert to numeric! 
-
+  #
   
   ggplot(df_long, aes(x=Date, y=df$clim))+geom_point()
-  p = ggplot(df_long, aes_string(x="Date", y=paste0(df$clim)))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+ggtitle(unique(df_long[,1]))
+  p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+ggtitle(paste0(unique(df_long[,1])))
   
   plot_list[[i]] = p
   while (!is.null(dev.list()))  dev.off() ## online hack to cannot shut down null device 
@@ -96,7 +96,7 @@ plot_list[[2]] # plot for CLD
 plot_list[[9]] # plot for TMX
 
 ## if we want to view the graphs in more detail use ggplotly function for interactivity
-ggplotly(plot_list[[2]])
+ggplotly(plot_list[[1]])
 
 ####  Summary for BCI ####
 

@@ -79,15 +79,33 @@ for(i in seq_along(objs)){
   df_long$Date<- anytime::anydate(df_long$Date)
   df_long[[3]]<- as.numeric(df_long[[3]]) #3 is the column of the clim var we need to convert to numeric! 
   #
+
+  ## add months column in really nonpleasant code 
+  df_long<- df_long %>%
+    mutate(months=ifelse(Date %in% df_long[grep("01",substr(df_long$Date,6,7)),][[2]], "January",
+                         ifelse(Date %in% df_long[grep("02",substr(df_long$Date,6,7)),][[2]], "February",
+                                ifelse(Date %in% df_long[grep("03",substr(df_long$Date,6,7)),][[2]], "March",
+                                       ifelse(Date %in% df_long[grep("04",substr(df_long$Date,6,7)),][[2]], "April",
+                                              ifelse(Date %in% df_long[grep("05",substr(df_long$Date,6,7)),][[2]], "May",
+                                                     ifelse(Date %in% df_long[grep("06",substr(df_long$Date,6,7)),][[2]], "June",
+                                                            ifelse(Date %in% df_long[grep("07",substr(df_long$Date,6,7)),][[2]], "July",
+                                                                   ifelse(Date %in% df_long[grep("08",substr(df_long$Date,6,7)),][[2]], "August",
+                                                                          ifelse(Date %in% df_long[grep("09",substr(df_long$Date,6,7)),][[2]], "September",
+                                                                                 ifelse(Date %in% df_long[grep("10",substr(df_long$Date,6,7)),][[2]], "October",
+                                                                                        ifelse(Date %in% df_long[grep("11",substr(df_long$Date,6,7)),][[2]], "November",
+                                                                                               ifelse(Date %in% df_long[grep("12",substr(df_long$Date,6,7)),][[2]], "December","NA")))))))))))))
   
-  ggplot(df_long, aes(x=Date, y=df$clim))+geom_point()
-  p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+ggtitle(paste0(unique(df_long[,1])))
+  # add geom_point if we prefer geom_point scatterplots
+  p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+ #geom_point()+ 
+    theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1))+ 
+    theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+
+    ggtitle(paste0(unique(df_long[,1])))+ geom_line(aes(color = months)) 
   
   plot_list[[i]] = p
   while (!is.null(dev.list()))  dev.off() ## online hack to cannot shut down null device 
   
   ##### to save to tiff - also need to change wd 
-  # file_name = paste("iris_plot_", i, ".tiff", sep="")
+  # file_name = paste("CRU_plot", i, ".tiff", sep="")
   # tiff(file_name)
   # print(plot_list[[i]])
   # dev.off()
@@ -95,7 +113,7 @@ for(i in seq_along(objs)){
 
 #### if we want to view the plots without saving them use plot_list[[i]] -- change i to a number between 1-11
 
-plot_list[[2]] # plot for CLD 
+plot_list[[5]] # plot for CLD 
 plot_list[[9]] # plot for TMX
 
 ## if we want to view the graphs in more detail use ggplotly function for interactivity ( you can zoom in for interested years)

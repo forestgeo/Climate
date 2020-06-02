@@ -65,16 +65,29 @@ for(j in sites){
     df_long$Date<- anytime::anydate(df_long$Date)
     df_long[[3]]<- as.numeric(df_long[[3]]) #3 is the column of the clim var we need to convert to numeric! 
     
-    # months are already selected so we can do a spring, summer, fall readings
-    ##### change the months (03 is march 06 is June) to see months you are interested in displayed 
-    ### makes it easier to read chart - can comment out to view all data
-    #df_long<- df_long[grep("03|06|12",substr(df_long$Date,6,7)),] 
+    ## add months column in really nonpleasant code 
+    df_long<- df_long %>%
+      mutate(months=ifelse(Date %in% df_long[grep("01",substr(df_long$Date,6,7)),][[2]], "January",
+                           ifelse(Date %in% df_long[grep("02",substr(df_long$Date,6,7)),][[2]], "February",
+                                  ifelse(Date %in% df_long[grep("03",substr(df_long$Date,6,7)),][[2]], "March",
+                                         ifelse(Date %in% df_long[grep("04",substr(df_long$Date,6,7)),][[2]], "April",
+                                                ifelse(Date %in% df_long[grep("05",substr(df_long$Date,6,7)),][[2]], "May",
+                                                       ifelse(Date %in% df_long[grep("06",substr(df_long$Date,6,7)),][[2]], "June",
+                                                              ifelse(Date %in% df_long[grep("07",substr(df_long$Date,6,7)),][[2]], "July",
+                                                                     ifelse(Date %in% df_long[grep("08",substr(df_long$Date,6,7)),][[2]], "August",
+                                                                            ifelse(Date %in% df_long[grep("09",substr(df_long$Date,6,7)),][[2]], "September",
+                                                                                   ifelse(Date %in% df_long[grep("10",substr(df_long$Date,6,7)),][[2]], "October",
+                                                                                          ifelse(Date %in% df_long[grep("11",substr(df_long$Date,6,7)),][[2]], "November",
+                                                                                                 ifelse(Date %in% df_long[grep("12",substr(df_long$Date,6,7)),][[2]], "December","NA")))))))))))))
     
     ### SCATTERPLOT - comment out for a line plot
-    p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+ggtitle(paste0(unique(df_long[,1])))
+    #p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+ggtitle(paste0(unique(df_long[,1])))
     
     ### LINE PLOT - uncomment this code if you want a line plot 
-    # p=  ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3])))) + geom_line() 
+     p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+ #geom_point()+ 
+       theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1))+ 
+       theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+
+       ggtitle(paste0(unique(df_long[,1])))+ geom_line(aes(color = months)) 
     
     plot_list[[counter]] = p
     names(plot_list)[[counter]] <- paste0(j, " ",toupper(v[i])) # add plot list name 

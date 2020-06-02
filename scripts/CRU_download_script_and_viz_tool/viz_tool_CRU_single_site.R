@@ -7,6 +7,9 @@
 # make plots of all variables showing the variable over time for site of choice!
 # look at plots and see if there is any descrepancy in data 
 
+# Make sure to install packages below with install.packages('PACKAGENAMEHERE') if you dont have them
+
+#these are the packages
 ##########
 library(readr)
 library(ggplot2)
@@ -95,7 +98,7 @@ for(i in seq_along(objs)){
 plot_list[[2]] # plot for CLD 
 plot_list[[9]] # plot for TMX
 
-## if we want to view the graphs in more detail use ggplotly function for interactivity
+## if we want to view the graphs in more detail use ggplotly function for interactivity ( you can zoom in for interested years)
 ggplotly(plot_list[[1]])
 
 ####  Summary for BCI ####

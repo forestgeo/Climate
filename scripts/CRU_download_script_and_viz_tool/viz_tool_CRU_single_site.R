@@ -101,26 +101,4 @@ plot_list[[9]] # plot for TMX
 ## if we want to view the graphs in more detail use ggplotly function for interactivity ( you can zoom in for interested years)
 ggplotly(plot_list[[1]])
 
-####  Summary for BCI ####
-
-#Clim var data was averaged for the ~ first thirty years creating inconsistent data 
-
-# CLD data: 1901 - 1932 the data for months are constant 
-# DTR: 1901 - 1940 constant and again from 1991 to 2010
-# FRS: 0 NO DATA
-# PET: 1901 - 1924
-# PRE: 1904 - 1916
-# tmn: 1901 - 1932
-# TMP: 1901 - 1917
-# TMX: 1901 - 1914
-# VAP: 1901 - 1928
-# WET: 1901 - 1936
-
-####  Summary for Scotty Creek ####
-
-ggplotly(plot_list[[11]])
-# frs is averaged for March, Nov, Feb all years
-# wet filled with some averages 1908 -1940 
-
-
 

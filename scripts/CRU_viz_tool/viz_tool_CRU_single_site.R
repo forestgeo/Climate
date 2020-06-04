@@ -7,11 +7,15 @@
 # make plots of all variables showing the variable over time for site of choice!
 # look at plots and see if there is any descrepancy in data 
 
+# Make sure to install packages below with install.packages('PACKAGENAMEHERE') if you dont have them
+
+#these are the packages
 ##########
 library(readr)
 library(ggplot2)
 library(plotly)
 library(anytime) 
+library(viridis)  
 ##########
 # Data 
 
@@ -76,15 +80,36 @@ for(i in seq_along(objs)){
   df_long$Date<- anytime::anydate(df_long$Date)
   df_long[[3]]<- as.numeric(df_long[[3]]) #3 is the column of the clim var we need to convert to numeric! 
   #
+
+  ## add months column in really nonpleasant code 
+  df_long<- df_long %>%
+    mutate(months=ifelse(Date %in% df_long[grep("01",substr(df_long$Date,6,7)),][[2]], "Jan",
+                         ifelse(Date %in% df_long[grep("02",substr(df_long$Date,6,7)),][[2]], "Feb",
+                                ifelse(Date %in% df_long[grep("03",substr(df_long$Date,6,7)),][[2]], "Mar",
+                                       ifelse(Date %in% df_long[grep("04",substr(df_long$Date,6,7)),][[2]], "Apr",
+                                              ifelse(Date %in% df_long[grep("05",substr(df_long$Date,6,7)),][[2]], "May",
+                                                     ifelse(Date %in% df_long[grep("06",substr(df_long$Date,6,7)),][[2]], "Jun",
+                                                            ifelse(Date %in% df_long[grep("07",substr(df_long$Date,6,7)),][[2]], "Jul",
+                                                                   ifelse(Date %in% df_long[grep("08",substr(df_long$Date,6,7)),][[2]], "Aug",
+                                                                          ifelse(Date %in% df_long[grep("09",substr(df_long$Date,6,7)),][[2]], "Sep",
+                                                                                 ifelse(Date %in% df_long[grep("10",substr(df_long$Date,6,7)),][[2]], "Oct",
+                                                                                        ifelse(Date %in% df_long[grep("11",substr(df_long$Date,6,7)),][[2]], "Nov",
+                                                                                               ifelse(Date %in% df_long[grep("12",substr(df_long$Date,6,7)),][[2]], "Dec","NA")))))))))))))
+  #making months a factor now for viz purposes 
+  df_long$months <- factor(df_long$months, levels = month.abb)
   
-  ggplot(df_long, aes(x=Date, y=df$clim))+geom_point()
-  p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+geom_point() + theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1)) + theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+ggtitle(paste0(unique(df_long[,1])))
+  # add geom_point if we prefer geom_point scatterplots
+  p = ggplot(df_long, aes_string(x="Date", y=paste0(names(df_long[3]))))+ #geom_point()+ 
+    theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1))+ 
+    theme(axis.text.y = element_text(angle = 90, vjust = 1, hjust=1))+
+    ggtitle(paste0(unique(df_long[,1])))+ geom_line(aes(color = months))+
+    scale_color_viridis(discrete = TRUE, option = "D") # change option to A,B,C, or D for other color schemes
   
   plot_list[[i]] = p
   while (!is.null(dev.list()))  dev.off() ## online hack to cannot shut down null device 
   
   ##### to save to tiff - also need to change wd 
-  # file_name = paste("iris_plot_", i, ".tiff", sep="")
+  # file_name = paste("CRU_plot", i, ".tiff", sep="")
   # tiff(file_name)
   # print(plot_list[[i]])
   # dev.off()
@@ -92,32 +117,10 @@ for(i in seq_along(objs)){
 
 #### if we want to view the plots without saving them use plot_list[[i]] -- change i to a number between 1-11
 
-plot_list[[2]] # plot for CLD 
+plot_list[[5]] # plot for CLD 
 plot_list[[9]] # plot for TMX
 
-## if we want to view the graphs in more detail use ggplotly function for interactivity
+## if we want to view the graphs in more detail use ggplotly function for interactivity ( you can zoom in for interested years)
 ggplotly(plot_list[[1]])
-
-####  Summary for BCI ####
-
-#Clim var data was averaged for the ~ first thirty years creating inconsistent data 
-
-# CLD data: 1901 - 1932 the data for months are constant 
-# DTR: 1901 - 1940 constant and again from 1991 to 2010
-# FRS: 0 NO DATA
-# PET: 1901 - 1924
-# PRE: 1904 - 1916
-# tmn: 1901 - 1932
-# TMP: 1901 - 1917
-# TMX: 1901 - 1914
-# VAP: 1901 - 1928
-# WET: 1901 - 1936
-
-####  Summary for Scotty Creek ####
-
-ggplotly(plot_list[[11]])
-# frs is averaged for March, Nov, Feb all years
-# wet filled with some averages 1908 -1940 
-
 
 

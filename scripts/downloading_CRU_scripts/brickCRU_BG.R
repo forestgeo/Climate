@@ -19,6 +19,7 @@ library(ncdf4)
 library(sp)
 library(raster)
 library(R.utils)
+library(rgdal)
 
 ###    --- Reading in site coordinates and creating spatial points dataframe --- ####
 
@@ -48,31 +49,31 @@ as.data.frame(points)
 ###   --- Set and check the working directory ----------------------------------------------------------- ####
 
 # BG: See instuctions doc to download CRU 
-#v4.03 version - 2018 data - updated in 2020 by BG
-setwd('S:/Global Maps Data/CRU/v4.03/gzfiles') # replace with your local path name
+#v4.04 version - 2019 data - updated in 2020 by BG
+setwd('S:/Global Maps Data/CRU/v4.04/gzfiles') # replace with your local path name
 
 
 ###    --- Decompressing and unzipping files ------------------------------------------------------------ ####
 
 # list files with the .gz extension (should be 10)
-gzfilenames <- list.files(path = 'S:/Global Maps Data/CRU/v4.03/gzfiles', pattern = "\\.nc.gz$") # replace with your local path name
+gzfilenames <- list.files(path = 'S:/Global Maps Data/CRU/v4.04/gzfiles', pattern = "\\.nc.gz$") # replace with your local path name
 
 
-# filename placeholders after below loop unzipping .gz files
-ncfilenames <- gsub("\\.nc.gz$", "\\.nc", gzfilenames)
-ncfilenames <- gsub("gzfiles", "ncfiles", ncfilenames) # pattern, replacement in ncfilenames
-
+# filenames after unzipping .gz files
+ncfilenames <- gsub("\\nc.gz$", "\\.nc", gzfilenames)
+ncfilenames <- gsub("gzfiles", "ncfiles", ncfilenames)
 
 # unzip files using gunzip in package 'R.utils'
 # batch gunzip not working - so I've been doing it one file at a time 
 # to gunzip 1 file takes ~3 mins
 
 for(i in 1:length(gzfilenames)) { # BG needs to post instructions file on github repo as well 
-  
   print(paste("unzipping", gzfilenames[i], "into", ncfilenames[i]))
   gunzip(gzfilenames[i], ncfilenames[i], remove=FALSE)
 }
 
+# sometimes you may want to unzip one or two files that are of type .gz 
+gunzip("S:/Global Maps Data/CRU/v4.04/gzfiles/cru_ts4.04.1901.2019.wet.dat.gz")
 detach("package:R.utils", unload=TRUE)
 
 #lapply(gzfilenames, function(x) { gunzip(x, ncfilenames)}) #need to play around with this more
@@ -94,27 +95,34 @@ detach("package:R.utils", unload=TRUE)
 
 ##### ---------- brick function to extract data at the coordinate points -----------------------####
 # Extract data from a single .nc file 
-setwd('S:/Global Maps Data/CRU/v4.03/') # replace with your local path name
+setwd('S:/Global Maps Data/CRU/v4.04/') # replace with your local path name
 
 for(v in c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")) {
   print(paste("extracting", v, "data for ForestGEo sites"))
-  r <- brick(paste0("ncfiles/cru_ts4.03.1901.2018.", v, ".dat.nc"), varname = v)   #maybe ~3mins
+  r <- brick(paste0("ncfiles/cru_ts4.04.1901.2019.", v, ".dat.nc"), varname = v)   #maybe ~3mins
   
   print("extracting points")
   x <- raster::extract(r, points) #maybe ~15 mins # ncol=2
   head(x)
   x <- cbind(sites.sitename = gsub(" ", "_", points@data$Site), x)
-  write.csv(x, file = paste0(v, ".1901.2018-ForestGEO_sites-5-20.csv"), row.names = F)
+  write.csv(x, file = paste0(v, ".1901.2019-ForestGEO_sites-6-03.csv"), row.names = F)
 }
+
+##### let's see if we can extract for the single file that isn't .dat.nc using below script!
+# cru_ts4.04.1901.2019.wet.dat 
+
 
 #### Extractintg Individual climate data
 
-# #### ----- PET data ----- ####
-# r <- brick("ncfiles/cru_ts3.23.1901.2014.pet.dat.nc", varname="pet")  #maybe ~3mins
-# pet.1901.2014 <- extract(r,points,ncol=2) #maybe ~15 mins
-# write.csv(pet.1901.2014, "pet.1901.2014-ForestGEO-6-17.csv")
-# 
-# 
+#### ----- WET data ----- ####
+gunzip("S:/Global Maps Data/CRU/v4.04/gzfiles/cru_ts4.04.1901.2019.wet.dat.nc.gz")
+
+r <- brick("gzfiles/cru_ts4.04.1901.2019.wet.dat.nc", varname="wet")  #maybe ~3mins
+# stack("gzfiles/cru_ts4.04.1901.2019.wet.dat.gz") another alternative to brick fn
+wet.1901.2019 <- raster::extract(r,points) #maybe ~15 mins
+write.csv(wet.1901.2019, "wet.1901.2019-ForestGEO-6-03.csv")
+
+
 # #### ----- Precip data ----- ####
 # # set and check the working directory
 # r <- brick("ncfiles/cru_ts3.23.1901.2014.pre.dat.nc", varname="pre")

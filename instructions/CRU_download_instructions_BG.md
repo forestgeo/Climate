@@ -107,7 +107,7 @@ Background on Windows
 Example of CRU data of SCBI
 ---------------------------
 
-<img src="https://github.com/forestgeo/Climate/blob/master/instructions/SCBI_cld.png">
+<img src="https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/CRU_v4_04/CRU_all_sites_figures/TMP_CRU_plot_Smithsonian_Conservation_Biology_Institute_590.png">
 
 Background on Mac
 -----------------

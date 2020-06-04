@@ -16,6 +16,7 @@ library(ggplot2)
 library(plotly)
 library(anytime) 
 library(dplyr)
+library(viridis)
 ##########
 # Data 
 
@@ -104,7 +105,7 @@ for(j in sites){
     
     # change your WD here to location of plots 
     setwd('C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/Gridded_Data_Products/Historical Climate Data/CRU_v4_04/CRU_all_sites_figures')
-    file_name = paste(toupper(names(df_long[3])),"_CRU_plot_", j, "_", counter, ".png", sep="")
+    file_name = paste(j, "_",toupper(names(df_long[3])),"_CRU_plot_", "_", counter, ".png", sep="")
     png(file_name)
     plot(plot_list[[counter]]) # ok so its calling this and then needs to save ?
     
@@ -118,6 +119,9 @@ for(j in sites){
 ## can also just open plot_list object
 plot_list[[paste0(sites[1], " ", toupper(v[1]))]] ## CHANGE site index to site of choice and v index to clim var of choice
 plot_list[["Amacayacu CLD"]]  ## or manually type in Site name with climvar of interest (in caps)
-
+sites
 ## if we want to view the graphs in more detail use ggplotly function for interactivity (IE you can zoom in!)
-ggplotly(plot_list[["Amacayacu CLD"]])
+ggplotly(plot_list[["Amacayacu DTR"]])
+ggplotly(plot_list[[paste0(sites[6], " ", toupper(v[11]))]]) #V is the climvar 1 - 11
+                    
+                    

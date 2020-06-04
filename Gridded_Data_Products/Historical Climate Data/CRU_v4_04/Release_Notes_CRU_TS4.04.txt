@@ -1,0 +1,84 @@
+RELEASE NOTES FOR CRU TS v4.04: 22 April 2020
+
+The CRU TS dataset was developed and has been subsequently updated,
+improved and maintained with support from a number of funders,
+principally the UK's Natural Environment Research Council (NERC) and the
+US Department of Energy. Long-term support is currently provided by the
+UK National Centre for Atmospheric Science (NCAS), a NERC collaborative
+centre. 
+
+The 4.04 release of the CRU TS dataset covers the period 1901-2019.
+
+This is the fourth release of the new interpolation algorithm, which is
+unchanged since the previous release (v4.03).
+
+To understand this dataset, it is important to understand its
+construction and limitations. It is therefore recommended that all users
+read the relevant paper:
+
+Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS
+monthly high-resolution gridded multivariate climate dataset.
+Sci Data 7, 109 (2020). https://doi.org/10.1038/s41597-020-0453-3
+
+
+1. What's new in 4.04
+
+1.1 Process changes
+
+The process whereby VAP is synthesised, using TMP and DTR, has been
+altered so that it delivers VAP absolutes, rather than anomalies as
+before. This means that synthetic VAP stations are introduced to the
+main process flow, and are anomalised in the same fashion as actual VAP
+observations.
+
+One of the main inputs to CRU TS is the MCDW update. This was previously
+a monthly update, however, it is now a monolithic file in .csv format.
+This resulted in a redesign and recode of the entire assimilation
+process, as all months from all sources now need to be reviewed in
+tandem. It has also had far-reaching effects on the output files, as
+some observations have been revised, and some stations added or deleted.
+If you need more information, please contact me directly.
+
+1.2 Bug fixes
+
+The work on VAP uncovered a previously-undetected bug that, in some
+circumstances, resulted in TMP observations persisting when the station
+concerned suffered a break in observations. This resulted in extra
+synthetic VAP values at times and places where none should have been.
+The effects may be seen in the VAP comparison plots, though these are, of
+course, also subject to the MCDW changes. In general, quite a lot of
+uncharacteristic behaviour has been removed, though in some sparsely-
+observed places (some islands, for instance), coverage has been lost for
+early periods. If you need more information, please contact me directly.
+
+A peculiar bug in the anomaly process was uncovered during the rewriting
+and testing of the assimilation process. This meant that any set of
+station observations that ended in 1983 would be omitted. This has not
+significantly affected outputs.
+
+
+2. Output files
+
+For now, the approach of issuing NetCDF and ASCII files in parallel will
+remain, as will the publications of decadal files as well as full-length
+versions. However, decadal files may not be archived when superceded, in
+order to make best use of space.
+
+
+As always, please contact BADC in the first instance if you have any
+questions, observations or suggestions. If, however, you wish to contact
+CRU directly about these datasets, please contact me at
+i.harris@uea.ac.uk, as mail to other members of the Unit will be passed
+through to me anyway.
+
+Ian Harris
+NCAS-Climate
+Climatic Research Unit
+School of Environmental Sciences
+University of East Anglia
+Norwich
+NR4 7TJ
+
+i.harris@uea.ac.uk
+
+

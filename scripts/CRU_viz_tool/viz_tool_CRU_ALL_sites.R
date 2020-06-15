@@ -20,7 +20,7 @@ library(viridis)
 ##########
 # Data 
 
-path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Gridded_Data_Products/Historical%20Climate%20Data/CRU_v4_03/"
+path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Gridded_Data_Products/Historical%20Climate%20Data/CRU_v4_04/"
 v<- c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")
 objs<- vector(mode = "list", length = length(v))
 counter <- 0
@@ -29,7 +29,7 @@ for(clim_v in v) { # so this is saying clim_v is each climate variable (v)
   
   counter<- counter + 1 
   print(paste0(clim_v, " ", counter))
-  objs[[counter]]<-read.csv(paste0(path_to_climate_data, clim_v, ".1901.2018-ForestGEO_sites-5-20.csv")) 
+  objs[[counter]]<-read.csv(paste0(path_to_climate_data, clim_v, ".1901.2019-ForestGEO_sites-6-03.csv")) 
   names(objs)[counter] <- clim_v # assign names to list 
 }
 

@@ -42,6 +42,7 @@ for(clim_v in v) { #  clim_v is each climate variable (v)
   
   # adding a col that will show the climate variable (ie cld or pet) 
   objs[[counter]]$clim<-  gsub(names(objs[counter]), v[counter], names(objs[counter]), ignore.case = FALSE)
+
 }
 
 #### Select the CRU data with the fsites (final sites) -----

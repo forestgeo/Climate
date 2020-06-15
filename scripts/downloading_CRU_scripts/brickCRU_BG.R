@@ -117,10 +117,11 @@ for(v in c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap",
 #### ----- WET data ----- ####
 gunzip("S:/Global Maps Data/CRU/v4.04/gzfiles/cru_ts4.04.1901.2019.wet.dat.nc.gz")
 
-r <- brick("gzfiles/cru_ts4.04.1901.2019.wet.dat.nc", varname="wet")  #maybe ~3mins
+r <- brick("cru_ts4.04.1901.2019.wet.dat.nc", varname="wet")  #maybe ~3mins
 # stack("gzfiles/cru_ts4.04.1901.2019.wet.dat.gz") another alternative to brick fn
-wet.1901.2019 <- raster::extract(r,points) #maybe ~15 mins
-write.csv(wet.1901.2019, "wet.1901.2019-ForestGEO-6-03.csv")
+x <- raster::extract(r,points) #maybe ~15 mins
+x <- cbind(sites.sitename = gsub(" ", "_", points@data$Site), x) # add sites.sitename
+write.csv(x, "wet.1901.2019-ForestGE_sites-6-03.csv")
 
 
 # #### ----- Precip data ----- ####

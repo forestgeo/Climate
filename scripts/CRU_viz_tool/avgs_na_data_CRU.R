@@ -126,6 +126,8 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
 ## Dataframe generated from the list above with all the relevent info for each sites (reps/year ranges)
 sites_reps<-do.call("rbind", storage.vess)
 
+write.csv(sites_reps, "all_sites.reps.csv")
+
   # ten sites and their indices: 
   # SERC  55
   # Harvard 18

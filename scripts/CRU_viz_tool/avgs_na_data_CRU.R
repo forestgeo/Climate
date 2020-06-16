@@ -1,7 +1,7 @@
 ##########
 ### Investigate CRU data for all sites
 ### Developed by: Bianca Gonzalez, bianca.glez94@gmail.com
-### OBJECTIVE: # find when data is filled with averages and/or NA data
+### OBJECTIVE: # identify years data is filled with averages
 
 ##########
 library(readr)

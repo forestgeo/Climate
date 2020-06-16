@@ -62,8 +62,6 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     print(paste0(j," counter # ", counter, " and clim var ", names(objs[i])))
     
     CRU_fsites[[counter]] <- objs[[i]][match(j, objs[[i]]$sites.sitename),] #go through each climvar and find the specified J aka site
-    ## make sure the 11th iteration (ie 22, 33, 44) or the WET clim var data gets processed (NEED TO INVESTIGATE!)
-
     #### Transform data to long format
     df<- as.data.frame(CRU_fsites[[counter]]) # make df object
 
@@ -77,13 +75,11 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     storage.vess[[counter]]<- df_long # store newly reshaped data in new storage vessel
     names(storage.vess)[counter] <- j
     
-    # change to Date format
-    storage.vess[[counter]][,2]<- anytime::anydate(storage.vess[[counter]][,2])
-    
-    # add month col for later processing! -- apparently there are dates with NA for month -- (NEED TO INVESTIGATE) - is.na(storage.vess[[1]]$month)
-    storage.vess[[counter]][,"month"] <- format(storage.vess[[counter]][,"Date"], "%m")
-    
+    storage.vess[[counter]][,2]<- anytime::anydate(storage.vess[[counter]][,2]) # change to Date format
+    storage.vess[[counter]]$climvar <- rep(names(storage.vess[[counter]])[3], times=nrow(storage.vess[[counter]])) # add the climvar column here
+    storage.vess[[counter]][,"month"] <- format(storage.vess[[counter]][,"Date"], "%m") # add month col for later processing! --
     storage.vess[[counter]]<-storage.vess[[counter]][order(as.numeric(storage.vess[[counter]]$month)),] # order the columns by month so we can use the RLE function 
+  
     repsnum <- rle(storage.vess[[counter]][,3]) # num of reps in the ordered vector
     
     # Compute star/end indices of run 
@@ -101,25 +97,35 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     
     df.indices<-cbind(start.df,end.df)
     rownames(df.indices)<-c(1:nrow(df.indices)) #change rownames to sequential order 
-    
     selection<-cbind(df.indices, start.end.indices) # add start and end indices column
     
     # if end - start >=2 then that means there are more or 3 consecutive years with the same value! (select only these)
-    selection$repyrs <-selection$end -selection$start # 0 is a 0 repititions, 1 is 2, and 2 is 3 so on.... b/c index 1-2 is 1 but 2 instances of reps
+    selection$rep.yrs <-selection$end -selection$start # 0 is a 0 repititions, 1 is 2, and 2 is 3 so on.... b/c index 1-2 is 1 but 2 instances of reps
     
-    # if repyrs is >=2 select those rows (ie )
-    selection<- selection %>% filter(selection$repyrs>=2)
+    # if rep.yrs is >=2 select those rows (ie )
+    selection<- selection %>% filter(selection$rep.yrs>=2)
+    selection$rep.yrs <- selection$rep.yrs+1
     
     ## add only the reps back in! 
     storage.vess[[counter]] <- selection # selection should be in a list that is length of storage vess (unique sites)
+  
+    ## arrange for ease of viewing
+    storage.vess[[counter]]<-storage.vess[[counter]] %>% arrange(desc(rep.yrs))
+  
+   storage.vess[[counter]] <- storage.vess[[counter]][-c(4:7,10,12:14)]
+    
+  # rename the startclimvar and endclimvar column
+  storage.vess[[counter]]<- storage.vess[[counter]] %>%
+    rename(start.climvar =names(storage.vess[[counter]][3]),
+            end.climvar =names(storage.vess[[counter]][5]),
+           climvar =names(storage.vess[[counter]][6]))
+   
   }
 }
 
+## Dataframe generated from the list above with all the relevent info for each sites (reps/year ranges)
+sites_reps<-do.call("rbind", storage.vess)
 
-#### Finding the reps across years -- IE reps across JAN 2017, JAN 2018 ------- 
-#site.	variable.	month.	average.filled.start.year1.	average.filled.end.year1.	average.filled.start.year2.	average.filled.end.year2.	notes.
-  
-##### Notes relevent to finding/selecting the above data ------- 
   # ten sites and their indices: 
   # SERC  55
   # Harvard 18

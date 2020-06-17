@@ -112,13 +112,23 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     ## arrange for ease of viewing
     storage.vess[[counter]]<-storage.vess[[counter]] %>% arrange(desc(rep.yrs))
   
-   storage.vess[[counter]] <- storage.vess[[counter]][-c(4:7,10,12:14)]
+    storage.vess[[counter]] <- storage.vess[[counter]][-c(3:7,10,13:14)]
     
-  # rename the startclimvar and endclimvar column
-  storage.vess[[counter]]<- storage.vess[[counter]] %>%
-    rename(start.climvar =names(storage.vess[[counter]][3]),
-            end.climvar =names(storage.vess[[counter]][5]),
-           climvar =names(storage.vess[[counter]][6]))
+    ## grab years only for start / end dates
+    storage.vess[[counter]][2]<-format(storage.vess[[counter]][2],"%Y")
+    storage.vess[[counter]][3]<-format(storage.vess[[counter]][3],"%Y")
+    
+    
+    #rename the startclimvar and endclimvar column
+    storage.vess[[counter]]<- storage.vess[[counter]] %>%
+    rename(climvar.val =names(storage.vess[[counter]][4]),
+           climvar.class =names(storage.vess[[counter]][5]),
+           month =names(storage.vess[[counter]][6])) #month =names(storage.vess)))
+    
+    ## We'll want to exclude frs=0
+    storage.vess[[counter]]<-storage.vess[[counter]] %>% filter(climvar.class != "frs" & climvar.val !=0)
+           #
+  #en
    
   }
 }
@@ -126,6 +136,13 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
 ## Dataframe generated from the list above with all the relevent info for each sites (reps/year ranges)
 sites_reps<-do.call("rbind", storage.vess)
 
+##change wd
+setwd(paste0(getwd(), "/scripts/CRU_viz_tool"))
+
+## add row nums
+row.names(sites_reps)<- 1:nrow(sites_reps)
+
+##write.csv
 write.csv(sites_reps, "all_sites.reps.csv")
 
   # ten sites and their indices: 

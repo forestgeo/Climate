@@ -6,9 +6,9 @@
 - v. 4.01 - Annual and climatic means were not calculated.
 - v. 4.03 - 2018 data latest version, sum pet also calculated
 
-**Temporal coverage**: 1901 - 2016 (ongoing)
+**Temporal coverage**: 1901 - 2019 (ongoing)
 
-**Temporal resolution**: monthly, annual, climatic means 
+**Temporal resolution**: monthly
 
 **Geographic coverage**: global
 
@@ -28,21 +28,27 @@
                
 
 ## Data set description:
-In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded from the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/), most recently in August 2018.  
+In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded from the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/).  
 
-Annual values and climatic means were calculated using Matlab by K. Anderson-Teixeira.
+Annual values and climatic means (presented with versions 3.10 and 3.23) were calculated using Matlab by K. Anderson-Teixeira.
 
 ## Notes:
 
-Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
+- Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
+
+- In the CRU database, data gaps are filled with averages (by month), which would be an issue for some analyses.
 
 ## Data files and contents.
 
 Described in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/CTFS-ForestGEO_historical_climate_metadata.pdf)
 
+## Associated resources
+
+Scripts for extracting, visualizing, and identifying gaps that were filled with means are available [here](https://github.com/forestgeo/Climate/tree/master/scripts).
+
 ## Data use:
 
-Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. The CRU data product is described by Harris et al. (2014, 2020).
+Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. The CRU data product is described by Harris et al. (2014, 2020). Researchers using the data product should cite these papers and abide by CRU data use guidelines.
 
 ## References:
 
@@ -52,6 +58,5 @@ Harris I, Jones PD, Osborn TJ, Lister DH (2014) Updated high-resolution grids of
 
 Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset. Sci Data 7, 109 (2020). https://doi-org.smithsonian.idm.oclc.org/10.1038/s41597-020-0453-3
 
-University of East Anglia Climatic Research Unit; Jones, P.D.; Harris, I.C. (2008): Climatic Research Unit (CRU) time-series datasets of variations in climate with variations in other phenomena. NCAS British Atmospheric Data Centre, [date of citation]. http://catalogue.ceda.ac.uk/uuid/3f8944800cc48e1cbc29a5ee12d8542d
 
 

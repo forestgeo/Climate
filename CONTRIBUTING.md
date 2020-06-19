@@ -19,4 +19,5 @@ We anticipate that the CTFS-ForestGEO Climate Data Portal will be of great value
 If you would like to open a discussion on the data or database, suggest changes that you do not feel comfortable making yourself, or report a problem, you may do so by submitting a [Github issue](https://help.github.com/articles/creating-an-issue/). Note that issues are visible to all database users/ the public.
 
 ## Contact:
-Kristina Anderson-Teixeira (Smithsonian)
+Kristina Anderson-Teixeira (Smithsonian)  
+e-mail: teixeirak@si.edu; GitHub: @teixeirak

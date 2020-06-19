@@ -14,5 +14,5 @@ This information was originally compiled by Kristina Anderson-Teixeira and membe
 [`ForestGEO climate data sources - metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Data_Products_Summary/ForestGEO%20climate%20data%20sources%20-%20metadata.pdf) - Metadata file describing the contents of [`ForestGEO climate data sources.csv`](https://github.com/forestgeo/Climate/blob/master/Data_Products_Summary/ForestGEO%20climate%20data%20sources.csv)  and [`ForestGEO_gridded climate data.csv`](https://github.com/forestgeo/Climate/blob/master/Data_Products_Summary/ForestGEO_gridded%20climate%20data.csv). An editable [.docx](https://github.com/forestgeo/Climate/blob/master/Data_Products_Summary/ForestGEO%20climate%20data%20sources%20-%20metadata.docx) file is also available for updating the .pdf.
 
 ## Contact 
-Kristina Anderson-Teixeira (Smithsonian)
+Kristina Anderson-Teixeira (Smithsonian)  
 e-mail: teixeirak@si.edu; GitHub: @teixeirak

@@ -12,13 +12,13 @@ In addition, individual sites may have README files describing the best availabl
 ### 2. Climate data repository-
 This site archives and distributes two types of data:
 
-[**1. Meteorological Station Data**](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data)- We host meteorological station data for CTFS-ForestGEO sites that are not readily available through other public repositories. This includes (i) raw data products and (ii) cleaned/ gap-filled datasets (based on raw data products that may be archived elsewhere). 
+[**1. Meteorological Station Data**](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data)- We host meteorological station data for ForestGEO sites that are not readily available through other public repositories. This includes (i) raw data products and (ii) cleaned/ gap-filled datasets (based on raw data products that may be archived elsewhere). 
 
-[**2. Gridded data products**](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products)- For convenience, we re-distribute data extracted from open-access gridded databases for CTFS-ForestGEO sites. 
+[**2. Gridded data products**](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products)- For convenience, we re-distribute data extracted from open-access gridded databases for ForestGEO sites. 
 
 
 ## Contributing to this repository
-We strongly encourage researchers in the CTFS-ForestGEO community to contribute relevant information and data to this repository:
+We strongly encourage researchers in the ForestGEO community to contribute relevant information and data to this repository:
 
 * Updates regarding available climate data are of great value to the research community and will facilitate collaborations. 
 

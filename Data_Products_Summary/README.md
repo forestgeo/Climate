@@ -15,3 +15,4 @@ This information was originally compiled by Kristina Anderson-Teixeira and membe
 
 ## Contact 
 Kristina Anderson-Teixeira (Smithsonian)
+e-mail: teixeirak@si.edu; GitHub: @teixeirak

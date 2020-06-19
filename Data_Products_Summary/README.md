@@ -1,4 +1,4 @@
-# CTFS-ForestGEO Climate Data Products Summary
+# ForestGEO Climate Data Products Summary
 
 ## Overview
 

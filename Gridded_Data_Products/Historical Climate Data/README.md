@@ -1,4 +1,4 @@
-# Historical Climate Data for CTFS-ForestGEO Sites
+# Historical Climate Data for ForestGEO Sites
 
 **Versions**: 
 - v. 3.10 - values from this version are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712)

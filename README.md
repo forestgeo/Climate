@@ -5,7 +5,7 @@
 This public repository is a portal for climate data and information for [ForestGEO](http://www.forestgeo.si.edu/) sites. It has two primary functions:
 
 ### 1. Source of information on available climate data- 
-This portal contains a [**Database of climate data sources that are available for CTFS-ForestGEO sites**](https://github.com/forestgeo/Climate/tree/master/Data_Products_Summary).
+This portal contains a [**Database of climate data sources that are available for ForestGEO sites**](https://github.com/forestgeo/Climate/tree/master/Data_Products_Summary).
 
 In addition, individual sites may have README files describing the best available sources of climate data (for example, [SCBI](https://github.com/forestgeo/Climate/blob/master/Met_Station_Data/SCBI/README.md)).
 

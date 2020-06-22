@@ -2,25 +2,16 @@
 # ForestGEO Climate Data Portal  
 
 ## About this repository
-This public repository is a portal for climate data and information for [ForestGEO](http://www.forestgeo.si.edu/) sites. It has two primary functions:
+This public repository is a portal for climate data and information for [ForestGEO](http://www.forestgeo.si.edu/) sites. It serves two primary functions:
 
-### 1. Source of information on available climate data- 
-This portal contains a [**Database of climate data sources that are available for ForestGEO sites**](https://github.com/forestgeo/Climate/tree/master/Data_Products_Summary).
+1. To act as a [**DIRECTORY**](https://github.com/forestgeo/Climate/tree/master/Data_Products_Summary) that identifies what types of climate data exist for ForestGEO sites and where you can access those data.  In some cases individual sites may have README files describing the best available sources of climate data (for example, [SCBI](https://github.com/forestgeo/Climate/blob/master/Met_Station_Data/SCBI/README.md)).  
 
-In addition, individual sites may have README files describing the best available sources of climate data (for example, [SCBI](https://github.com/forestgeo/Climate/blob/master/Met_Station_Data/SCBI/README.md)).
-
-### 2. Climate data repository-
-This site archives and distributes two types of data:
-
-[**1. Meteorological Station Data**](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data)- We host meteorological station data for ForestGEO sites that are not readily available through other public repositories. This includes (i) raw data products and (ii) cleaned/ gap-filled datasets (based on raw data products that may be archived elsewhere). 
-
-[**2. Gridded data products**](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products)- For convenience, we re-distribute data extracted from open-access gridded databases for ForestGEO sites. 
-
+2. To provide you with **DIRECT ACCESS** to climate data for ForestGEO sites.  In the Portal we host two climate data from two sources:  
+     + [**meteorological stations**](https://github.com/forestgeo/Climate/tree/master/Met_Station_Data) on/nearby ForestGEO sites with data that are not readily available through other public repositories.  The data from these meteorological stations include includes raw data products as well as cleaned/gap-filled data sets (based on raw dat products that may be archived elsewhere).  
+     + [**"gridded" data**](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products); these are global data sets that have been cleaned and winnowed down to reflect climate conditions only at ForstGEO sites.
 
 ## Contributing to this repository
-We strongly encourage researchers in the ForestGEO community to contribute relevant information and data to this repository:
-
-* Updates regarding available climate data are of great value to the research community and will facilitate collaborations. 
+Updates regarding available climate data are of great value to the research community and will facilitate collaborations. As such, we strongly encourage researchers in the ForestGEO community to contribute relevant information and data to this repository:
 
 * Site managers/ meteorological data owners may use this portal as a stable repository to archive and distribute their data (if data are not already hosted elsewhere).
 

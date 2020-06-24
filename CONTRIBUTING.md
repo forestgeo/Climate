@@ -1,8 +1,8 @@
-# Contributing to the CTFS-ForestGEO Climate Data Portal: 
+# Contributing to the ForestGEO Climate Data Portal: 
 
-We anticipate that the CTFS-ForestGEO Climate Data Portal will be of great value for various researchers seeking to understand the influence of climate on forests worldwide. We encourage CTFS-ForestGEO to increase its value by contributing information and data of value to the research community. This portal is set up in Github so that anyone in the CTFS-ForestGEO research network can update exisiting files or contribute data. Basic instructions for using Github can be found [here](https://guides.github.com/activities/hello-world/).
+We anticipate that the ForestGEO Climate Data Portal will be of great value for various researchers seeking to understand the influence of climate on forests worldwide. We encourage ForestGEO to increase its value by contributing information and data of value to the research community. This portal is set up in Github so that anyone in the ForestGEO research network can update exisiting files or contribute data. Basic instructions for using Github can be found [here](https://guides.github.com/activities/hello-world/).
 
-## Basic instructions for contributing to the CTFS-ForestGEO Climate Data Portal: 
+## Basic instructions for contributing to the ForestGEO Climate Data Portal: 
 1.	If you wish to modify an existing file, download the latest version of the file. Microsoft Word files used to create PDFs are included in the repository so that they can be modified. If you'll be submitting new files, existing files may be downloaded as templates, if desireable.
 2.	Create a new **branch**, including your username in the branch name.  
 3.	Create or modify files, ensuring that: 

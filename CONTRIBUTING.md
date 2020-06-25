@@ -16,7 +16,9 @@ We anticipate that the ForestGEO Climate Data Portal will be of great value for 
 5.	Database authors will approve pull request and merge changes. Delete branch when changes have been merged.  
 
 ## Basic instructions for creating an "issue":
-If you would like to open a discussion on the data or database, suggest changes that you do not feel comfortable making yourself, or report a problem, you may do so by submitting a [Github issue](https://help.github.com/articles/creating-an-issue/). Note that issues are visible to all database users/ the public.
+If you would like to open a discussion on the data or database, suggest changes that you do not feel comfortable making yourself, or report a problem, you may do so by submitting a [GitHub issue](https://help.github.com/articles/creating-an-issue/).  Note that issues are visible to all database users/the public.  
+
+Limited resources preclude us from guarenteeing that we can address all issues that are submitted, but we *do* want to receive them.  They act as reminders of what we'd like to improve in the Climate Data Portal. Thank you for your contributions!
 
 ## Contact:
 Kristina Anderson-Teixeira (Smithsonian)  

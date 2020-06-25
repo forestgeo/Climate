@@ -4,7 +4,9 @@
 
 This folder contains files summarizing the climate data sources for ForestGEO sites. It may be used as a guide for the ForestGEO research community to identify available climate data products. It will also serve as a portal for site PIs and data set originators to inform others about the availability of relevant data products.
 
-This information was originally compiled by Kristina Anderson-Teixeira and members of the ForestGEO Ecosystems & Climate Lab at the Smithsonian Conservation Biology Institute (especially Erika Gonzalez-Akre) based upon the information that we had on hand. It is not a complete listing of available data products, and many records for local weather stations remain incomplete. Researchers should contact site PIs for the most complete and accurate information on local weather stations.
+This information was originally compiled by Kristina Anderson-Teixeira and members of the ForestGEO Ecosystems & Climate Lab at the Smithsonian Conservation Biology Institute (especially Erika Gonzalez-Akre) based upon the information that we had on hand. It is not a complete listing of available data products, and many records for local weather stations remain incomplete. Researchers should contact site PIs for the most complete and accurate information on local weather stations.  
+
+All data in the Portal are public; in order to support proper citation of the data, we identify a combination of data contacts, URLs, and related publications in the [`ForestGEO climate data sources.csv`](https://github.com/forestgeo/Climate/blob/master/Data_Products_Summary/ForestGEO%20climate%20data%20sources.csv) and [`ForestGEO_gridded climate data.csv`](https://github.com/forestgeo/Climate/blob/master/Data_Products_Summary/ForestGEO_gridded%20climate%20data.csv) files.
 
 ## Files
 [`ForestGEO climate data sources.csv`](https://github.com/forestgeo/Climate/blob/master/Data_Products_Summary/ForestGEO%20climate%20data%20sources.csv) - File listing climate data sources available for ForestGEO sites, as described in the metadata file.

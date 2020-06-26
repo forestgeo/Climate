@@ -1,15 +1,24 @@
+# Moana Loa and NOAA CO2 data
+
 ######################################################
-# Data: Moana Loa and NOAA data
-# Purpose: Download C02 data and combine to create a c02 record matching years of CRU data.
-# Developed by: Bianca Gonzalez
-# R version 3.6.1 - First created June 2020
-# Script combining these data found here: https://github.com/forestgeo/Climate/tree/master/scripts/downloading_CO2_data
+
+Data: Moana Loa and NOAA data
+
+Purpose: Download C02 data and combine to create a c02 record matching years of CRU data.
+
+Developed by: Bianca Gonzalez
+
+R version 3.6.1 - First created June 2020
+
+Script combining these data found here: https://github.com/forestgeo/Climate/tree/master/scripts/downloading_CO2_data
+
 ######################################################
+
 - The script takes averages of all values for a given year of Moana Loa data and adds them to the ice cores data (NOAA). 
 
-##### Data sources:
+# Data sources:
 
-# Moana Loa data
+## Moana Loa data
 - Variables used: 
 	- value
 	- year
@@ -21,7 +30,7 @@
 - The search tool to fine the data:
 	- https://www.esrl.noaa.gov/gmd/dv/data/index.php?category=Greenhouse%2BGases&parameter_name=Carbon%2BDioxide
 
-# NOAA data 
+## NOAA data 
 - Variables used:
 	- c02 ppm
 	- Year AD

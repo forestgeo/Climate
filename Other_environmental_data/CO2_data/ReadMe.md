@@ -1,8 +1,8 @@
-# Moana Loa and NOAA CO2 data
+# Mauna Loa and NOAA CO2 data
 
 ######################################################
 
-Data: Moana Loa and NOAA data
+Data: Mauna Loa and NOAA data
 
 Purpose: Download C02 data and combine to create a c02 record matching years of CRU data.
 
@@ -14,12 +14,12 @@ Script combining these data found here: https://github.com/forestgeo/Climate/tre
 
 ######################################################
 
-- The script takes averages of all values for a given year of Moana Loa data and adds them to the ice cores data (NOAA). 
-- The combined file takes NOAA data from 1901 - 1973 (to match CRU data) and Moana Loa data from 1974-2019 (to complete the record to present date)
+- The script takes averages of all values for a given year of Mauna Loa data and adds them to the ice cores data (NOAA). 
+- The combined file takes NOAA data from 1901 - 1973 (to match CRU data) and Mauna Loa data from 1974-2019 (to complete the record to present date)
 
 # Data sources:
 
-## Moana Loa data
+## Mauna Loa data
 - Variables used: 
 	- value
 	- year

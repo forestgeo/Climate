@@ -5,7 +5,7 @@
 # R version 3.6.1 - First created June 2020
 # Script combining these data found here: https://github.com/forestgeo/Climate/tree/master/scripts/downloading_CO2_data
 ######################################################
-- The script takes averages of all values for a given year and adds them to the ice cores data.
+- The script takes averages of all values for a given year of Moana Loa data and adds them to the ice cores data (NOAA). 
 
 ##### Data sources:
 

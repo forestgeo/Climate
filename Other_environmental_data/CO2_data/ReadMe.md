@@ -25,7 +25,7 @@ This data is only current through 2019. New data from the search tool must be do
 	- `value`
 	- `year`
 - Variable definitions: 
-	- value:comment : Mole fraction reported in units of micromol mol-1 (10-6 mol per mol of dry air); equivalent to ppm (parts per million).
+	- value: Mole fraction reported in units of micromol mol-1 (10-6 mol per mol of dry air); equivalent to ppm (parts per million).
 	- year in AD time 
 - Date ranges:
 	- 1974 - 2019
@@ -39,7 +39,7 @@ This data is only current through 2019. New data from the search tool must be do
 	- `c02 ppm`
 	- `Year AD`
 - Variable definitions: 
-	- parts per million
+	- parts per million spline
 	- Year in AD time
 - Date ranges:
 	- 1901 - 1973

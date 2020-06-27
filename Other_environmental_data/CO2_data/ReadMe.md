@@ -31,7 +31,7 @@ This data is only current through 2019. New data from the search tool must be do
 	- 1974 - 2019
 - Find their read me here: 
 	- https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/co2_mlo_surface-flask_1_ccgg_event.txt
-- The search tool to fine the data:
+- The search tool to find the data:
 	- https://www.esrl.noaa.gov/gmd/dv/data/index.php?category=Greenhouse%2BGases&parameter_name=Carbon%2BDioxide
 
 ## NOAA data 

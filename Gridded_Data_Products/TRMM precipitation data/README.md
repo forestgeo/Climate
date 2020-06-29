@@ -1,4 +1,4 @@
-# Tropical Rainfall Measuring Mission (TRMM) precipitation data for CTFS-ForestGEO Sites.
+# Tropical Rainfall Measuring Mission (TRMM) precipitation data for ForestGEO Sites
 
 **Temporal coverage**: 1998-01 to 2014-12 
 
@@ -25,12 +25,12 @@ Comparison of TRMM data to local weather station data for ForestGEO sites (Table
 
 ## Data files:
 
-`CTFS-ForestGEO_TRMM.3B43_monthly.csv`
+[`CTFS-ForestGEO_TRMM.3B43_monthly.csv`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/TRMM%20precipitation%20data/CTFS-ForestGEO_TRMM.3B43_monthly.csv)
 
 [`CTFS-ForestGEO_TRMM.3B43_annual.csv`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/TRMM%20precipitation%20data/CTFS-ForestGEO_TRMM.3B43_annual.csv)
 
 ## Data file contents:
-Described in `CTFS_ForestGEO_TRMM_Metadata.pdf`
+Described in [`CTFS_ForestGEO_TRMM_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/TRMM%20precipitation%20data/CTFS_ForestGEO_TRMM_Metadata.pdf)
 
 ## Data use:
 

@@ -21,7 +21,7 @@ Monthly precipitation data were downloaded on October 21, 2015 for 63 CTFS-Fores
 
 ## Notes:
 
-Comparison of TRMM data to local weather station data for CTFS-ForestGEO sites (Table 2 in Anderson-Teixeira et al., 2015) showed that TRMM data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1. Thus, TRMM precipitation values for high precipitation sites should be considered probable underestimates.
+Comparison of TRMM data to local weather station data for ForestGEO sites (Table 2 in Anderson-Teixeira et al., 2015) showed that TRMM data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1. Thus, TRMM precipitation values for high precipitation sites should be considered probable underestimates.
 
 ## Data files:
 

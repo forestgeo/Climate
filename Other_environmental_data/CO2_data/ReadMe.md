@@ -22,8 +22,7 @@ This data are only current through 2019. New data from the search tool must be d
 - Date ranges:
 	- 1974 - 2019
 - Find their read me [here](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/co2_mlo_surface-flask_1_ccgg_event.txt)
-- The search tool to find the data:
-	- https://www.esrl.noaa.gov/gmd/dv/data/index.php?category=Greenhouse%2BGases&parameter_name=Carbon%2BDioxide
+- [Search tool to find the data](https://www.esrl.noaa.gov/gmd/dv/data/index.php?category=Greenhouse%2BGases&parameter_name=Carbon%2BDioxide)
 
 ### NOAA data 
 - Variables used:
@@ -36,8 +35,7 @@ This data are only current through 2019. New data from the search tool must be d
 	- 1901 - 1973
 - Find their read me here:
 	- First page of [this excel file](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/NOAA_law2006_ice_core_data.xls) has readme, second page has the data.
-- The search tool to find the original NOAA data:
-	- https://www.ncdc.noaa.gov/paleo-search/study/9959
+- [Search tool to find the original NOAA data](https://www.ncdc.noaa.gov/paleo-search/study/9959)
 	
 
 ## Script

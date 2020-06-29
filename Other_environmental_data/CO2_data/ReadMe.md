@@ -4,7 +4,7 @@
 
 Data: Mauna Loa and NOAA data
 
-Purpose: Download C02 data and combine to create a c02 record matching years of Historical Climate Data (CRU). Find CRU data here: https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/Historical%20Climate%20Data
+Purpose: Download CO2 data and combine to create a CO2 record for 1901-present.
 
 Developed by: Bianca Gonzalez
 
@@ -14,8 +14,10 @@ Script combining these data found here: https://github.com/forestgeo/Climate/tre
 
 ######################################################
 
-- The script takes averages of all values for a given year of Mauna Loa data and adds them to the ice cores data (NOAA). 
-- The combined file takes NOAA data from 1901 - 1973 (to match CRU data) and Mauna Loa data from 1974-2019 (to complete the record to present date)
+
+- The script takes averages of all values for a given year of Mauna Loa data and combines them with values derived from ice core data by NOAA. 
+- The combined file contains annual CO2 levels from 1901-present, with NOAA data ranging from 1901 - 1973 and Mauna Loa data from 1974-2019.
+
 
 # Data sources:
 
@@ -36,8 +38,8 @@ This data is only current through 2019. New data from the search tool must be do
 
 ## NOAA data 
 - Variables used:
-	- `c02 ppm`
-	- `Year AD`
+	- CO2 ppm
+	- Year AD
 - Variable definitions: 
 	- parts per million spline
 	- Year in AD time

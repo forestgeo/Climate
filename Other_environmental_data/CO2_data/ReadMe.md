@@ -1,10 +1,10 @@
-# Moana Loa and NOAA CO2 data
+# Mauna Loa and NOAA CO2 data
 
 ######################################################
 
-Data: Moana Loa and NOAA data
+Data: Mauna Loa and NOAA data
 
-Purpose: Download CO2 data and combine to create a CO2 record matching years of CRU data.
+Purpose: Download CO2 data and combine to create a CO2 record for 1901-present.
 
 Developed by: Bianca Gonzalez
 
@@ -14,22 +14,25 @@ Script combining these data found here: https://github.com/forestgeo/Climate/tre
 
 ######################################################
 
-- The script takes averages of all values for a given year of Moana Loa data and adds them to values derived from ice core data by NOAA. 
-- The combined file contains annual CO2 levels from 1901-present, with NOAA data ranging from 1901 - 1973 (to match CRU data) and Moana Loa data from 1974-2019 (to complete the record to present date).
+
+- The script takes averages of all values for a given year of Mauna Loa data and combines them with values derived from ice core data by NOAA. 
+- The combined file contains annual CO2 levels from 1901-present, with NOAA data ranging from 1901 - 1973 and Mauna Loa data from 1974-2019.
+
 
 # Data sources:
 
-## Moana Loa data
+## Mauna Loa data
+This data is only current through 2019. New data from the search tool must be downloaded to update the data continously. 
 - Variables used: 
-	- value
-	- year
+	- `value`
+	- `year`
 - Variable definitions: 
-	- value: comment: Mole fraction reported in units of micromol mol-1 (10-6 mol per mol of dry air); equivalent to ppm (parts per million).
+	- value: Mole fraction reported in units of micromol mol-1 (10-6 mol per mol of dry air); equivalent to ppm (parts per million).
 	- year in AD time 
 - Date ranges:
 	- 1974 - 2019
 - Find their read me here: 
-	- https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/NOAA_ESRL_C02_data/co2_mlo_surface-flask_1_ccgg_event.txt
+	- https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/co2_mlo_surface-flask_1_ccgg_event.txt
 - The search tool to find the data:
 	- https://www.esrl.noaa.gov/gmd/dv/data/index.php?category=Greenhouse%2BGases&parameter_name=Carbon%2BDioxide
 
@@ -38,11 +41,11 @@ Script combining these data found here: https://github.com/forestgeo/Climate/tre
 	- CO2 ppm
 	- Year AD
 - Variable definitions: 
-	- parts per million
+	- parts per million spline
 	- Year in AD time
 - Date ranges:
 	- 1901 - 1973
 - Find their read me here:
-	- First page of the excel sheet has readme, second page has the data used: https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/NOAA_ESRL_C02_data/NOAA_law2006_ice_core_data.xls
-- The search tool to find the data:
+	- First page of the excel sheet has readme, second page has the data used: https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/NOAA_law2006_ice_core_data.xls
+- The search tool to find the original NOAA data:
 	- https://www.ncdc.noaa.gov/paleo-search/study/9959

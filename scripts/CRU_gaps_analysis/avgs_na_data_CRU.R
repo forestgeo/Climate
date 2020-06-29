@@ -2,6 +2,7 @@
 ### Investigate CRU data for all sites
 ### Developed by: Bianca Gonzalez, bianca.glez94@gmail.com
 ### OBJECTIVE: # identify years data is filled with averages
+### Created June 2020
 
 ##########
 library(readr)
@@ -20,8 +21,14 @@ rm(list = ls())
 ForestGEO_sites <- read.csv("https://raw.githubusercontent.com/forestgeo/Site-Data/master/ForestGEO_site_data.csv")
 
 # See comments @ end of code for site indices
-site.index<- c(55,18,54,34,45,68,64,61,21,5)
-fsites<-ForestGEO_sites$Site.name[site.index]
+fsites<-c("Smithsonian Environmental Research Center","Harvard Forest"                            
+,"Smithsonian Conservation Biology Institute", "Lilly Dickey Woods"                        
+,"Ordway-Swisher"                             ,"Yosemite National Park"                    
+,"Wind River"                                 ,"Utah Forest Dynamics Plot"                 
+,"Huai Kha Khaeng"                            ,"Barro Colorado Island")       
+
+# write.csv for the current final sites 
+
 
 # Sites in climate data have _ so replace space with _ to match later
 fsites<- gsub(" ", "_", fsites)
@@ -75,12 +82,12 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     storage.vess[[counter]]<- df_long # store newly reshaped data in new storage vessel
     names(storage.vess)[counter] <- j
     
-    storage.vess[[counter]][,2]<- anytime::anydate(storage.vess[[counter]][,2]) # change to Date format
-    storage.vess[[counter]]$climvar <- rep(names(storage.vess[[counter]])[3], times=nrow(storage.vess[[counter]])) # add the climvar column here
+    storage.vess[[counter]][,2]<- anytime::anydate(storage.vess[[counter]]$Date) # change to Date format
+    storage.vess[[counter]]$climvar <- rep(names(storage.vess[[counter]])[3], times=nrow(storage.vess[[counter]])) # add the climvar column here (needs to be index)
     storage.vess[[counter]][,"month"] <- format(storage.vess[[counter]][,"Date"], "%m") # add month col for later processing! --
     storage.vess[[counter]]<-storage.vess[[counter]][order(as.numeric(storage.vess[[counter]]$month)),] # order the columns by month so we can use the RLE function 
   
-    repsnum <- rle(storage.vess[[counter]][,3]) # num of reps in the ordered vector
+    repsnum <- rle(storage.vess[[counter]][,3]) # climvar repeated in the ordered vector (needs to be index)
     
     # Compute star/end indices of run 
     end = cumsum(repsnum$lengths)
@@ -111,24 +118,23 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
   
     ## arrange for ease of viewing
     storage.vess[[counter]]<-storage.vess[[counter]] %>% arrange(desc(rep.yrs))
-  
-    storage.vess[[counter]] <- storage.vess[[counter]][-c(3:7,10,13:14)]
+    
+    storage.vess[[counter]] <- storage.vess[[counter]][-c(3:7,10,13:14)] # delete unecessary cols - leaving as index because the climvar changes
+    
     
     ## grab years only for start / end dates
-    storage.vess[[counter]][2]<-format(storage.vess[[counter]][2],"%Y")
-    storage.vess[[counter]][3]<-format(storage.vess[[counter]][3],"%Y")
-    
-    
+    storage.vess[[counter]][2]<-format(storage.vess[[counter]]$start_Date,"%Y")
+    storage.vess[[counter]][3]<-format(storage.vess[[counter]]$end_Date,"%Y")
+
+
     #rename the startclimvar and endclimvar column
     storage.vess[[counter]]<- storage.vess[[counter]] %>%
     rename(climvar.val =names(storage.vess[[counter]][4]),
-           climvar.class =names(storage.vess[[counter]][5]),
-           month =names(storage.vess[[counter]][6])) #month =names(storage.vess)))
-    
+           climvar.class = end_climvar,
+           month = end_month) #month =names(storage.vess)))
+
     ## We'll want to exclude frs=0
     storage.vess[[counter]]<-storage.vess[[counter]] %>% filter(climvar.class != "frs" & climvar.val !=0)
-           #
-  #en
    
   }
 }
@@ -142,9 +148,11 @@ setwd(paste0(getwd(), "/scripts/CRU_viz_tool"))
 ## add row nums
 row.names(sites_reps)<- 1:nrow(sites_reps)
 
-##write.csv
-write.csv(sites_reps, "all_sites.reps.csv")
+##write.csv remember to always include row.names = FALSE.
+# write.csv(sites_reps, "all_sites.reps.csv", row.names = FALSE.)
 
+#site.index<- c(55,18,54,34,45,68,64,61,21,5)
+#fsites<-ForestGEO_sites$Site.name[site.index]
   # ten sites and their indices: 
   # SERC  55
   # Harvard 18

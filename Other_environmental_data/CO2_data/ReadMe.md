@@ -6,9 +6,6 @@ Here we combine two CO<sub>2</sub> data sources to provide a continuous record o
 
 The combined record is [`co2_MOANA_NOAA_combined.csv`](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/co2_MOANA_NOAA_combined.csv).
 
-
-
-
 ## Data sources:
 
 ### Mauna Loa data
@@ -25,6 +22,7 @@ This data are only current through 2019. New data from the search tool must be d
 - Readme is [here](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/co2_mlo_surface-flask_1_ccgg_event.txt)
 - [Search tool to find the data](https://www.esrl.noaa.gov/gmd/dv/data/index.php?category=Greenhouse%2BGases&parameter_name=Carbon%2BDioxide)
 
+
 ### NOAA ice core data 
 - Variables used:
 	- `CO<sub>2</sub> ppm`
@@ -36,8 +34,7 @@ This data are only current through 2019. New data from the search tool must be d
 	- 1901 - 1973
 - Data & readme files:
 	- First page of [this excel file](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/NOAA_law2006_ice_core_data.xls) has readme, second page has the data.
-- [Search tool to find the original NOAA data](https://www.ncdc.noaa.gov/paleo-search/study/9959)
-	
+- [Search tool to find the original NOAA data](https://www.ncdc.noaa.gov/paleo-search/study/9959)	
 
 ## Script
 
@@ -47,3 +44,13 @@ Developed by: Bianca Gonzalez
 
 R version 3.6.1 - First created June 2020
 
+## Citations
+
+*Original Data Set: Mauna Loa*  
+Dlugokencky, E.J., J.W. Mund, A.M. Crotwell, M.J. Crotwell, and K.W. Thoning (2019), Atmospheric Carbon Dioxide Dry Air Mole Fractions from the NOAA ESRL Carbon Cycle Cooperative Global Air Sampling Network, 1968-2018, Version: 2019-07, [https://doi.org/10.15138/wkgj-f215](https://doi.org/10.15138/wkgj-f215)  
+
+*Original Data Set: NOAA Ice Cores*  
+MacFarling Meure, C., D. Etheridge, C. Trudinger, P. Steele, R. Langenfelds, T. van Ommen, A. Smith, and J. Elkins. 2006. The Law Dome CO2, CH4 and N2O Ice Core Records Extended to 2000 years BP. Geophysical Research Letters, Vol. 33, No. 14, L14810 10.1029/2006GL026152.  
+
+*Curated Data Set: Atmospheric CO<sub>2</sub> data: combined record for 1901-present*  
+Please refer to the ForestGEO Climate Date Portal's data citation policy.

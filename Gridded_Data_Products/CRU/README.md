@@ -74,7 +74,7 @@ X[YYYY.MM.DD]	| Date
 
 ## Data use & attribution
 
-*Original Data Set: CRU TS, v. 4.04*  
+*Original Data Set: CRU TS, v. 4.04*:  
 
 Researchers using the CRU data product should abide by the latest data use guidelines, available via the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/).
 
@@ -85,7 +85,7 @@ Climatic Research Unit, University of East Anglia.  2020.  CRU TSv4, Version 4.0
 Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset. Sci Data 7, 109 (2020). https://doi-org.smithsonian.idm.oclc.org/10.1038/s41597-020-0453-3
 
 
-*Curated Data Set: Historical Climate Data for ForestGEO Sites*  
+*Curated Data Set: Historical Climate Data for ForestGEO Sites*:  
 
 Please refer to the ForestGEO Climate Date Portal's data [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#citing-this-repository).
 

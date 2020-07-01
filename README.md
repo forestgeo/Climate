@@ -19,8 +19,8 @@ Updates regarding available climate data are of great value to the research comm
 
 For instrunctions on contributing to this repository, please see [`CONTRIBUTING.md`](https://github.com/forestgeo/Climate/blob/master/CONTRIBUTING.md). 
 
-## Citing this repository  
-If you use data from the ForestGEO Climate Data Portal, you must cite the original data source.  To facilitate proper attribution, we have begun to provide citations for original data sources on their respective README pages.  Although it is not required, it would be best scientific practice (for reproducibility and transparency) to also acknowledge that you obtained the original data set through the ForestGEO Climate Data Portal.  You may do so by citing our DOI: [forthcoming].
+## Data use policy
+Researchers who wish to use data contained in the ForestGEO Climate Data Portal are responsible to understand and evaluate its appropriateness for their research purposes, and to cite original sources as appropriate. To facilitate proper attribution, we have begun to provide citations for original data sources on their respective README pages.  Although it is not required, it would be best scientific practice (for reproducibility and transparency) to also acknowledge that you obtained the original data set through the ForestGEO Climate Data Portal.  You may do so by citing our DOI: [forthcoming].
 
 ## Contact 
 

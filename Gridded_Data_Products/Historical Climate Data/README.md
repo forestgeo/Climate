@@ -14,21 +14,26 @@
 
 **Spatial resolution**: 0.5° by 0.5°
 
-**Variables**: All CSV's are prefixed with the following codes:
-* `cld`: cloud cover
-* `dtr`: diurnal temperate range i.e. temperature amplitude
-* `frs`: frost day frequency
-* `pet`: potential evapotranspiration
-* `pre`: precipitation
-* `tmn`: average daily minimal temperatures
-* `tmp`: average daily mean temperatures
-* `tmx`: average daily maximal temperatures
-* `vap`: vapour pressure
-* `wet`: wet day frequency
+**Variables**: 
                
+Abbreviation	| Description	| Units
+--|--|--
+tmp	| average daily mean temperatures	|°C
+tmn	| 	average daily minimum temperatures	| 	°C
+tmx		| average daily maximum temperatures	| 	°C
+drt		| diurnal temperature range	(*i.e.,* temperature amplitude)	| °C
+frs		| frost day frequency	| days  mo-1
+pre	| 	precipitation		| mm mo-1
+wet		| wet day frequency	|  days	mo-1
+cld		| cloud cover		| %
+vap		| vapour pressure		| hPa
+pet		| average daily potential evapotranspiration 	| 	mm day-1
+pet_sum		| potential evapotranspiration sum (computed by [this script](https://github.com/forestgeo/Climate/blob/master/scripts/downloading_CRU_scripts/Calculate_PET_sum.R))	| 	mm mo-1
 
 ## Data set description:
 In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded from the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/).  
+
+All CSV's are prefixed with the variable codes listed in the above table.
 
 Annual values and climatic means (presented with versions 3.10 and 3.23) were calculated using Matlab by K. Anderson-Teixeira.
 

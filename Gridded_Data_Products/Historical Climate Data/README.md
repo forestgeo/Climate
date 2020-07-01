@@ -1,10 +1,6 @@
-# Historical Climate Data for ForestGEO Sites
+# Climatic Research Unit (CRU) data for ForestGEO sites
 
-**Versions**: 
-- v. 3.10 - values from this version are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712)
-- v. 3.23 - includes annual and climatic summary statistics.
-- v. 4.01 - Annual and climatic means were not calculated.
-- v. 4.03 - 2018 data latest version, sum pet also calculated
+**Source**: CRU TS monthly high-resolution gridded multivariate climate dataset, available [here](https://crudata.uea.ac.uk/cru/data/hrg/)
 
 **Temporal coverage**: 1901 - 2019 (ongoing)
 
@@ -31,17 +27,39 @@ pet		| average daily potential evapotranspiration 	| 	mm day-1
 pet_sum		| potential evapotranspiration sum (computed by [this script](https://github.com/forestgeo/Climate/blob/master/scripts/downloading_CRU_scripts/Calculate_PET_sum.R))	| 	mm mo-1
 
 ## Data set description:
+
 In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded from the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/).  
 
-All CSV's are prefixed with the variable codes listed in the above table.
+**Versions**: 
 
-Annual values and climatic means (presented with versions 3.10 and 3.23) were calculated using Matlab by K. Anderson-Teixeira.
+The latest version in this repository is **v.4.04** (released 24 April 2020, covers the period 1901-2019). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
 
-You can find a detailed description of data files and contents in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/CTFS-ForestGEO_historical_climate_metadata.pdf)
+[*Previous versions*](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/Historical%20Climate%20Data/previous_versions) in this repository include:
+- v. 3.10 - Values from this version, including annual and climatic means calculated using Matlab by K. Anderson-Teixeira, are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712). A detailed description of data files and contents is given in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/previous_versions/CRU_v3_10_01/CTFS-ForestGEO_historical_climate_metadata.pdf)
+- v. 3.23 - Includes annual and climatic means calculated using Matlab by K. Anderson-Teixeira, as detailed in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/previous_versions/CRU_v3_23/CTFS-ForestGEO_historical_climate_metadata.pdf). 
+- v. 4.01 
+- v. 4.03 
 
-  - Note: Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
+**Metadata**:
 
-  - Note: In the CRU database, data gaps are filled with averages (by month), which would be an issue for some analyses.
+*Data file names*: 
+
+`[xxx].1901.20xx.csv`, where `xxx` is a three-letter abbreviation for the climate variable in table above, and `20xx` indicates the data end year. 
+
+*Data file contents:*
+
+Column	| Description
+--|--
+sites.sitename	| Site name
+X[YYYY.MM.DD]	| Date 
+
+
+
+**Notes**:
+
+- Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
+
+- In the CRU database, data gaps are filled with averages (by month), which would be an issue for some analyses.
 
 ## Associated resources
 

@@ -32,15 +32,11 @@ In order to obtain standardized climate data for all sites, global climate data 
 
 Annual values and climatic means (presented with versions 3.10 and 3.23) were calculated using Matlab by K. Anderson-Teixeira.
 
-## Notes:
+You can find a detailed description of data files and contents in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/CTFS-ForestGEO_historical_climate_metadata.pdf)
 
-- Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
+  - Note: Comparison of available local weather station data (Table 2 in Anderson-Teixeira et al., 2015) to CRU data revealed close correlation for MAT (R2 >94%). However, CRU data tended to systematically underestimate MAP at sites with high MAP, particularly those receiving >3000 mm yr-1 (e.g., Korup, Kuala Belalong, Sinharaja, Fushan, La Planada). Thus, CRU precipitation values for high precipitation sites should be considered probable underestimates.
 
-- In the CRU database, data gaps are filled with averages (by month), which would be an issue for some analyses.
-
-## Data files and contents.
-
-Described in [`CTFS_ForestGEO_Historical_Climate_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/Historical%20Climate%20Data/CTFS-ForestGEO_historical_climate_metadata.pdf)
+  - Note: In the CRU database, data gaps are filled with averages (by month), which would be an issue for some analyses.
 
 ## Associated resources
 
@@ -49,6 +45,13 @@ Scripts for extracting, visualizing, and identifying gaps that were filled with 
 ## Data use:
 
 Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. The CRU data product is described by Harris et al. (2014, 2020). Researchers using the data product should cite these papers and abide by CRU data use guidelines.
+
+## Citations
+*Original Data Set: CRU TS, v. 4.03*  
+Climatic Research Unit, University of East Anglia.  2018.  CRU TSv4, Version 4.03, DOI: [10.1038/s41597-020-0453-3](https://doi.org/10.1038/s41597-020-0453-3)
+
+*Curated Data Set: Historical Climate Data for ForestGEO Sites*  
+Please refer to the ForestGEO Climate Date Portal's data citation policy: [Citing this repository](https://github.com/forestgeo/Climate/blob/master/README.md#citing-this-repository)
 
 ## References:
 

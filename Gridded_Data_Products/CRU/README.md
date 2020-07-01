@@ -26,7 +26,7 @@ vap		| vapour pressure		| hPa
 pet		| average daily potential evapotranspiration 	| 	mm day-1
 pet_sum		| potential evapotranspiration sum (computed by [this script](https://github.com/forestgeo/Climate/blob/master/scripts/downloading_CRU_scripts/Calculate_PET_sum.R))	| 	mm mo-1
 
-## Data set description:
+## Data description:
 
 In order to obtain standardized climate data for all sites, global climate data with 0.5 degree spatial resolution were downloaded from the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/).  
 
@@ -61,9 +61,19 @@ X[YYYY.MM.DD]	| Date
 
 - In the CRU database, data gaps are filled with averages (by month), which would be an issue for some analyses.
 
-## Associated resources
+## Scripts
 
-Scripts for extracting, visualizing, and identifying gaps that were filled with means are available [here](https://github.com/forestgeo/Climate/tree/master/scripts).
+[*Scripts*](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/src) in this repository include: 
+- **[CRU historical climate database visualization tools](https://github.com/forestgeo/Climate/tree/master/scripts/CRU_viz_tool)**
+   - viz_tool_CRU_single_site.R script to produce plots for CRU variables for a single site
+   - viz_tool_CRU_ALL_sites.R script to produce plots for CRU variables for ALL forest geo sites
+- **[CRU gaps analysis tool](https://github.com/forestgeo/Climate/tree/master/scripts/CRU_gaps_analysis)** - In the CRU database, data gaps are filled with averages (by month). This folder contains 
+   - a script to identify average-filled gaps of ≥3 years
+   - csv file summarizing these gaps for a subset of ForestGEO sites
+- **[CRU downloading scripts](https://github.com/forestgeo/Climate/tree/master/scripts/downloading_CRU_scripts)** - Scripts for extracting data of interest from the CRU database
+   - unzipping .nc.gz files and outputting a csv
+   - calculating pet_sum and outputting a csv
+
 
 ## Data use:
 

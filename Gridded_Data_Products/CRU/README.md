@@ -59,13 +59,13 @@ X[YYYY.MM.DD]	| Date
 
 ## Scripts
 
-[*Scripts*](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/src) in this repository include: 
-- **[CRU downloading scripts](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/src)** - Scripts for extracting data for ForestGEO sties from the CRU database. The script unzips .nc.gz files and outputs .csv
-- **[CRU pet_sum calculations]()**  - calculates pet_sum and outputs a .csv
-- **[CRU historical climate database visualization tools](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/src)**
+[*Scripts*](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts) in this repository include: 
+- **[CRU downloading scripts](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts)** - Scripts for extracting data for ForestGEO sties from the CRU database. The script unzips .nc.gz files and outputs .csv
+- **[CRU pet_sum calculations](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/CRU/scripts/Calculate_PET_sum.R)**  - calculates pet_sum and outputs a .csv
+- **[CRU historical climate database visualization tools](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts)**
    - viz_tool_CRU_single_site.R script to produce plots for CRU variables for a single site
    - viz_tool_CRU_ALL_sites.R script to produce plots for CRU variables for ALL forest geo sites
-- **[CRU gaps analysis tool](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/src)** - In the CRU database, data gaps are filled with averages (by month). This folder contains 
+- **[CRU gaps analysis tool](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts)** - In the CRU database, data gaps are filled with averages (by month). This folder contains 
    - a script to identify average-filled gaps of ≥3 years
    - csv file summarizing these gaps for a subset of ForestGEO sites
 

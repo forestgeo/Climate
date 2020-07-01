@@ -53,4 +53,4 @@ Dlugokencky, E.J., J.W. Mund, A.M. Crotwell, M.J. Crotwell, and K.W. Thoning (20
 MacFarling Meure, C., D. Etheridge, C. Trudinger, P. Steele, R. Langenfelds, T. van Ommen, A. Smith, and J. Elkins. 2006. The Law Dome CO2, CH4 and N2O Ice Core Records Extended to 2000 years BP. Geophysical Research Letters, Vol. 33, No. 14, L14810 10.1029/2006GL026152.  
 
 *Curated Data Set: Atmospheric CO<sub>2</sub> data: combined record for 1901-present*  
-Please refer to the ForestGEO Climate Date Portal's data citation policy.
+Please refer to the ForestGEO Climate Date Portal's data citation policy: [Citing this repository](https://github.com/forestgeo/Climate/blob/master/README.md#citing-this-repository)

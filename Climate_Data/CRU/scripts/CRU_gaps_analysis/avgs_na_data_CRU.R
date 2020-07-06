@@ -64,8 +64,6 @@ counter=0
 
 for(j in fsites){ # 110 times because 11 clim vars and 10 sites 
   for(i in seq_along(v)){
-  
-    # for(v in c(“pet”,tmx”,...))
     
     # i is seq # 1-11 of climvar objs ----- j is fsite raw - smithsonian ---- counter is the iterative # ie 110
     # for each climvar in objs we should have a smithsonian for cld smithsonian for dtr etc et
@@ -74,6 +72,7 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     print(paste0(j," counter # ", counter, " and clim var ", names(objs[i])))
     
     CRU_fsites[[counter]] <- objs[[i]][match(j, objs[[i]]$sites.sitename),] #go through each climvar and find the specified J aka site
+    
     #### Transform data to long format
     df<- as.data.frame(CRU_fsites[[counter]]) # make df object
 
@@ -83,10 +82,10 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
                       varying = list(colnames(df[-1])),
                       v.names = paste0(df$clim),
                       direction = "long",)
-
     storage.vess[[counter]]<- df_long # store newly reshaped data in new storage vessel
     names(storage.vess)[counter] <- j
     
+    # clean up data: date formats, climvar column, ordering the vector for later analysis.
     storage.vess[[counter]]$Date<- anytime::anydate(storage.vess[[counter]]$Date) # change to Date format
     storage.vess[[counter]]$climvar <- rep(names(storage.vess[[counter]])[3], times=nrow(storage.vess[[counter]])) # add the climvar column here (needs to be index)
     storage.vess[[counter]][,"month"] <- format(storage.vess[[counter]][,"Date"], "%m") # add month col for later processing! --
@@ -98,13 +97,8 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     
     # ## We'll want to exclude frs=0
     storage.vess[[counter]]<-storage.vess[[counter]] %>% filter(climvar.class != "frs" & climvar.val !=0)
-    
-    storage.vess[[counter]]$month <-as.integer(storage.vess[[counter]]$month)
+    storage.vess[[counter]]$month <-as.integer(storage.vess[[counter]]$month) # make months ints for later analysis
 
-    # gsub(0, '', storage.vess[[counter]]$month))
-     
-    # for every site filter and every clim var - IE BCI cld for january  -BCI cld for february -BCI cld formarch 
-    # j is every site 
   }
 }
 
@@ -115,11 +109,8 @@ months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each
     for(m in 1:12){
       for(i in 1:length(storage.vess)){  # so 12 months per cld # 12 * 11 (sites - climvar - month combos)
         
-        #12 sites - 11 climvars - 12 month combos  -- so 1,320 dfs 
-        ## first 11 (climvars) are dfs of each location with climvar
-        ## 12 months and 166 dataframes with climvar data per sites 
-        ## 12 months and 22 dataframes == 12*22 == 264
-        ## so for every dataframe I want to make 12 out of each so 12*166 == 1992
+        ## first 11 (climvars) are dfs of each location with climvar -- 12 month combos per df 
+        ## 12 months and 166 dataframes with climvar data per sites so 12 * # of dfs
 
       counter = counter+1
       print(paste0("month ", m, " i ", i, " counter for dataframes from storage vess (made of 11 diff climvars and each site) ", counter))
@@ -135,7 +126,6 @@ months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each
         
         start.df<-months_list[[counter]][start,] # add colanmes to start and end values
         end.df<- months_list[[counter]][end,]
-        
         colnames(start.df) <- paste0('start_', colnames(start.df))
         colnames(end.df) <- paste0('end_', colnames(end.df))
         
@@ -145,24 +135,23 @@ months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each
         selection$rep.yrs <-selection$end -selection$start # 0 is a 0 
         selection<- selection %>% filter(selection$rep.yrs>=2) # grab only repitions greater than 2 years
         selection$rep.yrs <- selection$rep.yrs+1 # add one to all instances to account for start years
-        
         months_list[[counter]]<- selection
         
         # ## arrange for ease of viewing, select only relevent variables
         months_list[[counter]]<-months_list[[counter]] %>% arrange(desc(rep.yrs))
         months_list[[counter]]<- months_list[[counter]][c('start_sites.sitename', 'start_Date', 'start_climvar.val', 'start_climvar.class', 'start_month', 'end_Date', 'rep.yrs')] 
-        # 
+        
         # # ## grab years only for start / end dates
         months_list[[counter]]$start_Date<-as.numeric(format(months_list[[counter]]$start_Date,"%Y"))
         months_list[[counter]]$end_Date<-as.numeric(format(months_list[[counter]]$end_Date,"%Y"))
-        # 
+        
         # # ## Exclude frs=0
         months_list[[counter]]<-months_list[[counter]] %>% filter(start_climvar.class != "frs" & start_climvar.val !=0)
       }
   }
 }
 
-  ## make DF from list above with all the relevent info for each sites (reps/year ranges)
+  ## make DF from list above
   sites_reps<-do.call("rbind", months_list)
     
 #----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----
@@ -170,11 +159,13 @@ sites_reps$check<- sites_reps$end_Date- sites_reps$start_Date+1
 problemsites<- sites_reps[sites_reps$check != sites_reps$rep.yrs,] 
 
 ##change wd
-setwd(paste0(getwd(), "/CRU/scripts/CRU_gaps_analysis"))
-
+setwd(paste0(getwd(), "/Climate_Data/CRU/scripts/CRU_gaps_analysis"))
 
 ##write.csv remember to always include row.names = FALSE.
-# write.csv(sites_reps, "all_sites.reps.csv", row.names = FALSE.)
+#write.csv(sites_reps, "all_sites.reps.csv", row.names = FALSE)
+
+## write csv of problem sites where rep years wont be accurate due to jumps in data 
+#write.csv(problemsites, "problem_sites.csv", row.names=FALSE)
 
 #site.index<- c(55,18,54,34,45,68,64,61,21,5)
 #fsites<-ForestGEO_sites$Site.name[site.index]

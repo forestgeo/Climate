@@ -25,8 +25,11 @@ fsites<-c("Smithsonian Environmental Research Center","Harvard Forest"
 ,"Smithsonian Conservation Biology Institute", "Lilly Dickey Woods"                        
 ,"Ordway-Swisher"                             ,"Yosemite National Park"                    
 ,"Wind River"                                 ,"Utah Forest Dynamics Plot"                 
-,"Huai Kha Khaeng"                            ,"Barro Colorado Island")       
+,"Huai Kha Khaeng"                            ,"Barro Colorado Island",
+"Zofin", "Scotty Creek")       
 
+## reconstructing by one to debug
+#fsites <- c("Barro Colorado Island", "Scotty Creek")
 # write.csv for the current final sites 
 
 
@@ -35,7 +38,7 @@ fsites<- gsub(" ", "_", fsites)
 
 #### Climate data -----
 
-path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Gridded_Data_Products/Historical%20Climate%20Data/CRU_v4_04/"
+path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/CRU/CRU_v4_04/"
 v<- c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")
 objs<- vector(mode = "list", length = length(v))
 counter <- 0
@@ -57,11 +60,13 @@ for(clim_v in v) { #  clim_v is each climate variable (v)
 # CRU data with final sites and storage vessel list for the long format of data
 CRU_fsites <- vector(mode="list", length=length(fsites)*length(v)) # I should have ten of each site (so fsites*v)
 storage.vess<- vector(mode="list", length=length(fsites)*length(v)) # and I should have a storage vessel with just as manny 
-
 counter=0
+
 for(j in fsites){ # 110 times because 11 clim vars and 10 sites 
   for(i in seq_along(v)){
   
+    # for(v in c(“pet”,tmx”,...))
+    
     # i is seq # 1-11 of climvar objs ----- j is fsite raw - smithsonian ---- counter is the iterative # ie 110
     # for each climvar in objs we should have a smithsonian for cld smithsonian for dtr etc et
     #### Select only FSITES from climvar data 
@@ -82,71 +87,91 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     storage.vess[[counter]]<- df_long # store newly reshaped data in new storage vessel
     names(storage.vess)[counter] <- j
     
-    storage.vess[[counter]][,2]<- anytime::anydate(storage.vess[[counter]]$Date) # change to Date format
+    storage.vess[[counter]]$Date<- anytime::anydate(storage.vess[[counter]]$Date) # change to Date format
     storage.vess[[counter]]$climvar <- rep(names(storage.vess[[counter]])[3], times=nrow(storage.vess[[counter]])) # add the climvar column here (needs to be index)
     storage.vess[[counter]][,"month"] <- format(storage.vess[[counter]][,"Date"], "%m") # add month col for later processing! --
     storage.vess[[counter]]<-storage.vess[[counter]][order(as.numeric(storage.vess[[counter]]$month)),] # order the columns by month so we can use the RLE function 
-  
-    repsnum <- rle(storage.vess[[counter]][,3]) # climvar repeated in the ordered vector (needs to be index)
-    
-    # Compute star/end indices of run 
-    end = cumsum(repsnum$lengths)
-    start = c(1, lag(end)[-1] + 1) # https://stackoverflow.com/questions/43875716/find-start-and-end-positions-indices-of-runs-consecutive-values
-    start.end.indices <-data.frame(start,end) #lags by one - shifts to the left , -1 puts it back ot original place and +1 adds the number to index (c(1)) - lag maintains length
-    
-    # now that we have start/end indices we can use the index to grab the values of that df for start / end 
-    # grab all indices of the start/end values and then only retain the numbers of start/end output if the difference of start/end is >2
-    
-    start.df<-storage.vess[[counter]][start,] # add colanmes to start and end values
-    end.df<- storage.vess[[counter]][end,]
-    colnames(start.df) <- paste0('start_', colnames(start.df))
-    colnames(end.df) <- paste0('end_', colnames(end.df))
-    
-    df.indices<-cbind(start.df,end.df)
-    rownames(df.indices)<-c(1:nrow(df.indices)) #change rownames to sequential order 
-    selection<-cbind(df.indices, start.end.indices) # add start and end indices column
-    
-    # if end - start >=2 then that means there are more or 3 consecutive years with the same value! (select only these)
-    selection$rep.yrs <-selection$end -selection$start # 0 is a 0 repititions, 1 is 2, and 2 is 3 so on.... b/c index 1-2 is 1 but 2 instances of reps
-    
-    # if rep.yrs is >=2 select those rows (ie )
-    selection<- selection %>% filter(selection$rep.yrs>=2)
-    selection$rep.yrs <- selection$rep.yrs+1
-    
-    ## add only the reps back in! 
-    storage.vess[[counter]] <- selection # selection should be in a list that is length of storage vess (unique sites)
-  
-    ## arrange for ease of viewing
-    storage.vess[[counter]]<-storage.vess[[counter]] %>% arrange(desc(rep.yrs))
-    
-    storage.vess[[counter]] <- storage.vess[[counter]][-c(3:7,10,13:14)] # delete unecessary cols - leaving as index because the climvar changes
-    
-    
-    ## grab years only for start / end dates
-    storage.vess[[counter]][2]<-format(storage.vess[[counter]]$start_Date,"%Y")
-    storage.vess[[counter]][3]<-format(storage.vess[[counter]]$end_Date,"%Y")
 
-
-    #rename the startclimvar and endclimvar column
     storage.vess[[counter]]<- storage.vess[[counter]] %>%
-    rename(climvar.val =names(storage.vess[[counter]][4]),
-           climvar.class = end_climvar,
-           month = end_month) #month =names(storage.vess)))
-
-    ## We'll want to exclude frs=0
+      rename(climvar.class =climvar,
+             climvar.val = names(storage.vess[[counter]][3]))
+    
+    # ## We'll want to exclude frs=0
     storage.vess[[counter]]<-storage.vess[[counter]] %>% filter(climvar.class != "frs" & climvar.val !=0)
-   
+    
+    storage.vess[[counter]]$month <-as.integer(storage.vess[[counter]]$month)
+
+    # gsub(0, '', storage.vess[[counter]]$month))
+     
+    # for every site filter and every clim var - IE BCI cld for january  -BCI cld for february -BCI cld formarch 
+    # j is every site 
   }
 }
 
-## Dataframe generated from the list above with all the relevent info for each sites (reps/year ranges)
-sites_reps<-do.call("rbind", storage.vess)
+### now for the length of storage vess: 12 different month and dfs combos --
+months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each month
+
+  counter = 0
+    for(m in 1:12){
+      for(i in 1:length(storage.vess)){  # so 12 months per cld # 12 * 11 (sites - climvar - month combos)
+        
+        #12 sites - 11 climvars - 12 month combos  -- so 1,320 dfs 
+        ## first 11 (climvars) are dfs of each location with climvar
+        ## 12 months and 166 dataframes with climvar data per sites 
+        ## 12 months and 22 dataframes == 12*22 == 264
+        ## so for every dataframe I want to make 12 out of each so 12*166 == 1992
+
+      counter = counter+1
+      print(paste0("month ", m, " i ", i, " counter for dataframes from storage vess (made of 11 diff climvars and each site) ", counter))
+      months_list[[counter]]<- storage.vess[[i]] %>%  dplyr::filter(climvar.class ==storage.vess[[i]]$climvar.class[1] & month ==m)
+      
+      #### REPS MONTH ANALYSIS --------------------
+      if(nrow(months_list[[counter]]) !=0){ # if the dataframe is empty dont go in here
+        
+        repsmo<- rle(months_list[[counter]][,3])
+        end = cumsum(repsmo$lengths)
+        start = c(1, lag(end)[-1] + 1) # https://stackoverflow.com/questions/43875716/find-start-and-end-positions-indices-of-runs-consecutive-values
+        start.end.indices <-data.frame(start,end) #lags by one - shifts to the left , -1 puts it back ot original place and +1 adds the number to index (c(1)) - lag maintains length
+        
+        start.df<-months_list[[counter]][start,] # add colanmes to start and end values
+        end.df<- months_list[[counter]][end,]
+        
+        colnames(start.df) <- paste0('start_', colnames(start.df))
+        colnames(end.df) <- paste0('end_', colnames(end.df))
+        
+        df.indices<-cbind(start.df,end.df) # bind both dataframes 
+        rownames(df.indices)<-c(1:nrow(df.indices)) #change rownames to sequential order 
+        selection<-cbind(df.indices, start.end.indices) # add start and end indices column
+        selection$rep.yrs <-selection$end -selection$start # 0 is a 0 
+        selection<- selection %>% filter(selection$rep.yrs>=2) # grab only repitions greater than 2 years
+        selection$rep.yrs <- selection$rep.yrs+1 # add one to all instances to account for start years
+        
+        months_list[[counter]]<- selection
+        
+        # ## arrange for ease of viewing, select only relevent variables
+        months_list[[counter]]<-months_list[[counter]] %>% arrange(desc(rep.yrs))
+        months_list[[counter]]<- months_list[[counter]][c('start_sites.sitename', 'start_Date', 'start_climvar.val', 'start_climvar.class', 'start_month', 'end_Date', 'rep.yrs')] 
+        # 
+        # # ## grab years only for start / end dates
+        months_list[[counter]]$start_Date<-as.numeric(format(months_list[[counter]]$start_Date,"%Y"))
+        months_list[[counter]]$end_Date<-as.numeric(format(months_list[[counter]]$end_Date,"%Y"))
+        # 
+        # # ## Exclude frs=0
+        months_list[[counter]]<-months_list[[counter]] %>% filter(start_climvar.class != "frs" & start_climvar.val !=0)
+      }
+  }
+}
+
+  ## make DF from list above with all the relevent info for each sites (reps/year ranges)
+  sites_reps<-do.call("rbind", months_list)
+    
+#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----
+sites_reps$check<- sites_reps$end_Date- sites_reps$start_Date+1
+problemsites<- sites_reps[sites_reps$check != sites_reps$rep.yrs,] 
 
 ##change wd
 setwd(paste0(getwd(), "/scripts/CRU_viz_tool"))
 
-## add row nums
-row.names(sites_reps)<- 1:nrow(sites_reps)
 
 ##write.csv remember to always include row.names = FALSE.
 # write.csv(sites_reps, "all_sites.reps.csv", row.names = FALSE.)

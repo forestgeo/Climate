@@ -170,7 +170,7 @@ sites_reps$check<- sites_reps$end_Date- sites_reps$start_Date+1
 problemsites<- sites_reps[sites_reps$check != sites_reps$rep.yrs,] 
 
 ##change wd
-setwd(paste0(getwd(), "/scripts/CRU_viz_tool"))
+setwd(paste0(getwd(), "/CRU/scripts/CRU_gaps_analysis"))
 
 
 ##write.csv remember to always include row.names = FALSE.

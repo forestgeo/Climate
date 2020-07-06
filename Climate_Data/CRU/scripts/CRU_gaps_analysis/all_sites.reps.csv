@@ -1,4 +1,4 @@
-"start_sites.sitename","start_Date","start_climvar.val","start_climvar.class","start_month","end_Date","rep.yrs","check"
+"start_sites.sitename","start_Date","start_climvar.val","start_climvar.class","month","end_Date","rep.yrs","check"
 "Smithsonian_Environmental_Research_Center",1997,"63.7999992370605","cld",1,2000,4,4
 "Smithsonian_Environmental_Research_Center",1997,"1.30000007152557","pet",1,1999,3,3
 "Harvard_Forest",1915,"1","pet",1,1917,3,3

@@ -153,6 +153,8 @@ months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each
 
   ## make DF from list above
   sites_reps<-do.call("rbind", months_list)
+  sites_reps<- sites_reps %>% rename(month = start_month) #rename startmonth to month
+
     
 #----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----
 sites_reps$check<- sites_reps$end_Date- sites_reps$start_Date+1

@@ -158,6 +158,9 @@ months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each
 sites_reps$check<- sites_reps$end_Date- sites_reps$start_Date+1
 problemsites<- sites_reps[sites_reps$check != sites_reps$rep.yrs,] 
 
+## without the problem sites
+sites_reps<- sites_reps[sites_reps$check == sites_reps$rep.yrs,] 
+
 ##change wd
 setwd(paste0(getwd(), "/Climate_Data/CRU/scripts/CRU_gaps_analysis"))
 

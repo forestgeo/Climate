@@ -26,4 +26,4 @@ Victoria Meakem (vmmeakem@gmail.com)
 Kristina Anderson-Teixeira
 
 ## References
-Meakem, V, Tepley, AJ, Gonzalez-Akre, EB, Herrmann V, Muller-Landau, HC, Wright, SJ, Hubbell, SP, Condit, R, Anderson-Teixeira, KJ. (2018) Role of tree size in moist tropical forest carbon cycling and water deficit responses. *New Phytologist 219*(3): 947-958.  https://doi.org/10.1111/nph.14633
+Meakem, V, Tepley, AJ, Gonzalez-Akre, EB, Herrmann V, Muller-Landau, HC, Wright, SJ, Hubbell, SP, Condit, R, Anderson-Teixeira, KJ. (2018) Role of tree size in moist tropical forest carbon cycling and water deficit responses. *New Phytologist*, 219(3): 947-958.  https://doi.org/10.1111/nph.14633

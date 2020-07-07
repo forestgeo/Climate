@@ -1,6 +1,6 @@
 # ForestGEO Weather Station @ Barro Colorado Island (BCI)
 
-**Temporal coverage**: 03/10/2011 - present 
+**Temporal coverage**: 03/10/2011 - 2017 
 
 **Temporal resolution**: 5 min
 

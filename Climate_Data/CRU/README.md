@@ -72,7 +72,7 @@ X[YYYY.MM.DD]	| Date
 
 
 
-## Data use & attribution
+## Data use and attribution
 
 Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. Researchers using the CRU data product should abide by the latest data use guidelines (available via the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/)) and provide appropriate citation:  
 

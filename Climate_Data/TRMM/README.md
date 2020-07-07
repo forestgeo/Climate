@@ -36,7 +36,7 @@ Described in [`CTFS_ForestGEO_TRMM_Metadata.pdf`](https://github.com/forestgeo/C
 
 Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. Information on the TRMM data product is summarized in (Liu et al., 2012) and at http://trmm.gsfc.nasa.gov.
 
-These data are freely available for scientific research purposes, as a service of the ForestGEO Ecosystems & Climate Initiative. Publications using these data should cite Liu et al. (2012) and cite this ForestGEO data product. 
+These data are freely available for scientific research purposes, as a service of the ForestGEO Ecosystems & Climate Initiative. Publications using these data should cite Liu et al. (2012) and cite this ForestGEO data product, as per our [Data Use Policy](https://github.com/forestgeo/Climate#data-use-policy). 
 
 
 ## References:

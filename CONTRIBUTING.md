@@ -5,8 +5,8 @@ We anticipate that the ForestGEO Climate Data Portal will be of great value for 
 ## Basic instructions for contributing to the ForestGEO Climate Data Portal: 
 1.	If you wish to modify an existing file, download the latest version of the file. Microsoft Word files used to create PDFs are included in the repository so that they can be modified. If you'll be submitting new files, existing files may be downloaded as templates, if desireable.
 2.	Create a new **branch**, including your username in the branch name.  
-3.	Create or modify files, ensuring that: 
-    a.	You have checked to ensure that the data are accurate and that missing values are filled with an appropriate code (e.g., NA).
+3.	Create or modify files, ensuring that:  
+    a.	You have checked to ensure that the data are accurate and that missing values are filled with an appropriate code (e.g., NA).  
     b.  Any new data files are properly documented with a metadata file, including a list of column headers, their definitions, and their units.  
     c.	Any updated files conform to existing metadata descriptions (or you modify the descriptions appropriately)  
     d.	State any conditions of data use in the metadata file.

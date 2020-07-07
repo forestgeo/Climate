@@ -17,7 +17,7 @@ The Tropical Rainfall Measuring Mission (TRMM) by NASA was launched in 1997 and 
 
 Data presented here are from the “Algorithm 3B43”, which gives the best-estimate precipitation rate and root-mean-square (RMS) precipitation-error estimates from TRMM.  Algorithm 3B43 is executed once per calendar month to produce the single, best-estimate precipitation rate and RMS precipitation-error estimate field (3B43) by combining the 3-hourly merged high-quality/IR estimates with the monthly accumulated Global Precipitation Climatology Centre (GPCC) rain gauge analysis.
 
-Monthly precipitation data were downloaded on October 21, 2015 for 63 CTFS-ForestGEO tropical, subtropical, and temperate sites (-50 to 50 degrees latitude). Data was retrieved from the [Mirador interface](http://mirador.gsfc.nasa.gov) from NASA Goddard Earth Sciences Data and Information Services Center (GES DISC). Version 7 was downloaded. Units were converted from mm hr-1 to mm mo-1 by multiplying by the number of hours in each month, and annual precipitation was computed by summing months. 
+Monthly precipitation data were downloaded on October 21, 2015 for 63 ForestGEO tropical, subtropical, and temperate sites (-50 to 50 degrees latitude). Data was retrieved from the [Mirador interface](http://mirador.gsfc.nasa.gov) from NASA Goddard Earth Sciences Data and Information Services Center (GES DISC). Version 7 was downloaded. Units were converted from mm hr-1 to mm mo-1 by multiplying by the number of hours in each month, and annual precipitation was computed by summing months. 
 
 ## Notes:
 
@@ -25,12 +25,12 @@ Comparison of TRMM data to local weather station data for ForestGEO sites (Table
 
 ## Data files:
 
-[`CTFS-ForestGEO_TRMM.3B43_monthly.csv`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/TRMM%20precipitation%20data/CTFS-ForestGEO_TRMM.3B43_monthly.csv)
+[`CTFS-ForestGEO_TRMM.3B43_monthly.csv`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/TRMM/CTFS-ForestGEO_TRMM.3B43_monthly.csv)
 
-[`CTFS-ForestGEO_TRMM.3B43_annual.csv`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/TRMM%20precipitation%20data/CTFS-ForestGEO_TRMM.3B43_annual.csv)
+[`CTFS-ForestGEO_TRMM.3B43_annual.csv`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/TRMM/CTFS-ForestGEO_TRMM.3B43_annual.csv)
 
 ## Data file contents:
-Described in [`CTFS_ForestGEO_TRMM_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/TRMM%20precipitation%20data/CTFS_ForestGEO_TRMM_Metadata.pdf)
+Described in [`CTFS_ForestGEO_TRMM_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/TRMM/CTFS_ForestGEO_TRMM_Metadata.pdf)
 
 ## Data use:
 

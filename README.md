@@ -8,7 +8,7 @@ This public repository is a portal for climate data and information for [ForestG
 
 1. To act as a [**DIRECTORY**](https://github.com/forestgeo/Climate/tree/master/Directory) that identifies what types of climate data exist for ForestGEO sites and where you can access those data.  In some cases individual sites may have README files describing the best available sources of climate data (for example, [SCBI](https://github.com/forestgeo/Climate/blob/master/Climate_Data/Met_Stations/SCBI/README.md)).  
 
-2. To provide you with **DIRECT ACCESS** to climate data for ForestGEO sites.  In the Portal we host two climate data from two sources:  
+2. To provide you with **DIRECT ACCESS** to [climate](https://github.com/forestgeo/Climate/tree/master/Climate_Data/) and [other environmental data](https://github.com/forestgeo/Climate/tree/master/Other_environmental_data/) for ForestGEO sites.  In the Portal we host two climate data from two sources:  
      + [**meteorological stations**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/Met_Stations) on/nearby ForestGEO sites with data that are not readily available through other public repositories.  The data from these meteorological stations include includes raw data products as well as cleaned/gap-filled data sets (based on raw dat products that may be archived elsewhere).  
      + [**global and regional databases**](https://github.com/forestgeo/Climate/tree/master/Climate_Data)- To faciliate use of data from global and regional databases, we have extracted data for ForstGEO sites. A record of databases and the ForestGEO sites for which data have been extracted is available in the [Directory](https://github.com/forestgeo/Climate/tree/master/Directory).
 

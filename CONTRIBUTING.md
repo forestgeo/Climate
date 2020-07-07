@@ -8,9 +8,9 @@ We anticipate that the ForestGEO Climate Data Portal will be of great value for 
 3.	Create or modify files, ensuring that:  
     a.	You have checked to ensure that the data are accurate and that missing values are filled with an appropriate code (e.g., NA).  
     b.  Any new data files are properly documented with a metadata file, including a list of column headers, their definitions, and their units.  
-    c.	Any updated files conform to existing metadata descriptions (or you modify the descriptions appropriately)  
-    d.	State any conditions of data use in the metadata file.
-    e.  Please provide the name of the most appropriate person/people who may be contacted with questions/ requests for collaboration. 
+    c.	Any updated files conform to existing metadata descriptions (or you modify the descriptions appropriately).  
+    d.	Any conditions of data use are stated in the metadata file.  
+    e.  The name of the most appropriate person/people who may be contacted with questions/requests for collaboration is provided.  *Bonus points for providing an e-mail address along with the name(s).  
     f.	All data are ready to be made public.   
 4.	Open a pull request: https://help.github.com/articles/creating-a-pull-request/. This will compare changes across the master branch and the new branch.  
 5.	Database authors will approve pull request and merge changes. Delete branch when changes have been merged.  

@@ -28,11 +28,11 @@ pet_sum		| potential evapotranspiration sum (computed here)	| 	mm mo-1
 
 ## Data description:
 
-The latest version in this repository is [**v.4.04**](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/CRU_v4_04) (released 24 April 2020, covers the period 1901-2019). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
+The latest version in this repository is [**v.4.04**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_04) (released 24 April 2020, covers the period 1901-2019). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
 
-[*Previous versions*](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/previous_versions) in this repository include:
-- v. 3.10 - Values from this version, including annual and climatic means calculated using Matlab by K. Anderson-Teixeira, are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712). A detailed description of data files and contents is given in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/CRU/previous_versions/CRU_v3_10_01/CTFS-ForestGEO_historical_climate_metadata.pdf)
-- v. 3.23 - Includes annual and climatic means calculated using Matlab by K. Anderson-Teixeira, as detailed in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/CRU/previous_versions/CRU_v3_23/CTFS-ForestGEO_historical_climate_metadata.pdf). 
+[*Previous versions*](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/previous_versions) in this repository include:
+- v. 3.10 - Values from this version, including annual and climatic means calculated using Matlab by K. Anderson-Teixeira, are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712). A detailed description of data files and contents is given in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/previous_versions/CRU_v3_10_01/CTFS-ForestGEO_historical_climate_metadata.pdf)
+- v. 3.23 - Includes annual and climatic means calculated using Matlab by K. Anderson-Teixeira, as detailed in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/previous_versions/CRU_v3_23/CTFS-ForestGEO_historical_climate_metadata.pdf). 
 - v. 4.01 
 - v. 4.03 
 
@@ -59,13 +59,13 @@ X[YYYY.MM.DD]	| Date
 
 ## Scripts
 
-[*Scripts*](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts) in this repository include: 
-- **[CRU downloading scripts](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts)** - Scripts for extracting data for ForestGEO sties from the CRU database. The script unzips .nc.gz files and outputs .csv
-- **[CRU pet_sum calculations](https://github.com/forestgeo/Climate/blob/master/Gridded_Data_Products/CRU/scripts/Calculate_PET_sum.R)**  - calculates pet_sum and outputs a .csv
-- **[CRU historical climate database visualization tools](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts)**
+[*Scripts*](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts) in this repository include: 
+- **[CRU downloading scripts](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/downloading_CRU_scripts)** - Scripts for extracting data for ForestGEO sties from the CRU database. The script unzips .nc.gz files and outputs .csv
+- **[CRU pet_sum calculations](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/scripts/Calculate_PET_sum.R)**  - calculates pet_sum and outputs a .csv
+- **[CRU historical climate database visualization tools](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/CRU_viz_tool)**
    - viz_tool_CRU_single_site.R script to produce plots for CRU variables for a single site
    - viz_tool_CRU_ALL_sites.R script to produce plots for CRU variables for ALL forest geo sites
-- **[CRU gaps analysis tool](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/CRU/scripts)** - In the CRU database, data gaps are filled with averages (by month). This folder contains 
+- **[CRU gaps analysis tool](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/CRU_gaps_analysis)** - In the CRU database, data gaps are filled with averages (by month). This folder contains 
    - a script to identify average-filled gaps of ≥3 years
    - csv file summarizing these gaps for a subset of ForestGEO sites
 

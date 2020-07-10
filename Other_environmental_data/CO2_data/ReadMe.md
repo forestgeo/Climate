@@ -38,7 +38,7 @@ This data are only current through 2019. New data from the search tool must be d
 
 ## Script
 
-Script combining these data found [here](https://github.com/forestgeo/Climate/tree/master/scripts/downloading_CO2_data). The script takes averages of all values for a given year of Mauna Loa data and combines them with values derived from ice core data by NOAA. 
+Script combining these data found [here](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/CO2_data/downloading_CO2_data/co2_process_data.R). The script takes averages of all values for a given year of Mauna Loa data and combines them with values derived from ice core data by NOAA. Data users can use script to to create the most up-to-date version of the combined data set using provided resources. 
 
 Developed by: Bianca Gonzalez
 

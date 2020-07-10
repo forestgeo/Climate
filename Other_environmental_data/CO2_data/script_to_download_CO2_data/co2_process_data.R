@@ -14,7 +14,7 @@ library(tidyverse)
 library(readxl)
 
 #### load data #### -------
-path = "/Other_environmental_data/NOAA_ESRL_C02_data/"
+path = "/Other_environmental_data/CO2_data/NOAA_ESRL_CO2/"
 
 # moana loa data // NOAA ice core data 
 moana <-read.csv(paste0(getwd(), path, "ESRL_Mauna_Loa_co2_data.csv")) 

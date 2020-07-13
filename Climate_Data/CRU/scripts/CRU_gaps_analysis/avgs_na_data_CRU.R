@@ -10,6 +10,7 @@ library(ggplot2)
 library(plotly)
 library(anytime) 
 library(dplyr)
+library(padr)
 library(viridis)
 ##########
 
@@ -96,7 +97,7 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
              climvar.val = names(storage.vess[[counter]][3]))
     
     # ## We'll want to exclude frs=0
-    storage.vess[[counter]]<-storage.vess[[counter]] %>% filter(climvar.class != "frs" & climvar.val !=0)
+    storage.vess[[counter]]<-storage.vess[[counter]] %>% filter(climvar.class != "frs")
     storage.vess[[counter]]$month <-as.integer(storage.vess[[counter]]$month) # make months ints for later analysis
 
   }
@@ -157,11 +158,14 @@ months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each
 
     
 #----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----#----
-sites_reps$check<- sites_reps$end_Date- sites_reps$start_Date+1
-problemsites<- sites_reps[sites_reps$check != sites_reps$rep.yrs,] 
+sites_reps$nyears<- sites_reps$end_Date- sites_reps$start_Date+1
+problemsites<- sites_reps[sites_reps$nyears != sites_reps$rep.yrs,]  #make sure there are none and reconcile 
 
 ## without the problem sites
-sites_reps<- sites_reps[sites_reps$check == sites_reps$rep.yrs,] 
+sites_reps<- sites_reps[sites_reps$nyears == sites_reps$rep.yrs,] 
+
+## add col with number of dates missing
+sites_reps$n.missing <- sites_reps$nyears - sites_reps$rep.yrs
 
 ##change wd
 setwd(paste0(getwd(), "/Climate_Data/CRU/scripts/CRU_gaps_analysis"))
@@ -186,3 +190,7 @@ setwd(paste0(getwd(), "/Climate_Data/CRU/scripts/CRU_gaps_analysis"))
   # thailand HKK, 21
   # BCI panama, 5
   # potentially going to have the NM and Scotty sites as well
+
+## scotty Creek is missing some values so fill them in 
+pad(storage.vess[[125]], interval = "month")
+pre_BCI %>% complete(Date = seq.Date(min(Date), max(Date), by="month"))

@@ -1,10 +1,1 @@
-"start_sites.sitename","start_Date","start_climvar.val","start_climvar.class","start_month","end_Date","rep.yrs","check"
-"Scotty_Creek",1924,"0.100000001490116","pet",1,2005,29,82
-"Scotty_Creek",1901,"0.100000001490116","pet",2,1932,26,32
-"Scotty_Creek",1940,"0.100000001490116","pet",2,1968,14,29
-"Scotty_Creek",1981,"0.100000001490116","pet",2,1986,5,6
-"Scotty_Creek",1994,"0.100000001490116","pet",2,1999,5,6
-"Scotty_Creek",2015,"0.100000001490116","pet",2,2019,3,5
-"Scotty_Creek",1902,"0.100000001490116","pet",11,1973,18,72
-"Scotty_Creek",1984,"0.100000001490116","pet",11,2017,12,34
-"Scotty_Creek",1917,"0.100000001490116","pet",12,1982,6,66
+"start_sites.sitename","start_Date","start_climvar.val","start_climvar.class","month","end_Date","rep.yrs","nyears"

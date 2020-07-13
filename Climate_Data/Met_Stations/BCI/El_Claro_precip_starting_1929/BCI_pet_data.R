@@ -64,6 +64,7 @@ wet_1900s<- wet_1900s %>% filter(Date < as.Date("1971-04-01"))
 # bind these puppies, add relevent cols, and write.csv
 wet_BCI <- rbind(wet_1900s, wet_1970s)
 wet_BCI$sites.sitename <- rep("Barro Colorado Island", nrow(wet_BCI))
+
 wet_BCI$month<- month(wet_BCI$Date)
 wet_BCI$climvar.class <- rep("wet", nrow(wet_BCI))
 wet_BCI<- wet_BCI %>% rename(climvar.val= n)

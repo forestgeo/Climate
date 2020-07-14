@@ -13,5 +13,5 @@ Version: 2.5 - July 2017
  Creators: Santiago Beguería (santiago.begueria@csic.es) and Sergio Vicente-Serrano (svicen@ipe.csic.es)
  
  ## Data Use and Attribution
- Beguería, S. & Vicente-Serrano, S.  Standardized Precipitation Evapotranspiration Index version 2.5 (July 2017).  El Consejo Superior de Investigaciones Científicas.  
+ Beguería, S. & Vicente-Serrano, S.  Standardized Precipitation Evapotranspiration Index version 2.5 (July 2017).  El Consejo Superior de Investigaciones Científicas.  Accessed 2019-12.
  

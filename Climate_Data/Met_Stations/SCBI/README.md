@@ -17,7 +17,7 @@ For studies requiring data prior to 2009, we recommend:
 
 5- [**CRU monthly gridded multivariate climate dataset**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU). 
 
-6- [**NOAA Divisional Data**](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#). NOAA data for N. Virginia, downloaded in December 2017 are posted [here](https://github.com/forestgeo/Climate/tree/master/Gridded_Data_Products/NOAA%20Divisional%20Data%20(USA)/Virginia_04_Northern_Virginia). Variables include Palmer Drought Severity Index.
+6- [**NOAA Divisional Data**](https://www7.ncdc.noaa.gov/CDO/CDODivisionalSelect.jsp#). NOAA data for N. Virginia, downloaded in December 2017 are posted [here](https://github.com/forestgeo/Climate/tree/master/Climate_Data/NOAA/Virginia_04_Northern_Virginia). Variables include Palmer Drought Severity Index.
 
 ## Contact
 Kristina Anderson-Teixeira (Smithsonian)  

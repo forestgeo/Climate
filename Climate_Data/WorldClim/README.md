@@ -38,3 +38,5 @@ Researchers who wish to use this data product are responsible to understand and 
 Anderson-Teixeira KJ, Davies SJ, Bennett AC, et al. (2015) CTFS-ForestGEO: a worldwide network monitoring forests in an era of global change. *Global Change Biology*, 21(2), 528–549.  https://doi.org/10.1111/gcb.12712
 
 Hijmans RJ, Cameron SE, Parra JL, Jones PG, and Jarvis A. (2005) Very high resolution interpolated climate surfaces for global land areas. *International Journal of Climatology*, 25(15), 1965–1978.  https://doi.org/10.1002/joc.1276
+
+Please also refer to the ForestGEO Climate Date Portal's [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy) re: citation of the curated data set.

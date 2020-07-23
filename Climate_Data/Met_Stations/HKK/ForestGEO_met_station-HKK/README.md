@@ -20,12 +20,8 @@ Data files: `HKK_Metdata_5min_[YEAR].csv.`
 
 Metadata: `METADATA.pdf`
 
-## Data use:
+## Data use & attribution:
 
-The data are freely available to the ForestGEO community for research and educational (non-commercial) purposes.
+The data are freely available to the ForestGEO community for research and educational (non-commercial) purposes.  Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  
 
-Papers using the data should acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program.
-
-## Data contact:
-
-Matteo Detto
+Papers using the data should acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program. Researchers should further cite the ForestGEO Climate Data Portal (as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy)) and contact site PIs (Sarayudh Bunyavejchewin (sarayudh_b@yahoo.com), Nantachai Pongpattananurak (nanku49@hotmail.com) & Somboon Kiratiprayoon (sxk49@yahoo.com)) for names of researchers who should be credited for these data.

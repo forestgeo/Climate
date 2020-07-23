@@ -11,7 +11,7 @@
 ## Files
 [`ForestGEO climate data sources.csv`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources.csv) - File listing climate data sources available for ForestGEO sites, as described in the metadata file.
 
-[`ForestGEO climate data sources - metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources%20-%20metadata.pdf) - Metadata file describing the contents of [`ForestGEO climate data sources.csv`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources.csv)  and [`ForestGEO_gridded climate data.csv`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO_gridded%20climate%20data.csv). An editable [.docx](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources%20-%20metadata.docx) file is also available for updating the .pdf.
+[`ForestGEO climate data sources - metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources%20-%20metadata.pdf) - Metadata file describing the contents of [`ForestGEO climate data sources.csv`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources.csv). An editable [.docx](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources%20-%20metadata.docx) file is also available for updating the .pdf.
 
 ## Contact 
 Kristina Anderson-Teixeira (Smithsonian)  

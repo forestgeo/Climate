@@ -10,4 +10,9 @@
 
 - [NGEE-Tropics QA/QC-ed BCI meteorological drivers](https://ngt-data.lbl.gov/dois/NGT0062/)- starts 2003.
 
+## Data Use & Attribution
+Researchers who wish to use these data products are responsible for understanding and evaluating their appropriateness for specific research purposes.  
+
+Researchers should cite the ForestGEO Climate Data Portal (as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy)) and contact site PIs (Salomón Aguilar (AguilarS@si.edu) & Rolando Pérez (perezro@si.edu)) for names of researchers who should be credited for these data.
+
 

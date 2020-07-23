@@ -1,6 +1,6 @@
 
 # ForestGEO Climate Data Portal  
-
+[![DOI](https://zenodo.org/badge/83330500.svg)](https://zenodo.org/badge/latestdoi/83330500)
 
 ## About this repository
 This public repository is a portal for climate data and information for [ForestGEO](http://www.forestgeo.si.edu/) sites. It serves two primary functions:
@@ -24,7 +24,7 @@ For instrunctions on contributing to this repository, please see [`CONTRIBUTING.
 
 ## Data use policy
 
-Researchers who wish to use data contained in the ForestGEO Climate Data Portal are responsible to understand and evaluate its appropriateness for their research purposes, and to cite original sources as appropriate. To facilitate proper attribution, we have begun to provide citations for original data sources on their respective README pages.  Although it is not required if using data exclusively from other public sources, it would be best scientific practice (for reproducibility and transparency) to also acknowledge that you obtained the original data set through the ForestGEO Climate Data Portal.  You may do so by citing our DOI: [forthcoming].
+Researchers who wish to use data contained in the ForestGEO Climate Data Portal are responsible to understand and evaluate its appropriateness for their research purposes, and to cite original sources as appropriate. To facilitate proper attribution, we have begun to provide citations for original data sources on their respective README pages.  Although it is not required if using data exclusively from other public sources, it would be best scientific practice (for reproducibility and transparency) to also acknowledge that you obtained the original data set through the ForestGEO Climate Data Portal.  You may do so by citing our DOI: [![DOI](https://zenodo.org/badge/83330500.svg)](https://zenodo.org/badge/latestdoi/83330500).
 
 ### License
 

@@ -1,7 +1,6 @@
 
 # ForestGEO Climate Data Portal  
 
-We are in the process of reoranizing this repository; please pardon broken links.
 
 ## About this repository
 This public repository is a portal for climate data and information for [ForestGEO](http://www.forestgeo.si.edu/) sites. It serves two primary functions:

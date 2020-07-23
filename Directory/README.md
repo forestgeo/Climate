@@ -2,7 +2,7 @@
 
 ## Overview
 
-This folder contains files summarizing climate data sources for ForestGEO sites. It may be used as a guide for the ForestGEO research community to identify available climate data products. It can also serve as a portal for site PIs and data set originators to inform others about the availability of relevant data products.
+[**`ForestGEO climate data sources`**](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources.csv) summarizes climate data products available for ForestGEO sites and points to the location from which they can be obtained, within this data portal or elsewhere. It may be used as a guide for the ForestGEO research community to help identify available climate data products. It can also serve as a portal for site PIs and data set originators to inform others about the availability of relevant data products.
 
 **This is not a complete listing of available data products, and many records for local weather stations remain incomplete.** Researchers should contact site PIs for the most complete and accurate information on local weather stations. When appropriate weather station data are not available, we encourage researchers to explore the latest available gridded climate data products. We will be grateful for additions and updates to this directory.
 

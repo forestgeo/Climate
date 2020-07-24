@@ -29,4 +29,4 @@ Papers using the data should acknowledge the ForestGEO meteorological monitoring
 
 ## Contact:
 
-Matteo Detto
+Matteo Detto (mdetto@princeton.edu)

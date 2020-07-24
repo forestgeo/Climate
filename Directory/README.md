@@ -14,6 +14,9 @@
 [`ForestGEO climate data sources - metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources%20-%20metadata.pdf) - Metadata file describing the contents of [`ForestGEO climate data sources.csv`](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources.csv). An editable [.docx](https://github.com/forestgeo/Climate/blob/master/Directory/ForestGEO%20climate%20data%20sources%20-%20metadata.docx) file is also available for updating the .pdf.
 
 ## User tips
+
+To download `ForestGEO climate data sources` as a .csv, select "view raw" and then right-click to "save page as...". 
+
 To use this spreadsheet to identify relevant data sources, filter by 'Site' (including "ANY SITE" if interested in gridded data products) and 'Variable' of interest. Data may also be filtered by a variety of other potential constraints-- for example, `Start.Date`, whether the data have been gap filled `Gap.Free?`, or where the instruments are located relative to the ForestGEO plot canopy (`Instrument.Location`). 
 
 ## Contact 

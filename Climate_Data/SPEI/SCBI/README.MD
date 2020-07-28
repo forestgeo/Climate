@@ -12,6 +12,8 @@ Version: 2.5 - July 2017
   
  Creators: Santiago Beguería (santiago.begueria@csic.es) and Sergio Vicente-Serrano (svicen@ipe.csic.es)
  
- ## Data Use and Attribution
- Beguería, S. & Vicente-Serrano, S.  Standardized Precipitation Evapotranspiration Index version 2.5 (July 2017).  El Consejo Superior de Investigaciones Científicas.  Accessed 2019-12.
+## Data Use and Attribution
+Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  They must cite the original data source (below) and should also cite the ForestGEO Climate Data Portal, as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy).
+ 
+Beguería, S. & Vicente-Serrano, S.  Standardized Precipitation Evapotranspiration Index version 2.5 (July 2017).  El Consejo Superior de Investigaciones Científicas.  Accessed 2019-12.
  

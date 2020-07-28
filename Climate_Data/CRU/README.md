@@ -69,23 +69,12 @@ X[YYYY.MM.DD]	| Date
    - a script to identify average-filled gaps of ≥3 years
    - csv file summarizing these gaps for a subset of ForestGEO sites
 
-
-
-
 ## Data use and attribution
-
-Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. Researchers using the CRU data product should abide by the latest data use guidelines (available via the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/)) and provide appropriate citation:  
-
-*Original Data Set: CRU TS, v. 4.04* (citation current as of July 2020):
+Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  They must cite the original data source (below) and should also cite the ForestGEO Climate Data Portal, as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy).  Researchers using the CRU data product should abide by the latest data use guidelines (available via the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/)).
 
 Climatic Research Unit, University of East Anglia.  2020.  CRU TSv4, Version 4.04, DOI: [10.1038/s41597-020-0453-3](https://doi.org/10.1038/s41597-020-0453-3)
 
 Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset. Sci Data 7, 109 (2020). https://doi-org.smithsonian.idm.oclc.org/10.1038/s41597-020-0453-3
-
-
-*Curated Data Set: Historical Climate Data for ForestGEO Sites*:  
-
-Please refer to the ForestGEO Climate Date Portal's data [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy).
 
 
 ## References

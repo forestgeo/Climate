@@ -31,12 +31,10 @@ Comparison of available local weather station data (Table 2 in Anderson-Teixeira
 ## Data file contents
 Described in `CTFS_ForestGEO_WorldClim_Metadata.pdf`
 
-## Data use and attribution:
-
-Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. The WorldClim data product is described at http://www.worldclim.org/ and in Hijmans, et al. (2005). Publications using these data should cite Anderson-Teixeira, et al. (2015) and Hijmans, et al. (2005):
+## Data use and attribution
+Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  They must cite the original data sources (below) and should also cite the ForestGEO Climate Data Portal, as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy).  The WorldClim data product is described at http://www.worldclim.org/ and in Hijmans, et al. (2005).
 
 Anderson-Teixeira KJ, Davies SJ, Bennett AC, et al. (2015) CTFS-ForestGEO: a worldwide network monitoring forests in an era of global change. *Global Change Biology*, 21(2), 528–549.  https://doi.org/10.1111/gcb.12712
 
 Hijmans RJ, Cameron SE, Parra JL, Jones PG, and Jarvis A. (2005) Very high resolution interpolated climate surfaces for global land areas. *International Journal of Climatology*, 25(15), 1965–1978.  https://doi.org/10.1002/joc.1276
 
-Please also refer to the ForestGEO Climate Date Portal's [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy) re: citation of the curated data set.

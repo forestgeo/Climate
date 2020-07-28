@@ -32,11 +32,10 @@ Comparison of TRMM data to local weather station data for ForestGEO sites (Table
 ## Data file contents:
 Described in [`CTFS_ForestGEO_TRMM_Metadata.pdf`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/TRMM/CTFS_ForestGEO_TRMM_Metadata.pdf)
 
-## Data use:
+## Data use and attribution:
+Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  They must cite the original data source (below) and should also cite the ForestGEO Climate Data Portal, as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy).  Information on the TRMM data product is summarized in (Liu et al., 2012) and at http://trmm.gsfc.nasa.gov.
 
-Researchers who wish to use this data product are responsible to understand and evaluate its appropriateness for their research purposes. Information on the TRMM data product is summarized in (Liu et al., 2012) and at http://trmm.gsfc.nasa.gov.
-
-These data are freely available for scientific research purposes, as a service of the ForestGEO Ecosystems & Climate Initiative. Publications using these data should cite Liu et al. (2012) and cite this ForestGEO data product, as per our [Data Use Policy](https://github.com/forestgeo/Climate#data-use-policy). 
+Liu Z, Ostrenga D, Teng W, Kempler S (2012) Tropical Rainfall Measuring Mission (TRMM) Precipitation Data and Services for Research and Applications. Bulletin of the American Meteorological Society, 93, 1317–1325. http://journals.ametsoc.org/doi/abs/10.1175/BAMS-D-11-00152.1
 
 
 ## References:

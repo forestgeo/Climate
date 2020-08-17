@@ -1,6 +1,6 @@
 ######################################################
 # Purpose: SPEI data for ForestGEO network
-# Developed by: Bianca Gonzalez
+# Developed by: Bianca Gonzalez (data inputs from V.Hermann)
 # R version 3.6.2 - First created August 2020
 ######################################################
 

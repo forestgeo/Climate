@@ -2,7 +2,7 @@
 Standardized Precipitation Evapotranspiration Index 
 
 ## Data Set Description
-This data set corresponds to the climate of the Smithsonian Conservation Biology Institute in Front Royal, VA, USA.
+This folder contains data downloaded directly from the [SPEI website](https://spei.csic.es/). 
 
 Version: 2.5 - July 2017
 

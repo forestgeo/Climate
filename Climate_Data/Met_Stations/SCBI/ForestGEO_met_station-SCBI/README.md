@@ -24,16 +24,10 @@ Data collection: These files are used internally to collect data in the field. C
 
 Processing: To [visualize](https://github.com/forestgeo/Climate/tree/master/Climate_Data/Met_Stations/SCBI/ForestGEO_met_station-SCBI/plots) and to find anomalies in the datasets (per year) you can build plots using this [R script](https://github.com/forestgeo/Climate/blob/master/Climate_Data/Met_Stations/scripts/plotting_ForestGEO_weather_data/format_met_tower_data_graphs.R). Please add notes [to this file](https://github.com/forestgeo/Climate/blob/master/Climate_Data/Met_Stations/SCBI/ForestGEO_met_station-SCBI/data_anomalies.md) if any abnormality is found.
 
-## Data use:
+## Data use & attribution:
 
-The data are freely available to the ForestGEO community for research and educational (non-commercial) purposes.
+The data are freely available [for use with proper attribution](https://github.com/forestgeo/Climate/blob/master/license.txt). Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  
 
-Research using the data should acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program.
+Papers using these data should cite the ForestGEO Climate Data Portal (as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy)), and specifically acknowledge Kristina Anderson-Teixeira, Bill McShea, and Erika Gonzalez-Akre as authors of these data. (Suggested text: “SCBI weather station data collected by Kristina Anderson-Teixeira, Bill McShea, and Erika Gonzalez-Akre were obtained from the ForestGEO Data Portal [cite [![DOI](https://zenodo.org/badge/83330500.svg)](https://zenodo.org/badge/latestdoi/83330500)."]).  
 
-## Data contacts:
-
-Kristina Anderson-Teixeira
-
-Erika Gonzalez-Akre
-
-Matteo Detto
+Publications should further acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program.

@@ -24,12 +24,9 @@ Metadata: `METADATA.pdf`
 
 ## Data use & attribution:
 
-The data are freely available to the ForestGEO community for research and educational (non-commercial) purposes.  Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  
+The data are freely available [for use with proper attribution](https://github.com/forestgeo/Climate/blob/master/license.txt). Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  
 
-Papers using the data should acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program. Researchers should further cite the ForestGEO Climate Data Portal (as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy)) and contact site PIs (Sarayudh Bunyavejchewin (sarayudh_b@yahoo.com) & Stuart Davies (daviess@si.edu) for names of researchers who should be credited for these data.
+Papers using these data should cite the ForestGEO Climate Data Portal (as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy)), and specifically acknowledge Sarayudh Bunyavejchewin and Stuart Davies as authors of these data. (Suggested text: “KC weather station data collected by Sarayudh Bunyavejchewin and Stuart Davies were obtained from the ForestGEO Data Portal [cite [![DOI](https://zenodo.org/badge/83330500.svg)](https://zenodo.org/badge/latestdoi/83330500)."]).  
 
-## Data contacts:
+Publications should further acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program.
 
-Matteo Detto (mdetto@princeton.edu)
-
-Pitoon Kongnoo

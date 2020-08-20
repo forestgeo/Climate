@@ -1,6 +1,6 @@
 ######################################################
 # Purpose: SPEI data for ForestGEO network
-# Developed by: Bianca Gonzalez (data inputs from V.Hermann)
+# Developed by: Bianca Gonzalez (data inputs from V.Hermann & B.G)
 # R version 3.6.2 - First created August 2020
 ######################################################
 
@@ -67,8 +67,7 @@ for(clim_v in climate_variables) {
   print(clim_v)
   x <- get(clim_v)
   
-  ### subset for the sites we care about
-  
+  ### subset for the sites we care about 
   x <- x[x$sites.sitename %in% sites.sitenames, ]
   
   ### reshape to long format
@@ -98,7 +97,7 @@ clim_gaps <- clim_gaps[!(clim_gaps$start_sites.sitename %in% "Barro_Colorado_Isl
 # keep only complete rows (this will remove BCI dat for years where we don't have pre data)
 all_Clim <- all_Clim[complete.cases(all_Clim), ]
 
-### Calculate the Standardized Precipitation-Evapotranspiration Index (SPEI) ----
+###### Prep Data to Calculate (SPEI) for multiple sites ---------------------------------------------
 clim_prep <- all_Clim %>% 
   select(sites.sitename, Date, pre, pet)
 
@@ -113,51 +112,63 @@ clim_prep <- clim_prep %>%
 wide_clim_all <- tidyr::spread(clim_prep, sites.sitename, bal)
 
 # drop BCI so can calculate SPEI for all sites (BCI has NA values and SPEI doesn't accept)
-wide_clim<- wide_clim_all %>% select(-Barro_Colorado_Island, -Date)
+wide_clim<- wide_clim_all %>% select(-Barro_Colorado_Island,-Date)
 
-# Convert to a ts (time series) object --- time series wont have date
+# Convert to a ts (time series) object --- time series iput for SPEI obj
 ts_sites<- ts(wide_clim, start=c(1901,01), end=c(2019,12), frequency = 12)
 
-### convert SPEI for all sites
-spei_sites<- spei(ts_sites, 6) # going to take into account 
+####### Calculating SPEI at all time-scales (1-48 months) ---------------------------------------------
+month_ranges<- 1:48
+for(month in month_ranges){
+  x <- spei(ts_sites, month)
+  x_df <- data.frame(.preformat.ts(x$fitted), stringsAsFactors = FALSE)
+  x_df$Date <- wide_clim_all$Date
+  
+  # then reshape into long format // date // site // value // 
+  x_long <- gather(x_df,
+                   sites.sitename, !!paste0("value_month_",month, collapse = '*'), Harvard_Forest:New_Mexico, factor_key = T)
+  
+  if(month == month_ranges[1]) all_SPEI <- x_long
+  else all_SPEI <- merge(all_SPEI, x_long, by = c("sites.sitename","Date"), all =T)
 
-spei_df<- data.frame(.preformat.ts(spei_sites$fitted), stringsAsFactors = FALSE)
+}
+write.csv(all_SPEI, paste0(getwd(), "/spei_all_months.csv"), row.names = F)
 
-# original date forma
-spei_df$Date<- wide_clim_all$Date
+############ SPEI for BCI for (1-48 months)  -------
 
-# no need for this
-row.names(spei_df)<- NULL
+## filter by single site and filter nas
+clim_prep_bci_date <- wide_clim_all %>% select("Barro_Colorado_Island", "Date") %>% filter(!is.na(Barro_Colorado_Island))
 
-# Extract information from spei object: summary, call function, fitted values, and coefficients
-plot(spei_sites)
-summary(spei_sites)
-names(spei_sites)
-spei_sites$call
-spei_sites$fitted 
-spei_sites$coefficients
-
-write.csv(spei_df, paste0(getwd(), "/spei_sites.csv"), row.names = F)
-
-############ SPEI for BCI  
-
-## filter by single site and apply to single site
-clim_prep_bci_date<- clim_prep %>% filter(sites.sitename=="Barro_Colorado_Island") 
-
-## convert to wide
-clim_prep_bci_date <- tidyr::spread(clim_prep_bci_date, sites.sitename, bal)
-
-## look at start and end dates (Start is 1929-01-16 and End is 2019-11-16
+## look at start and end dates (Start is 1929-01-16 and End is 2019-11-16 //convert to TS obj
 clim_prep_bci <- clim_prep_bci_date %>% select(-Date)
-
-# Convert to a ts (time series) object --- time series wont have date
 ts_BCI<- ts(clim_prep_bci, start=c(1929,1), end=c(2019,11), frequency = 12)
 
-spei_BCI<-spei(ts_BCI,6)
-plot(spei_BCI)
+month_ranges<- 1:48
+for(month in month_ranges){
+  x <- spei(ts_BCI, month)
+  x_df <- data.frame(.preformat.ts(x$fitted), stringsAsFactors = FALSE)
+  
+  # then reshape into long format // date // site // value // 
+  x_long <- reshape(x_df,varying=colnames(x_df),
+                    v.names = paste0("value_month_",month),direction = "long", ids=rownames(x_df))
+  x_long$sites.sitename<-"Barro_Colorado_Island"
+  x_long$Date<- paste0(x_long$id,"-",x_long$time,"-", "01")
+  x_long$Date<- lubridate::ymd(x_long$Date)
+  
+  # drop unnecessary cols
+  x_long$time<-NULL
+  x_long$id<-NULL
+  
+  if(month == month_ranges[1]) 
+    BCI_SPEI <- x_long
+  else 
+    BCI_SPEI <- merge(BCI_SPEI, x_long, by = c("sites.sitename","Date"), all =T)
+}
 
-spei_BCI_df<- data.frame(spei_BCI$fitted)
+## Now write BCI_SPEI and sites_SPEI as CSV dataframes and put into one dataframe in excel
+## delete NM dataframe and add to different repo 
 
+write.csv(BCI_SPEI, paste0(getwd(), "/spei_bci.csv"), row.names = F)
 
 
 

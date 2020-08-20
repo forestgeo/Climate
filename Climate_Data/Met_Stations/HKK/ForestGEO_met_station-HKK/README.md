@@ -22,11 +22,8 @@ Metadata: `METADATA.pdf`
 
 ## Data use & attribution:
 
-The data are freely available to the ForestGEO community for research and educational (non-commercial) purposes.  Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  
+The data are freely available [for use with proper attribution](https://github.com/forestgeo/Climate/blob/master/license.txt). Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  
 
-Papers using the data should acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program. Researchers should further cite the ForestGEO Climate Data Portal (as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy)) and contact site PIs (Sarayudh Bunyavejchewin (sarayudh_b@yahoo.com), Nantachai Pongpattananurak (nanku49@hotmail.com) & Somboon Kiratiprayoon (sxk49@yahoo.com) for names of researchers who should be credited for these data.
+Papers using these data should cite the ForestGEO Climate Data Portal (as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy)), and specifically acknowledge Sarayudh Bunyavejchewin, Nantachai Pongpattananurak, and Somboon Kiratiprayoon as authors of these data. (Suggested text: “HKK weather station data collected by Sarayudh Bunyavejchewin, Nantachai Pongpattananurak, and Somboon Kiratiprayoon were obtained from the ForestGEO Data Portal [cite [![DOI](https://zenodo.org/badge/83330500.svg)](https://zenodo.org/badge/latestdoi/83330500)."]).  
 
-
-## Contact:
-
-Matteo Detto (mdetto@princeton.edu)
+Publications should further acknowledge the ForestGEO meteorological monitoring program and funding from the Smithsonian Institution's ForestGEO program. 

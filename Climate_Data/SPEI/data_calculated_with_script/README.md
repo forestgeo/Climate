@@ -2,8 +2,8 @@
 Standardized Precipitation Evapotranspiration Index 
 
 ## Folder Contents
-  - [`spei_all_months.csv`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/SPEI/ForestGEOSites/spei_all_months.csv) contains SPEI values calculated for 69 ForestGEO sites.
-  - [`spei_forestGEO.R`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/SPEI/data_calculated_with_script/spei_forestGEO.R) is the script that was used to calculate SPEI for all **{I only see eight}** ForestGEO sites.
+  - [`spei_all_months.csv`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/SPEI/data_calculated_with_script/spei_all_months.csv) contains SPEI values calculated for 69 ForestGEO sites.
+  - [`spei_forestGEO.R`](https://github.com/forestgeo/Climate/blob/master/Climate_Data/SPEI/data_calculated_with_script/spei_forestGEO.R) is the script that was used to calculate SPEI for ForestGEO sites.
   
 ## About the Data
   - Timescales between 1 and 48 months. Each column is a time series of monthly SPEI values starting on January 1901 (exception: BCI's data begins in 1929).  

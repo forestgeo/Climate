@@ -29,15 +29,6 @@ climate_variables <- c( "pre", "wet",
                         # "dtr", "cld") # "frs", "vap"
 )
 
-sites.sitenames <- c(BCI = "Barro_Colorado_Island", 
-                     CedarBreaks = "Utah_Forest_Dynamics_Plot",
-                     HarvardForest = "Harvard_Forest",
-                     LillyDickey = "Lilly_Dickey_Woods",
-                     SCBI = "Smithsonian_Conservation_Biology_Institute",
-                     ScottyCreek = "Scotty_Creek",
-                     Zofin = "Zofin",
-                     HKK = "Huai_Kha_Khaeng",
-                     NewMexico = "New_Mexico")
 
 clim_var_group <- list(c("pre", "wet"),
                        c("tmp", "tmn", "tmx", "pet")#,
@@ -67,8 +58,8 @@ for(clim_v in climate_variables) {
   print(clim_v)
   x <- get(clim_v)
   
-  ### subset for the sites we care about 
-  x <- x[x$sites.sitename %in% sites.sitenames, ]
+  ### all forestgeo sites
+  x <- x[x$sites.sitename, ]
   
   ### reshape to long format
   x_long <- reshape(x, 
@@ -119,6 +110,7 @@ ts_sites<- ts(wide_clim, start=c(1901,01), end=c(2019,12), frequency = 12)
 
 ####### Calculating SPEI at all time-scales (1-48 months) ---------------------------------------------
 month_ranges<- 1:48
+
 for(month in month_ranges){
   x <- spei(ts_sites, month)
   x_df <- data.frame(.preformat.ts(x$fitted), stringsAsFactors = FALSE)
@@ -126,10 +118,13 @@ for(month in month_ranges){
   
   # then reshape into long format // date // site // value // 
   x_long <- gather(x_df,
-                   sites.sitename, !!paste0("value_month_",month, collapse = '*'), Harvard_Forest:New_Mexico, factor_key = T)
+                   sites.sitename, !!paste0("value_month_",month, collapse = '*'), 
+                   Amacayacu:New_Mexico, factor_key = T)
   
-  if(month == month_ranges[1]) all_SPEI <- x_long
-  else all_SPEI <- merge(all_SPEI, x_long, by = c("sites.sitename","Date"), all =T)
+  if(month == month_ranges[1]) 
+    all_SPEI <- x_long
+  else 
+    all_SPEI <- merge(all_SPEI, x_long, by = c("sites.sitename","Date"), all =T)
 
 }
 write.csv(all_SPEI, paste0(getwd(), "/spei_all_months.csv"), row.names = F)

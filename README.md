@@ -16,11 +16,14 @@ This public repository is a portal for climate data and information for [ForestG
 ## Highlighted products
 
 - [**Local weather station data**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/Met_Stations)
-<img src="images/SCBI_weather_tower.jpg" width=27% height=27%>
+
+    ![SCBI weather tower](images/SCBI_weather_tower.png)
 
 - [**Monthly climate records starting 1901 from CRU** (plus scripts and plots)](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU)
 
-![Example plot of monthly CRU data: minimum temperatures at Bukit Timah, Singapore](images/Bukit_Timah_TMP_CRU_plot__73.png)
+    ![Example plot of monthly CRU data: minimum temperatures at Bukit Timah, Singapore](images/Bukit_Timah_TMP_CRU_plot__73.png)
+    
+- [**SPEI drought index starting 1901**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/SPEI)
 
 ## Contributing to this repository
 Updates regarding available climate data are of great value to the research community and will facilitate collaborations. As such, we strongly encourage researchers in the ForestGEO community to contribute relevant information and data to this repository:

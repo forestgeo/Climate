@@ -15,8 +15,7 @@ This public repository is a portal for climate data and information for [ForestG
 
 ## Highlighted products
 
-- [**Local weather station data**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/Met_Stations)
-<img src="https://github.com/forestgeo/Climate/blob/master/Climate_Data/Met_Stations/SCBI/ForestGEO_met_station-SCBI/SCBI_weather_tower.jpg" width=27% height=27%>
+- [**Local weather station data**](images/SCBI_weather_tower.jpg" width=27% height=27%>
 
 - [**Monthly climate records starting 1901 from CRU** (plus scripts and plots)](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU)
 

@@ -1,3 +1,6 @@
+
+## Developed by: Bianca Gonzalez, September 2020
+
 # ------------------------------------------------------------------------------
 #Reading gridded data and extracting data points
 # load relevant packages

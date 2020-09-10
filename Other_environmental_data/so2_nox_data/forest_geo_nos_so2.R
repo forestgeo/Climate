@@ -35,7 +35,7 @@ ncfilenames <- list.files(path = paste0('C:/Users/GonzalezB2/Desktop/Smithsonian
 ncfilenames <- list.files(path = paste0('C:/Users/GonzalezB2/Desktop/Smithsonian/CEDS/intermediate-output/gridded-emissions/NOx'), pattern = "\\.nc")
 
 ### Change this too to reflect the dir we're interested in
-setwd("C:/Users/GonzalezB2/Desktop/Smithsonian/CEDS/intermediate-output/gridded-emissions/NOx")
+setwd("C:/Users/GonzalezB2/Desktop/Smithsonian/CEDS/intermediate-output/gridded-emissions/SO2")
 
 ### R hack-- function converting factor to to numeric
 funny <- function(poopy){
@@ -81,7 +81,8 @@ for(file in ncfilenames) {
 }
 
 ### Change to Tidy format // gather values //filter extra NAs from merge process
-DEP_clean <-  pivot_longer(all_DEP,cols= starts_with("1"),
+
+DEP_clean <-  pivot_longer(all_DEP,cols= starts_with(c("1", "2")), # 1700s-2000s
                         names_to= "year",values_to = "value") %>%
                         filter(!is.na(value))
 
@@ -91,4 +92,4 @@ DEP_clean<- DEP_clean %>% group_by(year, sites.sitename, emission_units, emissio
                          summarise(value = sum(value))# sum across all industries
 
 ### Okay great! now let's CSV this puppy
-#write.csv(DEP_clean, "C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/Other_environmental_data/nox_emissions_wout_2000s.csv", row.names=FALSE)
+write.csv(DEP_clean, "C:/Users/GonzalezB2/Desktop/Smithsonian/Climate/Other_environmental_data/so2_emissions_wout_2000s.csv", row.names=FALSE)

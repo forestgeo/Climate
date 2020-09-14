@@ -1,0 +1,10 @@
+"Description: ","Dates where the change in TX is > 20 degrees."
+"Station: ","SCBI_mettower_data_sensor2"
+"Latitude: ","30"
+"Longitude: ","70"
+"ClimPACT2_version: ","1.2.8"
+"Date_of_calculation: ","2020-09-14"
+Date,TX
+2011-3-6,23.3
+2011-3-7,20.6
+2018-1-13,20.2

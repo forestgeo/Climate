@@ -1,0 +1,7 @@
+"Description: ","Dates where precipitation > 200 mm or abs(temperature) > 50 degrees."
+"Station: ","SCBI_mettower_data_sensor2"
+"Latitude: ","30"
+"Longitude: ","70"
+"ClimPACT2_version: ","1.2.8"
+"Date_of_calculation: ","2020-09-14"
+Date,Prec,TX,TN

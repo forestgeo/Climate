@@ -1,0 +1,16 @@
+"Description: ",""
+"Station: ","SCBI_mettower_data_sensor1"
+"Latitude: ","30"
+"Longitude: ","78"
+"ClimPACT2_version: ","1.2.8"
+"Date_of_calculation: ","2020-09-14"
+Year,Prec,TX,TN
+2011,365,6,6
+2012,366,0,0
+2013,365,0,0
+2014,365,0,0
+2015,365,4,4
+2016,366,6,6
+2017,365,2,9
+2018,365,0,0
+2019,365,81,81

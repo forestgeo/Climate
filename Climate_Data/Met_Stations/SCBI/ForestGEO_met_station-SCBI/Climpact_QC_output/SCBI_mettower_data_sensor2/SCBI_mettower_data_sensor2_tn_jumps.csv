@@ -1,0 +1,10 @@
+"Description: ","Dates where the change in TN is > 20 degrees."
+"Station: ","SCBI_mettower_data_sensor2"
+"Latitude: ","30"
+"Longitude: ","70"
+"ClimPACT2_version: ","1.2.8"
+"Date_of_calculation: ","2020-09-14"
+Date,TN
+2011-1-5,17.07245
+2011-5-3,14.60785
+2018-1-12,12.53772

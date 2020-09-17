@@ -14,7 +14,7 @@
     -   original source: Community Emissions Data System (CEDS)
 
 ## Script 
-This [script](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/forest_geo_nos_so2.R) isolates historic levels of SO<sub>2</sub> and NO<sub>x</sub> at 69 of ForestGEO's research location from CEDS's global data set.  Data users can use this script to to create the most up-to-date version of the data set as new data become available, and as additional plots join the ForestGEO network.   
+The [`forest_geo_nos_so2.R` script](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/forest_geo_nos_so2.R) isolates historic levels of SO<sub>2</sub> and NO<sub>x</sub> at 69 of ForestGEO's research location from CEDS's global data set.  Data users can use this script to to create the most up-to-date version of the data set as new data become available, and as additional plots join the ForestGEO network.   
 
 Developed by: Bianca Gonzalez
 

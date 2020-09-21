@@ -1,4 +1,4 @@
-# SO<sub>2</sub> & NO<sub>x</sub>
+# SO<sub>2</sub> & NO<sub>x</sub> Emissions Data
 
 ## Data
 - <b>SO<sub>2</sub> Emissions:</b>[`so2_emissions.csv`](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/so2_emissions.csv)

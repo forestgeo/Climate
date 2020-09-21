@@ -14,11 +14,23 @@
     -   original source: Community Emissions Data System (CEDS)
 
 ## Script 
-The [`forest_geo_nos_so2.R` script](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/forest_geo_nos_so2.R) isolates historic levels of SO<sub>2</sub> and NO<sub>x</sub> at 69 of ForestGEO's research location from CEDS's global data set.  Data users can use this script to to create the most up-to-date version of the data set as new data become available, and as additional plots join the ForestGEO network.   
+The following steps will allow data users to create the most up-to-date version of the data, as new data become available and as additional plots join the ForestGEO network: 
 
-Developed by: Bianca Gonzalez
+1.  Download the following files from Zenodo, unzip, select relevant files) and store them.  
+    [`CEDS_NOx_emissions_by_country_CEDS_sector_v_2019_12_23.csv`]
+    [`CEDS_SO2_emissions_by_country_CEDS_sector_v_2019_12_23.csv`]
 
-R version 3.6.1 - First created August 2020
+2.  Edit and debug Module G.G1 script to generate NC files from the above files. Store these files in the intermediate output of CEDS directory.
+    Edits and bugs found in G1 scipt:
+        a.  Change relevent atmospheric metric: line 39 in module G script to "if ( is.na( em ) ) em <- "NOx" # change to nox or s02"
+        b.  module G bug identified (CEDS team is now fixing)
+        c.  add ", meta = FALSE ) to all readData() functions"
+        
+3.  Run the [`G1.1.grid_bulk_emissions.R`](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/G1.1.grid_bulk_emissions.R) script.
+
+4.  Run the [`forest_geo_nos_so2.R` script](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/forest_geo_nos_so2.R) to isolate historic levels of SO<sub>2</sub> and NO<sub>x</sub> at 69 of ForestGEO's research location from CEDS's global data set.  
+
+[`forest_geo_nos_so2.R` script](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/forest_geo_nos_so2.R): Developed by: Bianca Gonzalez | R version 3.6.1 - First created August 2020
 
 <i>Special thanks to [Steve Smith](https://github.com/ssmithClimate) for guidance in editing and using the G1.1.grid_bulk_emissions.R script</i>
 

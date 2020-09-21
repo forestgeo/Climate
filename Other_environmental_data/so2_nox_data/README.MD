@@ -1,6 +1,8 @@
 # SO<sub>2</sub> & NO<sub>x</sub> Emissions Data
 
 ## Data
+The Community Emissions Data System (CEDS) produces consistent estimates of global air emissions species over the industrial era (1750 - present). The system is written in R and uses open-source data (with the exception of the IEA energy statistics which must be purchased from IEA). CEDS is publicly available through an [Open Source License](https://github.com/JGCRI/CEDS/#license-section).
+
 - <b>SO<sub>2</sub> Emissions:</b>[`so2_emissions.csv`](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/so2_emissions.csv)
     - date range: 1750-2014
     -   increment: annual
@@ -44,4 +46,3 @@ Researchers who wish to use these data are responsible for understanding and eva
 
 <b>CEDS Data Set:</b>  
 Hoesly, Rachel M., O'Rourke, Patrick R, Smith, Steven J., Feng, Leyang, Klimont, Zbigniew, Janssens-Maenhout, Greet, … Muwan, Presley. (2020). CEDS v_2019_12_23 Emission Data (Version v_2019_12_23) [Data set]. [Zenodo](http://doi.org/10.5281/zenodo.3606753).
-

@@ -16,7 +16,7 @@
 ## Script 
 The following steps will allow data users to create the most up-to-date version of the data, as new data become available and as additional plots join the ForestGEO network: 
 
-1.  Download the following files from Zenodo, unzip, select relevant files) and store them.  
+1.  Download the following files from [Zenodo](https://zenodo.org/record/3606753#.X2kAxWhKjIU), unzip, select relevant files) and store them.  
     [`CEDS_NOx_emissions_by_country_CEDS_sector_v_2019_12_23.csv`]
     [`CEDS_SO2_emissions_by_country_CEDS_sector_v_2019_12_23.csv`]
 
@@ -31,6 +31,10 @@ The following steps will allow data users to create the most up-to-date version 
 4.  Run the [`forest_geo_nos_so2.R` script](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/forest_geo_nos_so2.R) to isolate historic levels of SO<sub>2</sub> and NO<sub>x</sub> at 69 of ForestGEO's research location from CEDS's global data set.  
 
 [`forest_geo_nos_so2.R` script](https://github.com/forestgeo/Climate/blob/master/Other_environmental_data/so2_nox_data/forest_geo_nos_so2.R): Developed by: Bianca Gonzalez | R version 3.6.1 - First created August 2020
+
+Helpful Resources:
+    - wiki instructions on running gridding https://github.com/JGCRI/CEDS/wiki/User_Guide#use-instructions
+    - download the gridding proxies here https://zenodo.org/record/3606753#.X1kTUmdTk6U
 
 <i>Special thanks to [Steve Smith](https://github.com/ssmithClimate) for guidance in editing and using the G1.1.grid_bulk_emissions.R script</i>
 

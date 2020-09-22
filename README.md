@@ -1,6 +1,6 @@
 
 # ForestGEO Climate Data Portal  
-![ForestGEO_logo.png](images/ForestGEO_logo.png)  
+![FG_logo_crop.png](images/FG_logo_crop.png)
 [![DOI](https://zenodo.org/badge/83330500.svg)](https://zenodo.org/badge/latestdoi/83330500)
 
 ## About this repository

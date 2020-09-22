@@ -28,6 +28,6 @@ Harris, I., Osborn, T.J., Jones, P. et al. Version 4 of the CRU TS monthly high-
 
 
 <i><b>Scripts for Data Visualization</i></b>:  
-[forthcoming citation for ForesetGEO Data Portal]
+DOI for ForestGEO Climate Data Portal: [![DOI](https://zenodo.org/badge/83330500.svg)](https://zenodo.org/badge/latestdoi/83330500).
 
 

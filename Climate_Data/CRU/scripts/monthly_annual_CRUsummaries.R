@@ -1,0 +1,87 @@
+######################################################
+# Purpose: Generate monthly and annual summaries for CRU data from 1950 to present for all sites
+# Developed by: Bianca Gonzalez
+# R version 3.6.2 - First created Septemeber 2020
+######################################################
+
+# clear environement ####
+rm(list = ls())
+
+# Objectives: Jan and July temp, annual precip (for MEE ) &  and mean annual temperature 
+
+# ------------------------------------------------------------------------------
+
+# load relevant packages
+library(tidyverse)
+
+### Load CRU data (TMP, TMN, TMX, CLD, TMP, TMN, TMX, CLD, PET) ###
+#### Climate data -----
+
+path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/CRU/CRU_v4_04/"
+climate_variables <- c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")
+
+for(clim_v in climate_variables) {
+  assign(clim_v, # assign just gives it a name of the DATA in read.csv 
+         read.csv(paste0(path_to_climate_data, clim_v,  ".1901.2019-ForestGEO_sites-6-03.csv"))
+  )
+  
+}
+
+# prepare data ####
+
+## climate data ####
+for(clim_v in climate_variables) {
+  print(clim_v)
+  x <- get(clim_v)
+  
+  ### reshape to long format
+  x_long <- reshape(x, 
+                    times = names(x)[-1], timevar = "Date",
+                    varying = list(names(x)[-1]), direction = "long", v.names = clim_v)
+  
+  ### format date
+  x_long$Date <- gsub("X", "", x_long$Date)
+  x_long$Date <- as.Date(x_long$Date , format = "%Y.%m.%d")
+  
+  
+  ### combine all variables in one
+  if(clim_v == climate_variables [1]) all_Clim <- x_long[, c(1:3)]
+  else all_Clim <- merge(all_Clim, x_long[, c(1:3)], by = c("sites.sitename", "Date"), all = T)
+  
+}
+
+###    ---  ANNUAL summary tables (mean, mode, max, min, 5th and 95th percentiles) for CRU vars --- ####
+
+all_Clim_1950 <- all_Clim[all_Clim$Date>="1950-01-16",] # Krista only wants stats on >= 1950
+all_Clim_1950$Year<- substr(all_Clim_1950$Date, 1, 4) ## group by year and site then calculate the summary for TMP, TMN, TMX, CLD
+all_Clim_1950$Year_month <- substr(all_Clim_1950$Date, 1,7) ## to later group by month and year 
+# compute annual averages/ mean / max / mode/ sd / median / min 
+
+annual_stats<- all_Clim_1950 %>%
+  group_by(sites.sitename, Year) %>% 
+  summarise(across(where(is.numeric), list(min = min, max = max, 
+                                           median = median, mean = mean,
+                                           sd = sd, sum = sum)))
+
+## add sum and mean to beginning b/c its' what we are primarily interested in 
+annual_stats<- annual_stats %>% dplyr::select(sites.sitename, Year,ends_with("mean"),
+                                              ends_with("sum"),everything())
+
+###    ---  MONTHLY summary tables (mean, mode, max, min, 5th and 95th percentiles) for CRU vars --- ####
+
+monthly_stats<- all_Clim_1950 %>%
+  group_by(sites.sitename, Year_month) %>% 
+  summarise(across(where(is.numeric), list(min = min, max = max,
+                                           median = median, mean = mean,
+                                           sd = sd, sum = sum)))
+
+## add sum and mean to beginning b/c its' what we are primarily interested in 
+monthly_stats<- monthly_stats %>% dplyr::select(sites.sitename, Year_month,ends_with("mean"),
+                                              ends_with("sum"),everything())
+
+### Okay MVP is ready --  ## still need 5th and 95th percentiles, too.
+#Find the quartiles (25th, 50th, and 75th percentiles) of the vector
+#quantile(data, probs = c(.25, .5, .75))
+
+write.csv(monthly_stats, paste0(getwd(),"/Climate_Data/CRU/scripts/monthly_stats.csv"), row.names = F)
+write.csv(annual_stats, paste0(getwd(),"/Climate_Data/CRU/scripts/annual_stats.csv"), row.names = F)

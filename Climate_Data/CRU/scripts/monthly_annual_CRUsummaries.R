@@ -18,7 +18,7 @@ library(tidyverse)
 #### Climate data -----
 
 path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/CRU/CRU_v4_04/"
-climate_variables <- c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")
+climate_variables <- c("cld", "dtr", "frs", "pet_sum", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")
 
 for(clim_v in climate_variables) {
   assign(clim_v, # assign just gives it a name of the DATA in read.csv 
@@ -62,26 +62,30 @@ annual_stats<- all_Clim_1950 %>%
   summarise(across(where(is.numeric), list(min = min, max = max, 
                                            median = median, mean = mean,
                                            sd = sd, sum = sum)))
+# interested in the following variables: 
+# Average: TMP, TMN, TMX, CLD (everything with min, max, median, & sd) Sum: PRE, WET, FRS, PET_SUM 
 
-## add sum and mean to beginning b/c its' what we are primarily interested in 
-annual_stats<- annual_stats %>% dplyr::select(sites.sitename, Year,ends_with("mean"),
-                                              ends_with("sum"),everything())
-
+v_int <- annual_stats %>% select(sites.sitename, Year, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
+annual_int <- annual_stats %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
+annual_stats_clean<- left_join(v_int, annual_int, by = c("sites.sitename","Year"))
+#annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
 ###    ---  MONTHLY summary tables (mean, mode, max, min, 5th and 95th percentiles) for CRU vars --- ####
 
 monthly_stats<- all_Clim_1950 %>%
   group_by(sites.sitename, Year_month) %>% 
   summarise(across(where(is.numeric), list(min = min, max = max,
-                                           median = median, mean = mean,
-                                           sd = sd, sum = sum)))
+                                           mean = mean, sum = sum)))
 
-## add sum and mean to beginning b/c its' what we are primarily interested in 
-monthly_stats<- monthly_stats %>% dplyr::select(sites.sitename, Year_month,ends_with("mean"),
-                                              ends_with("sum"),everything())
+## clean up & select only vars of interest
+m_int <- monthly_stats %>% select(sites.sitename, Year_month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
+monthly_int <- monthly_stats %>% select(-colnames(monthly_stats[grepl("mean|sum", colnames(monthly_stats))]))
+monthly_stats_clean<- left_join(monthly_int, m_int, by = c("sites.sitename","Year_month"))
 
 ### Okay MVP is ready --  ## still need 5th and 95th percentiles, too.
 #Find the quartiles (25th, 50th, and 75th percentiles) of the vector
-#quantile(data, probs = c(.25, .5, .75))
 
-write.csv(monthly_stats, paste0(getwd(),"/Climate_Data/CRU/scripts/monthly_stats.csv"), row.names = F)
-write.csv(annual_stats, paste0(getwd(),"/Climate_Data/CRU/scripts/annual_stats.csv"), row.names = F)
+
+#quantile(all_Clim_1950, probs = c(.95, .05))
+
+write.csv(monthly_stats_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/monthly_stats.csv"), row.names = F)
+write.csv(annual_stats_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/annual_stats.csv"), row.names = F)

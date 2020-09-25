@@ -117,5 +117,5 @@ monthly_stats_clean<- left_join(monthly_int, m_int, by = c("sites.sitename","Yea
 
 #quantile(all_Clim_1950, probs = c(.95, .05))
 
-write.csv(range_annual_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/monthly_stats.csv"), row.names = F)
-write.csv(range_monthly_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/annual_stats.csv"), row.names = F)
+write.csv(range_annual_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/annual_stats.csv"), row.names = F)
+write.csv(range_monthly_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/monthly_stats.csv"), row.names = F)

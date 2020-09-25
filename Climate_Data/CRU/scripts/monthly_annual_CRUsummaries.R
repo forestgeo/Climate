@@ -49,12 +49,40 @@ for(clim_v in climate_variables) {
   else all_Clim <- merge(all_Clim, x_long[, c(1:3)], by = c("sites.sitename", "Date"), all = T)
   
 }
-
-###    ---  ANNUAL summary tables (mean, mode, max, min, 5th and 95th percentiles) for CRU vars --- ####
-
 all_Clim_1950 <- all_Clim[all_Clim$Date>="1950-01-16",] # Krista only wants stats on >= 1950
 all_Clim_1950$Year<- substr(all_Clim_1950$Date, 1, 4) ## group by year and site then calculate the summary for TMP, TMN, TMX, CLD
 all_Clim_1950$Year_month <- substr(all_Clim_1950$Date, 1,7) ## to later group by month and year 
+all_Clim_1950$Month <- substr(all_Clim_1950$Date, 6,7) ## to later group by month and year 
+
+##### WELP Let's do another pass at annual values ######
+range_stats_a<- all_Clim_1950 %>%
+  group_by(sites.sitename) %>%
+  summarise(across(where(is.numeric), list(min = min, max = max, 
+                                           median = median, mean = mean,
+                                           sd = sd, sum = sum)))
+
+range_stats_m<- all_Clim_1950 %>%
+  group_by(sites.sitename, Month) %>%
+  summarise(across(where(is.numeric), list(min = min, max = max, 
+                                           median = median, mean = mean,
+                                           sd = sd, sum = sum)))
+
+## clean variables 
+
+v_int <- range_stats_a %>% select(sites.sitename, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
+annual_int <- range_stats_a %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
+range_annual_clean<- left_join(v_int, annual_int, by = c("sites.sitename"))
+#annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
+
+v_int <- range_stats_m %>% select(sites.sitename,Month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
+annual_int <- range_stats_m %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
+range_monthly_clean<- left_join(v_int, annual_int, by = c("sites.sitename", "Month"))
+#annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
+
+####
+
+###    ---  ANNUAL summary tables (mean, mode, max, min, 5th and 95th percentiles) for CRU vars --- ####
+
 # compute annual averages/ mean / max / mode/ sd / median / min 
 
 annual_stats<- all_Clim_1950 %>%
@@ -69,6 +97,8 @@ v_int <- annual_stats %>% select(sites.sitename, Year, tmp_mean, tmn.x_mean, tmx
 annual_int <- annual_stats %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
 annual_stats_clean<- left_join(v_int, annual_int, by = c("sites.sitename","Year"))
 #annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
+
+
 ###    ---  MONTHLY summary tables (mean, mode, max, min, 5th and 95th percentiles) for CRU vars --- ####
 
 monthly_stats<- all_Clim_1950 %>%
@@ -87,5 +117,5 @@ monthly_stats_clean<- left_join(monthly_int, m_int, by = c("sites.sitename","Yea
 
 #quantile(all_Clim_1950, probs = c(.95, .05))
 
-write.csv(monthly_stats_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/monthly_stats.csv"), row.names = F)
-write.csv(annual_stats_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/annual_stats.csv"), row.names = F)
+write.csv(range_annual_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/monthly_stats.csv"), row.names = F)
+write.csv(range_monthly_clean, paste0(getwd(),"/Climate_Data/CRU/scripts/annual_stats.csv"), row.names = F)

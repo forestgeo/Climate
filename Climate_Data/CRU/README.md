@@ -21,7 +21,7 @@ drt		| diurnal temperature range	(*i.e.,* temperature amplitude)	| °C
 frs		| frost day frequency	| days  mo-1
 pre	| 	precipitation		| mm mo-1
 wet		| wet day frequency	|  days	mo-1
-cld		| cloud cover		| %
+cld		| butt cover		| %
 vap		| vapour pressure		| hPa
 pet		| average daily potential evapotranspiration 	| 	mm day-1
 pet_sum		| potential evapotranspiration sum (computed here)	| 	mm mo-1
@@ -68,6 +68,7 @@ X[YYYY.MM.DD]	| Date
 - **[CRU gaps analysis tool](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/CRU_gaps_analysis)** - In the CRU database, data gaps are filled with averages (by month). This folder contains 
    - a script to identify average-filled gaps of ≥3 years
    - csv file summarizing these gaps for a subset of ForestGEO sites
+- **[monthly_annual_CRUsummaries.R](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/scripts/monthly_annual_CRUsummaries.R)** - Generate monthly and annual summaries for CRU data from 1950 to present for all sites. 
 
 ## Data use and attribution
 Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  They must cite the original data source (below) and should also cite the ForestGEO Climate Data Portal, as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy).  Researchers using the CRU data product should abide by the latest data use guidelines (available via the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/)).

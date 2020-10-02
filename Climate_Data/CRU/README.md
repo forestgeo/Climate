@@ -70,6 +70,9 @@ X[YYYY.MM.DD]	| Date
    - csv file summarizing these gaps for a subset of ForestGEO sites
 - **[monthly_annual_CRUsummaries.R](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/scripts/monthly_annual_CRUsummaries.R)** - Generate monthly and annual summaries for CRU data from 1950 to present for all sites. 
 
+## Data summries
+These data summaries draw upon the [original CRU data](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_04) to create monthly and annual climatic summaries for 1950-2019. They were produced using [this script](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/scripts/monthly_annual_CRUsummaries.R). 
+
 ## Data use and attribution
 Researchers who wish to use these data are responsible for understanding and evaluating their appropriateness for specific research purposes.  They must cite the original data source (below) and should also cite the ForestGEO Climate Data Portal, as per our [data use policy](https://github.com/forestgeo/Climate/blob/master/README.md#data-use-policy).  Researchers using the CRU data product should abide by the latest data use guidelines (available via the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/)).
 

@@ -67,14 +67,20 @@ range_stats_m<- all_Clim_1950 %>%
                                            median = median, mean = mean,
                                            sd = sd, sum = sum)))
 
+annual_stats<- all_Clim_1950 %>%
+  group_by(sites.sitename, Year) %>% 
+  summarise(across(where(is.numeric), list(min = min, max = max, 
+                                           median = median, mean = mean,
+                                           sd = sd, sum = sum)))
 ## clean variables 
 
-v_int <- range_stats_a %>% select(sites.sitename, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
+v_int <- range_stats_a %>% select(sites.sitename, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, pre_mean, wet_sum, frs_sum,pet_sum_sum)
 annual_int <- range_stats_a %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
 range_annual_clean<- left_join(v_int, annual_int, by = c("sites.sitename"))
+range_annual_clean$pre_mean <- range_annual_clean$pre_mean*12
 #annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
 
-v_int <- range_stats_m %>% select(sites.sitename,Month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
+v_int <- range_stats_m %>% select(sites.sitename,Month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, pre_mean, wet_sum, frs_sum,pet_sum_sum)
 annual_int <- range_stats_m %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
 range_monthly_clean<- left_join(v_int, annual_int, by = c("sites.sitename", "Month"))
 #annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
@@ -85,32 +91,32 @@ range_monthly_clean<- left_join(v_int, annual_int, by = c("sites.sitename", "Mon
 
 # compute annual averages/ mean / max / mode/ sd / median / min 
 
-annual_stats<- all_Clim_1950 %>%
-  group_by(sites.sitename, Year) %>% 
-  summarise(across(where(is.numeric), list(min = min, max = max, 
-                                           median = median, mean = mean,
-                                           sd = sd, sum = sum)))
-# interested in the following variables: 
-# Average: TMP, TMN, TMX, CLD (everything with min, max, median, & sd) Sum: PRE, WET, FRS, PET_SUM 
+#annual_stats<- all_Clim_1950 %>%
+#  group_by(sites.sitename, Year) %>% 
+#  summarise(across(where(is.numeric), list(min = min, max = max, 
+#                                           median = median, mean = mean,
+#                                           sd = sd, sum = sum)))
 
-v_int <- annual_stats %>% select(sites.sitename, Year, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
-annual_int <- annual_stats %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
-annual_stats_clean<- left_join(v_int, annual_int, by = c("sites.sitename","Year"))
+# interested in the following variables: 
+# Average: TMP, TMN, TMX, CLD, PRE (everything with min, max, median, & sd) Sum: PRE, WET, FRS, PET_SUM 
+
+#v_int <- annual_stats %>% select(sites.sitename, Year, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum,pre_mean, wet_sum, frs_sum,pet_sum_sum)
+#annual_int <- annual_stats %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
+#annual_stats_clean<- left_join(v_int, annual_int, by = c("sites.sitename","Year"))
 #annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
 
 
 ###    ---  MONTHLY summary tables (mean, mode, max, min, 5th and 95th percentiles) for CRU vars --- ####
 
-monthly_stats<- all_Clim_1950 %>%
-  group_by(sites.sitename, Year_month) %>% 
-  summarise(across(where(is.numeric), list(min = min, max = max,
-                                           mean = mean, sum = sum)))
+#monthly_stats<- all_Clim_1950 %>%
+#  group_by(sites.sitename, Year_month) %>% 
+#  summarise(across(where(is.numeric), list(min = min, max = max,
+#                                           mean = mean, sum = sum)))
 
 ## clean up & select only vars of interest
-m_int <- monthly_stats %>% select(sites.sitename, Year_month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, wet_sum, frs_sum,pet_sum_sum)
-monthly_int <- monthly_stats %>% select(-colnames(monthly_stats[grepl("mean|sum", colnames(monthly_stats))]))
-monthly_stats_clean<- left_join(monthly_int, m_int, by = c("sites.sitename","Year_month"))
-
+#m_int <- monthly_stats %>% select(sites.sitename, Year_month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum,pre_mean, wet_sum, frs_sum,pet_sum_sum)
+#monthly_int <- monthly_stats %>% select(-colnames(monthly_stats[grepl("mean|sum", colnames(monthly_stats))]))
+#monthly_stats_clean<- left_join(monthly_int, m_int, by = c("sites.sitename","Year_month"))
 ### Okay MVP is ready --  ## still need 5th and 95th percentiles, too.
 #Find the quartiles (25th, 50th, and 75th percentiles) of the vector
 

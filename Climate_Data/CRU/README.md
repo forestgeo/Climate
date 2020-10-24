@@ -8,7 +8,7 @@
 
 **Geographic coverage**: global
 
-**Spatial resolution**: 0.5° by 0.5°
+**Spatial resolution**: 0.5° by 0.5° (~55.66 km at equator, 42.5 km at 40° latitude, 0 km at poles)
 
 **Variables**: 
                

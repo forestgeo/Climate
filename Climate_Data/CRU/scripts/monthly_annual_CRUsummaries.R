@@ -1,7 +1,7 @@
 ######################################################
 # Purpose: Generate monthly and annual summaries for CRU data from 1950 to present for all sites
-# Developed by: Bianca Gonzalez
-# R version 3.6.2 - First created Septemeber 2020
+# Developed by: Bianca Gonzalez & Cameron Dow
+# R version 3.6.2 - First created September 2020
 ######################################################
 
 # clear environement ####
@@ -69,18 +69,25 @@ range_stats_m<- all_Clim_1950 %>%
 
 annual_stats<- all_Clim_1950 %>%
   group_by(sites.sitename, Year) %>% 
-  summarise(across(where(is.numeric), list(min = min, max = max, 
-                                           median = median, mean = mean,
-                                           sd = sd, sum = sum)))
+  summarise(across(where(is.numeric), list(mean = mean, sum = sum)))
+
+annual_df_columns <- annual_stats %>%
+  group_by(sites.sitename) %>%
+  summarise((across(where(is.numeric), list(mean = mean, max = max, min = min, sd = sd, 
+                                            median = median))))
 ## clean variables 
 
-v_int <- range_stats_a %>% select(sites.sitename, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, pre_mean, wet_sum, frs_sum,pet_sum_sum)
-annual_int <- range_stats_a %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
+v_int <- annual_df_columns %>% select(sites.sitename, tmp_mean_mean, tmn.x_mean_mean, tmx_mean_mean, cld_mean_mean, pre_sum_mean, frs_sum_mean, wet_sum_mean)
+annual_int <- annual_df_columns %>% select(-colnames(annual_df_columns[grepl("dtr_sum|tmn.y|pet|mean_mean|sum_mean|tmp_sum|tmp_mean_mean|tmn.x_mean_mean|tmx_mean_mean|cld_mean_mean|pre_sum_mean|frs_sum_mean|wet_sum_mean|tmn.x_sum|tmx_sum|cld_sum|pre_mean|frs_mean|wet_mean", colnames(annual_df_columns))]))
+#annual_sum <- annual_sum_columns[, c(1,19,25,31, 67)]
 range_annual_clean<- left_join(v_int, annual_int, by = c("sites.sitename"))
-range_annual_clean$pre_mean <- range_annual_clean$pre_mean*12
+#range_annual_clean<- left_join(range_annual_clean, annual_sum, by = c("sites.sitename"))
+
+
+#range_annual_clean$pre_mean <- range_annual_clean$pre_mean*12
 #annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))
 
-v_int <- range_stats_m %>% select(sites.sitename,Month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_sum, pre_mean, wet_sum, frs_sum,pet_sum_sum)
+v_int <- range_stats_m %>% select(sites.sitename,Month, tmp_mean, tmn.x_mean, tmx_mean, cld_mean, pre_mean)
 annual_int <- range_stats_m %>% select(-colnames(annual_stats[grepl("mean|sum", colnames(annual_stats))]))
 range_monthly_clean<- left_join(v_int, annual_int, by = c("sites.sitename", "Month"))
 #annual_stats[grepl("mean", colnames(annual_stats))]<- do.call(cbind, lapply(annual_stats[grepl("mean", colnames(annual_stats))], as.numeric))

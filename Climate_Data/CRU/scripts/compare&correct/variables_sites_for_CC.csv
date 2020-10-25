@@ -1,0 +1,5 @@
+Source_alt,ClimV_CRU,ClimV_alt,Site_CRU,Site_alt,cellPosition
+PRISM,tmn,tmin,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE
+PRISM,tmp,tmean,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE
+PRISM,tmx,tmax,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE
+PRISM,pre,ppt,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE

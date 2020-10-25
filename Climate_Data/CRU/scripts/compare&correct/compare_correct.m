@@ -54,8 +54,10 @@ if strcmp(CC.Source_alt, "PRISM")==1 %PRISM high-res comparison
     ALT_year=linspace(PRISM_start,PRISM_end, PRISM_end-PRISM_start+1);
     ALT_CRUyrs=cat(2, NaN*ones(12, PRISM_start-CRU_start), ALT_matrix, NaN*ones(12, CRU_end-PRISM_end));
     ALT_table2=cell2table(num2cell([CRU_year; ALT_CRUyrs]'),'VariableNames',{'Year' 'Jan' 'Feb' 'Mar' 'Apr' 'May' 'Jun' 'Jul' 'Aug' 'Sep' 'Oct' 'Nov' 'Dec'});
-
+    CRU_ALTyrs=CRU_matrix(:, PRISM_start-CRU_start+1:length(CRU_matrix)-(CRU_end-PRISM_end));
 end
+
+
 
 %%% CREATE COMPARISON PLOTS
 figure (n)
@@ -73,11 +75,16 @@ sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))),  'I
 figure (100+n)
 for m=1:12
     subplot (3,4,m)
-    plot (CRU_matrix (m,:), ALT_CRUyrs(m,:),'ok'); hold on;
-    refline(1,0)
-    ylabel (alt_name)
-    xlabel ('CRU')
-    title (strcat('month = ',num2str(m)))
+    %plot (CRU_matrix (m,:), ALT_CRUyrs(m,:),'ok'); hold on;
+    plot (CRU_ALTyrs(m,:), ALT_matrix(m,:),'ok'); hold on;
+    p = polyfit(CRU_ALTyrs(m,:)', ALT_matrix(m,:)',1);
+    regline=refline(p(1), p(2));
+    regline.Color='k';
+    OneOneline=refline(1,0);
+    OneOneline.Color='b';
+    ylabel (alt_name);
+    xlabel ('CRU');
+    title (strcat('month = ',num2str(m)));
 end
 sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))), 'Interpreter', 'none')
 

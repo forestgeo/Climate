@@ -57,39 +57,46 @@ if strcmp(CC.Source_alt, "PRISM")==1 %PRISM high-res comparison
     CRU_ALTyrs=CRU_matrix(:, PRISM_start-CRU_start+1:length(CRU_matrix)-(CRU_end-PRISM_end));
 end
 
+%%% CREATE CORRECTED MONTHLY RECORD IN CRU FORMAT
+CRU_corrected0_matrix=CRU_matrix;
 
+for m=1:12
+    p = polyfit(CRU_ALTyrs(m,:)', ALT_matrix(m,:)',1); %regression between CRU & ALT variable
+    CRU_corrected0_matrix(m,:)=CRU_matrix(m,:)*p(1)+p(2);
+end
 
-%%% CREATE COMPARISON PLOTS
+CRU_corrected_matrix=CRU_corrected0_matrix;
+
+%%% CREATE PLOTS
 figure (n)
 for m=1:12
     subplot (3,4,m)
-    plot (CRU_year, CRU_matrix (m,:)); hold on;
+    plot (CRU_year, CRU_matrix (m,:), 'k', CRU_year, CRU_corrected0_matrix (m,:), 'b'); hold on;
     plot (ALT_year, ALT_matrix (m,:));
     ylabel (cell2mat(CC.ClimV_CRU(n)))
     title (strcat('month = ',num2str(m)))
     xlabel ('year')
 end
-legend ('CRU', alt_name)
+legend ('CRU','CRU-corrected0', alt_name)
 sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))),  'Interpreter', 'none')
 
 figure (100+n)
 for m=1:12
     subplot (3,4,m)
-    %plot (CRU_matrix (m,:), ALT_CRUyrs(m,:),'ok'); hold on;
     plot (CRU_ALTyrs(m,:), ALT_matrix(m,:),'ok'); hold on;
-    p = polyfit(CRU_ALTyrs(m,:)', ALT_matrix(m,:)',1);
+    
     regline=refline(p(1), p(2));
     regline.Color='k';
-    OneOneline=refline(1,0)
+    OneOneline=refline(1,0);
     OneOneline.Color='b';
-    ylabel (alt_name)
-    xlabel ('CRU')
-    title (strcat('month = ',num2str(m)))
+    ylabel (alt_name);
+    xlabel ('CRU');
+    title (strcat('month = ',num2str(m)));
 end
 sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))), 'Interpreter', 'none')
 
 
-%%% CREATE CORRECTED MONTHLY RECORD IN CRU FORMAT
+
 
 %%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE, WRITE OUTPUT FILE
 

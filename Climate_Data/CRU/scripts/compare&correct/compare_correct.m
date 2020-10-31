@@ -100,5 +100,12 @@ sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))), 'In
 
 
 %%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE, WRITE OUTPUT FILE
+CRU_table_corrected=CRU_table; %this is a table in corrected value will be pasted
+%transform CRU_corrected_matrix to vector:
+CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
+%...then paste this vector in CRU_table_corrected:
+CRU_table_corrected (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
+
+%next step: save matrix for each climate variable. Needs to break outside of this loop for correction of multiple sites!
 
 end

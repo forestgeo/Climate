@@ -34,6 +34,7 @@ pre_corrected=0;
 
 %% CYCLE THROUGH SITE-VARIABLE COMPARISONS & CORRECTIONS
 for n=1:height(CC)
+if CC.compare(n)==1
     
 %%% READ IN CRU DATA
 ClimV_CRU=cell2mat(CC.ClimV_CRU(n)); %identify variables to be used
@@ -115,29 +116,31 @@ end
 legend ('CRU', 'CRU-corrected0', '1:1 line')
 sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))), 'Interpreter', 'none')
 
+%%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE (if correct=1)
+if CC.correct(n)==1
+    CRU_table_corrected=CRU_table; %this is a table in corrected value will be pasted
+    %transform CRU_corrected_matrix to vector:
+    CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
+    %...then paste this vector in CRU_table_corrected:
+    CRU_table_corrected (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
 
-%%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE, WRITE OUTPUT FILE
-CRU_table_corrected=CRU_table; %this is a table in corrected value will be pasted
-%transform CRU_corrected_matrix to vector:
-CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
-%...then paste this vector in CRU_table_corrected:
-CRU_table_corrected (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
-
-%save matrix for climate variable, as it may be corrected for multiple sites
-if strcmp(ClimV_CRU, 'tmn')==1
-    CRU_tmn_corrected=CRU_table_corrected;
-    tmn_corrected=1;
-elseif strcmp(ClimV_CRU, 'tmp')==1
-    CRU_tmp_corrected=CRU_table_corrected;
-    tmp_corrected=1;
-elseif strcmp(ClimV_CRU, 'tmx')==1
-    CRU_tmx_corrected=CRU_table_corrected;
-    tmx_corrected=1;
-elseif strcmp(ClimV_CRU, 'pre')==1
-    CRU_pre_corrected=CRU_table_corrected;
-    pre_corrected=1;
+    %save matrix for climate variable, as it may be corrected for multiple sites
+    if strcmp(ClimV_CRU, 'tmn')==1
+        CRU_tmn_corrected=CRU_table_corrected;
+        tmn_corrected=1;
+    elseif strcmp(ClimV_CRU, 'tmp')==1
+        CRU_tmp_corrected=CRU_table_corrected;
+        tmp_corrected=1;
+    elseif strcmp(ClimV_CRU, 'tmx')==1
+        CRU_tmx_corrected=CRU_table_corrected;
+        tmx_corrected=1;
+    elseif strcmp(ClimV_CRU, 'pre')==1
+        CRU_pre_corrected=CRU_table_corrected;
+        pre_corrected=1;
+    end
 end
 
+end
 end
 
 %write out corrected matrices

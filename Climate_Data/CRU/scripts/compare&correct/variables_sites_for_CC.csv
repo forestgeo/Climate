@@ -3,3 +3,19 @@ PRISM,tmn,tmin,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE,1
 PRISM,tmp,tmean,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE,1
 PRISM,tmx,tmax,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE,1
 PRISM,pre,ppt,Utah_Forest_Dynamics_Plot,Utah Forest Dynamics Plot,NE,1
+PRISM,tmn,tmin,Smithsonian_Conservation_Biology_Institute,Smithsonian Conservation Biology Institute (SCBI),C,0
+PRISM,tmp,tmean,Smithsonian_Conservation_Biology_Institute,Smithsonian Conservation Biology Institute (SCBI),C,0
+PRISM,tmx,tmax,Smithsonian_Conservation_Biology_Institute,Smithsonian Conservation Biology Institute (SCBI),C,0
+PRISM,pre,ppt,Smithsonian_Conservation_Biology_Institute,Smithsonian Conservation Biology Institute (SCBI),C,0
+PRISM,tmn,tmin,Smithsonian_Environmental_Research_Center,Smithsonian Environmental Research Center (SERC),C,0
+PRISM,tmp,tmean,Smithsonian_Environmental_Research_Center,Smithsonian Environmental Research Center (SERC),C,0
+PRISM,tmx,tmax,Smithsonian_Environmental_Research_Center,Smithsonian Environmental Research Center (SERC),C,0
+PRISM,pre,ppt,Smithsonian_Environmental_Research_Center,Smithsonian Environmental Research Center (SERC),C,0
+PRISM,tmn,tmin,Harvard_Forest,Harvard Forest,C,0
+PRISM,tmp,tmean,Harvard_Forest,Harvard Forest,C,0
+PRISM,tmx,tmax,Harvard_Forest,Harvard Forest,C,0
+PRISM,pre,ppt,Harvard_Forest,Harvard Forest,C,0
+PRISM,tmn,tmin,Lilly_Dickey_Woods,Lilly Dickey Woods,C,0
+PRISM,tmp,tmean,Lilly_Dickey_Woods,Lilly Dickey Woods,C,0
+PRISM,tmx,tmax,Lilly_Dickey_Woods,Lilly Dickey Woods,C,0
+PRISM,pre,ppt,Lilly_Dickey_Woods,Lilly Dickey Woods,C,0

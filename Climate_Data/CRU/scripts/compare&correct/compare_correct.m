@@ -12,8 +12,10 @@ CC = readtable('variables_sites_for_CC.csv');
 
 %%% Directories
 CRU_data_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_v4_04/';
-CRU_corrected_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_corrected/';
 PRISM_high_res_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate_Private/PRISM data/';
+CRU_corrected_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_corrected/';
+CRU_corrected_figures_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_corrected/figures/';
+
 
 %%% Data set parameters
 %CRU:
@@ -31,6 +33,8 @@ tmn_corrected=0;
 tmp_corrected=0;
 tmx_corrected=0;
 pre_corrected=0;
+mean_CRUmALT=NaN*ones(height(CC),12);
+mean_R2=NaN*ones(height(CC),12);
 
 %% CYCLE THROUGH SITE-VARIABLE COMPARISONS & CORRECTIONS
 for n=1:height(CC)
@@ -86,9 +90,13 @@ end
 CRU_corrected_matrix=CRU_corrected0_matrix; %create second matrix that will use original ALT variable data
 CRU_corrected_matrix(:,PRISM_start-CRU_start+1:length(CRU_matrix)-(CRU_end-PRISM_end))=ALT_matrix;
 
+%%% CALCULATE SOME STATS
+ALT_monthly_means=mean(ALT_matrix,2);
+CRU_monthly_means_ALTyrs=mean(CRU_ALTyrs,2);
+mean_CRUmALT(n,:)=ALT_monthly_means'-CRU_monthly_means_ALTyrs';
 
 %%% CREATE PLOTS
-figure (n)
+f1=figure ('visible','off');
 for m=1:12
     subplot (3,4,m)
     plot (CRU_year, CRU_matrix (m,:), 'k', CRU_year, CRU_corrected0_matrix (m,:), 'b',CRU_year,  CRU_corrected_matrix (m,:), 'c'); hold on;
@@ -99,14 +107,14 @@ for m=1:12
 end
 legend ('CRU','CRU-corrected0', 'CRU-corrected', alt_name)
 sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))),  'Interpreter', 'none')
+cd(CRU_corrected_figures_dir)
+print(f1,strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n)),'-ts'),'-dpng')
 
-figure (100+n)
+f2=figure ('visible','off');
 for m=1:12
     subplot (3,4,m)
     plot (ALT_matrix(m,:), CRU_ALTyrs(m,:), 'ok'); hold on;
     plot (ALT_CRUyrs(m,:), CRU_corrected0_matrix(m,:),  'ob')
-    %regline=refline(p(1), p(2));
-    %regline.Color='k';
     OneOneline=refline(1,0);
     OneOneline.Color='b';
     xlabel (alt_name);
@@ -115,6 +123,7 @@ for m=1:12
 end
 legend ('CRU', 'CRU-corrected0', '1:1 line')
 sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))), 'Interpreter', 'none')
+print(f2, strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n)),'-corr'),'-dpng')
 
 %%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE (if correct=1)
 if CC.correct(n)==1
@@ -149,3 +158,10 @@ writetable(CRU_tmn_corrected,'tmn_CRU_corrected.csv')
 writetable(CRU_tmp_corrected,'tmp_CRU_corrected.csv')
 writetable(CRU_tmx_corrected,'tmx_CRU_corrected.csv')
 writetable(CRU_pre_corrected,'pre_CRU_corrected.csv')
+
+%generate and write out report
+meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences
+corrections_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, meanCRUmALT);
+corrections_report.Properties.VariableNames = {'Site' 'Climate Variable' 'Alternate Source' 'Mean (CRU_monthly_mean-ALT_monthly_mean)'};
+
+writetable(corrections_report,'corrections_report.csv')

@@ -45,11 +45,11 @@ ClimV_CRU=cell2mat(CC.ClimV_CRU(n)); %identify variables to be used
 Site_CRU=cell2mat(CC.Site_CRU(n)); %CRU site name
 
 if strcmp(ClimV_CRU, 'tmn') + tmn_corrected ==2 %if variable has already been run, select corrected matrix
-    CRU_table=CRU_tmn_corrected;
+    CRU_table=CRU_tmn_corrected_conservative;
 elseif strcmp(ClimV_CRU, 'tmp') + tmp_corrected ==2 
-    CRU_table=CRU_tmp_corrected;
+    CRU_table=CRU_tmp_corrected_conservative;
 elseif strcmp(ClimV_CRU, 'tmx') + tmx_corrected ==2 
-    CRU_table=CRU_tmx_corrected;
+    CRU_table=CRU_tmx_corrected_conservative;
 elseif strcmp(ClimV_CRU, 'pre') + pre_corrected ==2 
     CRU_table=CRU_pre_corrected;
 else % read in CRU data table
@@ -125,39 +125,53 @@ legend ('CRU', 'CRU-corrected0', '1:1 line')
 sgtitle (strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n))), 'Interpreter', 'none')
 print(f2, strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n)),'-corr'),'-dpng')
 
-%%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE (if correct=1)
-if CC.correct(n)==1
-    CRU_table_corrected=CRU_table; %this is a table in corrected value will be pasted
-    %transform CRU_corrected_matrix to vector:
-    CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
-    %...then paste this vector in CRU_table_corrected:
-    CRU_table_corrected (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
+%%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE 
+%create tables into which corrected values will be pasted
+CRU_table_corrected_all=CRU_table; %all in CC
+CRU_table_corrected_conservative=CRU_table; %conservative (if correct=1 in CC)
 
-    %save matrix for climate variable, as it may be corrected for multiple sites
-    if strcmp(ClimV_CRU, 'tmn')==1
-        CRU_tmn_corrected=CRU_table_corrected;
-        tmn_corrected=1;
-    elseif strcmp(ClimV_CRU, 'tmp')==1
-        CRU_tmp_corrected=CRU_table_corrected;
-        tmp_corrected=1;
-    elseif strcmp(ClimV_CRU, 'tmx')==1
-        CRU_tmx_corrected=CRU_table_corrected;
-        tmx_corrected=1;
-    elseif strcmp(ClimV_CRU, 'pre')==1
-        CRU_pre_corrected=CRU_table_corrected;
-        pre_corrected=1;
-    end
+%transform CRU_corrected_matrix to vector:
+CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
+
+%...then paste this vector in CRU_table_corrected:
+CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
+if CC.correct(n)==1 % conservative 
+    CRU_table_corrected_conservative (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
 end
+    
+    %save matrix for climate variable, as it may be corrected for multiple sites
+if strcmp(ClimV_CRU, 'tmn')==1
+    CRU_tmn_corrected_all=CRU_table_corrected_all;
+    CRU_tmn_corrected_conservative=CRU_table_corrected_conservative;
+    tmn_corrected=1;
+elseif strcmp(ClimV_CRU, 'tmp')==1
+    CRU_tmp_corrected_all=CRU_table_corrected_all;
+    CRU_tmp_corrected_conservative=CRU_table_corrected_conservative;
+    tmp_corrected=1;
+elseif strcmp(ClimV_CRU, 'tmx')==1
+    CRU_tmx_corrected_all=CRU_table_corrected_all;
+    CRU_tmx_corrected_conservative=CRU_table_corrected_conservative;
+    tmx_corrected=1;
+elseif strcmp(ClimV_CRU, 'pre')==1
+    CRU_pre_corrected_all=CRU_table_corrected_all;
+    CRU_pre_corrected_conservative=CRU_table_corrected_conservative;
+    pre_corrected=1;
+end
+
 
 end
 end
 
 %write out corrected matrices
 cd(CRU_corrected_dir)
-writetable(CRU_tmn_corrected,'tmn_CRU_corrected.csv')
-writetable(CRU_tmp_corrected,'tmp_CRU_corrected.csv')
-writetable(CRU_tmx_corrected,'tmx_CRU_corrected.csv')
-writetable(CRU_pre_corrected,'pre_CRU_corrected.csv')
+writetable(CRU_tmn_corrected_all,'tmn_CRU_corrected_all.csv')
+writetable(CRU_tmp_corrected_all,'tmp_CRU_corrected_all.csv')
+writetable(CRU_tmx_corrected_all,'tmx_CRU_corrected_all.csv')
+writetable(CRU_pre_corrected_all,'pre_CRU_corrected_all.csv')
+writetable(CRU_tmn_corrected_conservative,'tmn_CRU_corrected_conservative.csv')
+writetable(CRU_tmp_corrected_conservative,'tmp_CRU_corrected_conservative.csv')
+writetable(CRU_tmx_corrected_conservative,'tmx_CRU_corrected_conservative.csv')
+writetable(CRU_pre_corrected_conservative,'pre_CRU_corrected_conservative.csv')
 
 %generate and write out report
 meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences
@@ -165,3 +179,4 @@ corrections_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, meanCRUmALT);
 corrections_report.Properties.VariableNames = {'Site' 'Climate Variable' 'Alternate Source' 'Mean (CRU_monthly_mean-ALT_monthly_mean)'};
 
 writetable(corrections_report,'corrections_report.csv')
+disp('DONE!')

@@ -34,7 +34,7 @@ tmp_corrected=0;
 tmx_corrected=0;
 pre_corrected=0;
 mean_CRUmALT=NaN*ones(height(CC),12);
-mean_R2=NaN*ones(height(CC),12);
+CRU_ALT_different=NaN*ones(height(CC),1);
 
 %% CYCLE THROUGH SITE-VARIABLE COMPARISONS & CORRECTIONS
 for n=1:height(CC)
@@ -89,11 +89,13 @@ end
 
 CRU_corrected_matrix=CRU_corrected0_matrix; %create second matrix that will use original ALT variable data
 CRU_corrected_matrix(:,PRISM_start-CRU_start+1:length(CRU_matrix)-(CRU_end-PRISM_end))=ALT_matrix;
+CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
 
 %%% CALCULATE SOME STATS
 ALT_monthly_means=mean(ALT_matrix,2);
 CRU_monthly_means_ALTyrs=mean(CRU_ALTyrs,2);
 mean_CRUmALT(n,:)=ALT_monthly_means'-CRU_monthly_means_ALTyrs';
+CRU_ALT_different(n)=ttest(table2array(CRU_site_record),CRU_corrected_vector);
 
 %%% CREATE PLOTS
 f1=figure ('visible','off');
@@ -130,16 +132,14 @@ print(f2, strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n)),'-co
 CRU_table_corrected_all=CRU_table; %all in CC
 CRU_table_corrected_conservative=CRU_table; %conservative (if correct=1 in CC)
 
-%transform CRU_corrected_matrix to vector:
-CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
-
-%...then paste this vector in CRU_table_corrected:
+%paste CRU_corrected_vector in CRU_table_corrected:
 CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
-if CC.correct(n)==1 % conservative 
+cons_correct=CC.correct;
+if cons_correct(n)==1 % conservative 
     CRU_table_corrected_conservative (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
 end
     
-    %save matrix for climate variable, as it may be corrected for multiple sites
+%save matrix for climate variable, as it may be corrected for multiple sites
 if strcmp(ClimV_CRU, 'tmn')==1
     CRU_tmn_corrected_all=CRU_table_corrected_all;
     CRU_tmn_corrected_conservative=CRU_table_corrected_conservative;
@@ -175,8 +175,8 @@ writetable(CRU_pre_corrected_conservative,'pre_CRU_corrected_conservative.csv')
 
 %generate and write out report
 meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences
-corrections_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, meanCRUmALT);
-corrections_report.Properties.VariableNames = {'Site' 'Climate Variable' 'Alternate Source' 'Mean (CRU_monthly_mean-ALT_monthly_mean)'};
+corrections_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, cons_correct, CRU_ALT_different, meanCRUmALT);
+corrections_report.Properties.VariableNames = {'Site' 'Climate Variable' 'Alternate Source' 'Corrected in _conservative' 'CRU and ALT differ in paired t-test?' 'Mean (CRU_monthly_mean-ALT_monthly_mean)'};
 
 writetable(corrections_report,'corrections_report.csv')
 disp('DONE!')

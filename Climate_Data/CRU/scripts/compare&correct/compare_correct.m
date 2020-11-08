@@ -35,6 +35,7 @@ tmx_corrected=0;
 pre_corrected=0;
 mean_CRUmALT=NaN*ones(height(CC),12);
 CRU_ALT_different=NaN*ones(height(CC),1);
+cons_correct=NaN*ones(height(CC),1);
 
 %% CYCLE THROUGH SITE-VARIABLE COMPARISONS & CORRECTIONS
 for n=1:height(CC)
@@ -45,16 +46,21 @@ ClimV_CRU=cell2mat(CC.ClimV_CRU(n)); %identify variables to be used
 Site_CRU=cell2mat(CC.Site_CRU(n)); %CRU site name
 
 if strcmp(ClimV_CRU, 'tmn') + tmn_corrected ==2 %if variable has already been run, select corrected matrix
-    CRU_table=CRU_tmn_corrected_conservative;
+    CRU_table=CRU_tmn_corrected_all;
+    CRU_table_cons=CRU_tmn_corrected_conservative;
 elseif strcmp(ClimV_CRU, 'tmp') + tmp_corrected ==2 
-    CRU_table=CRU_tmp_corrected_conservative;
+    CRU_table=CRU_tmp_corrected_all;
+    CRU_table_cons=CRU_tmp_corrected_conservative;
 elseif strcmp(ClimV_CRU, 'tmx') + tmx_corrected ==2 
-    CRU_table=CRU_tmx_corrected_conservative;
+    CRU_table=CRU_tmx_corrected_all;
+    CRU_table_cons=CRU_tmx_corrected_conservative;
 elseif strcmp(ClimV_CRU, 'pre') + pre_corrected ==2 
-    CRU_table=CRU_pre_corrected;
+    CRU_table=CRU_pre_corrected_all;
+    CRU_table_cons=CRU_pre_corrected_conservative;
 else % read in CRU data table
     cd(CRU_data_dir);
     CRU_table=readtable(strcat(ClimV_CRU,CRU_file_ext));
+    CRU_table_cons=CRU_table;
 end
 
 CRU_site_record= CRU_table(strcmp(Site_CRU, CRU_table.sites_sitename)==1, 2:end); % pulls out row corresponding to site of interest
@@ -95,6 +101,7 @@ CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row
 ALT_monthly_means=mean(ALT_matrix,2);
 CRU_monthly_means_ALTyrs=mean(CRU_ALTyrs,2);
 mean_CRUmALT(n,:)=ALT_monthly_means'-CRU_monthly_means_ALTyrs';
+meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences
 CRU_ALT_different(n)=ttest(table2array(CRU_site_record),CRU_corrected_vector);
 
 %%% CREATE PLOTS
@@ -130,12 +137,25 @@ print(f2, strcat(cell2mat(CC.ClimV_CRU(n)),' -  ', cell2mat(CC.Site_CRU(n)),'-co
 %%% REPLACE ORIGINAL CRU RECORD WITH CORRECTED VARIABLE 
 %create tables into which corrected values will be pasted
 CRU_table_corrected_all=CRU_table; %all in CC
-CRU_table_corrected_conservative=CRU_table; %conservative (if correct=1 in CC)
+CRU_table_corrected_conservative=CRU_table_cons; %conservative (if correct=1 in CC)
 
 %paste CRU_corrected_vector in CRU_table_corrected:
+%correct all:
 CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
-cons_correct=CC.correct;
-if cons_correct(n)==1 % conservative 
+
+%correct only a subset
+if CRU_ALT_different(n)==1 %only eligible for correction of t-test is sig
+    if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>25 % for pre, replace if off by >25mm/mo
+        cons_correct(n)=1;
+    elseif strcmp(ClimV_CRU,'pre')~=1 && abs(meanCRUmALT(n))>2 % >2 degrees T difference --> replace
+        cons_correct(n)=1;
+    else
+        cons_correct(n)=0;
+    end
+else
+    cons_correct(n)=0;
+end
+if cons_correct(n)==1 % conservative  (sig differences only)
     CRU_table_corrected_conservative (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=array2table(CRU_corrected_vector);
 end
     

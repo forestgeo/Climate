@@ -21,7 +21,7 @@ drt		| diurnal temperature range	(*i.e.,* temperature amplitude)	| °C
 frs		| frost day frequency	| days  mo-1
 pre	| 	precipitation		| mm mo-1
 wet		| wet day frequency	|  days	mo-1
-cld		| butt cover		| %
+cld		| cloud cover		| %
 vap		| vapour pressure		| hPa
 pet		| average daily potential evapotranspiration 	| 	mm day-1
 pet_sum		| potential evapotranspiration sum (computed here)	| 	mm mo-1

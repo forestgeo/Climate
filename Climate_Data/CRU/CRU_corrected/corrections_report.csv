@@ -1,8 +1,10 @@
 Site,Climate Variable,Alternate Source,Corrected in _conservative,CRU and ALT differ in paired t-test?,Mean (CRU_monthly_mean-ALT_monthly_mean)
-"Utah_Forest_Dynamics_Plot",tmn,PRISM,1,1,-3.11924175671698
-"Utah_Forest_Dynamics_Plot",tmp,PRISM,1,1,-5.68098842118382
-"Utah_Forest_Dynamics_Plot",tmx,PRISM,1,1,-8.26486293240539
-"Utah_Forest_Dynamics_Plot",pre,PRISM,1,1,48.2281198621642
+"Barro_Colorado_Island",pre,El_Claro,1,1,-21.1786078311235
+"Barro_Colorado_Island",wet,El_Claro,NaN,NaN,NaN
+"Utah_Forest_Dynamics_Plot",tmn,PRISM,1,1,-2.97177256912008
+"Utah_Forest_Dynamics_Plot",tmp,PRISM,1,1,-5.48944479928459
+"Utah_Forest_Dynamics_Plot",tmx,PRISM,1,1,-8.0293561555643
+"Utah_Forest_Dynamics_Plot",pre,PRISM,1,1,43.4413107012146
 "Smithsonian_Conservation_Biology_Institute",tmn,PRISM,0,1,-0.505209011789351
 "Smithsonian_Conservation_Biology_Institute",tmp,PRISM,0,1,-1.10842699453177
 "Smithsonian_Conservation_Biology_Institute",tmx,PRISM,0,1,-1.7478360114094

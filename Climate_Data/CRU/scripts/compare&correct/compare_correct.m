@@ -13,6 +13,7 @@ CC = readtable('variables_sites_for_CC.csv');
 %%% Directories
 CRU_data_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_v4_04/';
 PRISM_high_res_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate_Private/PRISM data/';
+El_Claro_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929/';
 CRU_corrected_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_corrected/';
 CRU_corrected_figures_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_corrected/figures/';
 
@@ -27,6 +28,10 @@ CRU_file_ext='.1901.2019-ForestGEO_sites-6-03.csv';
 PRISM_start=1930;
 PRISM_end=2015;
 PRISM_file_ext='_1930-2015.csv';
+
+%El_Claro (BCI)
+EC_start=1929;
+EC_end=2019;
 
 %% initialize some variables
 tmn_corrected=0;
@@ -69,21 +74,42 @@ CRU_year=linspace(CRU_start,CRU_end,CRU_end-CRU_start+1);
 CRU_table2=cell2table(num2cell([CRU_year; CRU_matrix]'),'VariableNames',{'Year' 'Jan' 'Feb' 'Mar' 'Apr' 'May' 'Jun' 'Jul' 'Aug' 'Sep' 'Oct' 'Nov' 'Dec'});
 
 %%% READ IN ALTERNATIVE DATA
-if strcmp(CC.Source_alt, "PRISM")==1 %PRISM high-res comparison
+ClimV_alt=cell2mat(CC.ClimV_alt(n));
+Site_alt=cell2mat(CC.Site_alt(n)); %PRISM site name
+if strcmp(CC.Source_alt(n), "PRISM")==1 %PRISM high-res comparison
     alt_name='PRISM';
-    ClimV_PRISM=cell2mat(CC.ClimV_alt(n));
-    Site_PRISM=cell2mat(CC.Site_alt(n)); %PRISM site name
+    ALT_start=PRISM_start;
+    ALT_end=PRISM_end;
     % read in PRISM data table
     cd(PRISM_high_res_dir);
-    PRISM_table=readtable(strcat('PRISM_',ClimV_PRISM,PRISM_file_ext));
-    PRISM_index= strcmp(Site_PRISM, PRISM_table.Site) + strcmp(CC.cellPosition(n), PRISM_table.cellPosition)==2; %find PRISM record for desired site and cell position
+    PRISM_table=readtable(strcat('PRISM_',ClimV_alt,PRISM_file_ext));
+    PRISM_index= strcmp(Site_alt, PRISM_table.Site) + strcmp(CC.cellPosition(n), PRISM_table.cellPosition)==2; %find PRISM record for desired site and cell position
     PRISM_site_record= PRISM_table(PRISM_index, 3:end); % pull out row corresponding to site of interest
-    ALT_matrix=reshape(table2array(PRISM_site_record), [12, PRISM_end-PRISM_start+1]); % create matrix with months as rows, years as columns
-    ALT_year=linspace(PRISM_start,PRISM_end, PRISM_end-PRISM_start+1);
-    ALT_CRUyrs=cat(2, NaN*ones(12, PRISM_start-CRU_start), ALT_matrix, NaN*ones(12, CRU_end-PRISM_end));
-    ALT_table2=cell2table(num2cell([CRU_year; ALT_CRUyrs]'),'VariableNames',{'Year' 'Jan' 'Feb' 'Mar' 'Apr' 'May' 'Jun' 'Jul' 'Aug' 'Sep' 'Oct' 'Nov' 'Dec'});
-    CRU_ALTyrs=CRU_matrix(:, PRISM_start-CRU_start+1:length(CRU_matrix)-(CRU_end-PRISM_end));
+    ALT_matrix=reshape(table2array(PRISM_site_record), [12, ALT_end-ALT_start+1]); % create matrix with months as rows, years as columns
+
+elseif strcmp(CC.Source_alt(n), "El_Claro")==1
+    alt_name="El_Claro";
+    ALT_start=EC_start;
+    ALT_end=EC_end;
+    % read in El Claro data table
+    cd(El_Claro_dir);
+    El_Claro_table=readtable(strcat(ClimV_alt,'_BCI.csv'));
+    El_Claro_record=El_Claro_table.climvar_val'; % pull out climate variable column 
+    if strcmp(ClimV_alt,'wet')==1
+        %currently a problem with wet_BCI.csv: missing months with 0 precip. 
+        %This will have to be fixed here or, ideally, in the source file.
+    end
+    ALT_matrix=reshape(El_Claro_record, [12, ALT_end-ALT_start+1]); % create matrix with months as rows, years as columns
+    
 end
+
+%%% CREATE PARALLEL MATRICES FOR CRU AND ALT
+%%% matrix and table of ALT data for CRU years
+ALT_CRUyrs=cat(2, NaN*ones(12, ALT_start-CRU_start), ALT_matrix, NaN*ones(12, CRU_end-ALT_end));
+ALT_table2=cell2table(num2cell([CRU_year; ALT_CRUyrs]'),'VariableNames',{'Year' 'Jan' 'Feb' 'Mar' 'Apr' 'May' 'Jun' 'Jul' 'Aug' 'Sep' 'Oct' 'Nov' 'Dec'});
+%%% matrices with ALT years 
+ALT_year=linspace(ALT_start,ALT_end, ALT_end-ALT_start+1); %alt_year vector
+CRU_ALTyrs=CRU_matrix(:, ALT_start-CRU_start+1:length(CRU_matrix)-(CRU_end-ALT_end)); %CRU matrix limited to alt years
 
 %%% CREATE CORRECTED MONTHLY RECORD IN CRU FORMAT
 CRU_corrected0_matrix=CRU_matrix;
@@ -94,7 +120,7 @@ for m=1:12
 end
 
 CRU_corrected_matrix=CRU_corrected0_matrix; %create second matrix that will use original ALT variable data
-CRU_corrected_matrix(:,PRISM_start-CRU_start+1:length(CRU_matrix)-(CRU_end-PRISM_end))=ALT_matrix;
+CRU_corrected_matrix(:,ALT_start-CRU_start+1:length(CRU_matrix)-(CRU_end-ALT_end))=ALT_matrix;
 CRU_corrected_vector=reshape(CRU_corrected_matrix,1,[]); % convert matrix to row vector
 
 %%% CALCULATE SOME STATS
@@ -126,7 +152,7 @@ for m=1:12
     plot (ALT_CRUyrs(m,:), CRU_corrected0_matrix(m,:),  'ob')
     OneOneline=refline(1,0);
     OneOneline.Color='b';
-    xlabel (alt_name);
+    xlabel (alt_name, 'Interpreter', 'none');
     ylabel ('CRU');
     title (strcat('month = ',num2str(m)));
 end
@@ -145,7 +171,7 @@ CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=ar
 
 %correct only a subset
 if CRU_ALT_different(n)==1 %only eligible for correction of t-test is sig
-    if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>25 % for pre, replace if off by >25mm/mo
+    if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>20 % for pre, replace if off by >20mm/mo (note that a higher threshold would require force correction of BCI PRE). 
         cons_correct(n)=1;
     elseif strcmp(ClimV_CRU,'pre')~=1 && abs(meanCRUmALT(n))>2 % >2 degrees T difference --> replace
         cons_correct(n)=1;
@@ -184,14 +210,23 @@ end
 
 %write out corrected matrices
 cd(CRU_corrected_dir)
+if tmn_corrected==1
 writetable(CRU_tmn_corrected_all,'tmn_CRU_corrected_all.csv')
-writetable(CRU_tmp_corrected_all,'tmp_CRU_corrected_all.csv')
-writetable(CRU_tmx_corrected_all,'tmx_CRU_corrected_all.csv')
-writetable(CRU_pre_corrected_all,'pre_CRU_corrected_all.csv')
 writetable(CRU_tmn_corrected_conservative,'tmn_CRU_corrected_conservative.csv')
+end
+if tmp_corrected==1
+writetable(CRU_tmp_corrected_all,'tmp_CRU_corrected_all.csv')
 writetable(CRU_tmp_corrected_conservative,'tmp_CRU_corrected_conservative.csv')
+end
+if tmx_corrected==1
+writetable(CRU_tmx_corrected_all,'tmx_CRU_corrected_all.csv')
 writetable(CRU_tmx_corrected_conservative,'tmx_CRU_corrected_conservative.csv')
+end
+if pre_corrected==1
+writetable(CRU_pre_corrected_all,'pre_CRU_corrected_all.csv')
 writetable(CRU_pre_corrected_conservative,'pre_CRU_corrected_conservative.csv')
+end
+
 
 %generate and write out report
 meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences

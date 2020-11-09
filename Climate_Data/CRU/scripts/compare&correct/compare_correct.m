@@ -207,8 +207,10 @@ CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=ar
 if CRU_ALT_different(n)==1 %only eligible for correction of t-test is sig
     if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>20 % for pre, replace if off by >20mm/mo (note that a higher threshold would require force correction of BCI PRE). 
         cons_correct(n)=1;
+        distrust_PPT(CRU_site_index)=1;
     elseif strcmp(ClimV_CRU,'pre')~=1 && abs(meanCRUmALT(n))>2 % >2 degrees T difference --> replace
         cons_correct(n)=1;
+        distrust_T(CRU_site_index)=1;
     else
         cons_correct(n)=0;
     end
@@ -224,7 +226,6 @@ if strcmp(ClimV_CRU, 'tmn')==1
     CRU_tmn_corrected_all=CRU_table_corrected_all;
     CRU_tmn_corrected_conservative=CRU_table_corrected_conservative;
     tmn_corrected=1;
-    distrust_PET(
 elseif strcmp(ClimV_CRU, 'tmp')==1
     CRU_tmp_corrected_all=CRU_table_corrected_all;
     CRU_tmp_corrected_conservative=CRU_table_corrected_conservative;
@@ -246,7 +247,15 @@ end
 %% READ IN CRU VARIABLES WITH NO ALTERATIVE SOURCE, REMOVE UNRELIABLE RECORDS
 % Specifically,...
 % - if T variables are substantially off, we don't trust PET, DTR, FRS
+%CRU_pet(distrust_T, :)=NaN;
+CRU_pet
+%CRU_pet_sum(distrust_T, :)=NaN;
+%CRU_dtr(distrust_T, :)=NaN;
+%CRU_frs(distrust_T, :)=NaN;
+
 % - if PPT is substantially off, we don't trust WET
+%CRU_wet(distrust_PPT, :)=NaN;
+
 % - not currently making corrected versions of CLD or VAP
 
 

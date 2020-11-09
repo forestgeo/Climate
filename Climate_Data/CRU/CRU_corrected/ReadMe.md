@@ -4,7 +4,7 @@ This folder contains CRU records that have been corrected (using [this script](h
 
 ## Data sets used for correction:
 - **PRISM records of T_max, T_mean, T_min, and PPT for sites within the continental US**. Spatial resolution is 800 m, time period is 1930-2015. Data are available [here, in a private repository](https://github.com/forestgeo/Climate_private/tree/master/PRISM%20data) because they were purchased and cannot be posted publicly, but contact us for access. 
-- COMING SOON: **["El Claro" weather station precipitation records for Barro Colorado Island, Panama](https://github.com/forestgeo/Climate/tree/master/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929)**. These extend back to 1929.  
+- **["El Claro" weather station precipitation records for Barro Colorado Island, Panama](https://github.com/forestgeo/Climate/tree/master/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929)**. These extend back to 1929.  
 
 ## Summary of methods:
 - CRU data were combined with the alternate source on a monthly basis. We used linear regression to characterize the relationship between the CRU and alternative sources. We then used this relationship to correct CRU data outside the time frame of the alternative source. CRU records were replaced with alternative records over the time frame for which they were available.

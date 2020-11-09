@@ -33,6 +33,19 @@ PRISM_file_ext='_1930-2015.csv';
 EC_start=1929;
 EC_end=2019;
 
+%% READ IN CRU DATA
+cd(CRU_data_dir);
+CRU_tmn=readtable(strcat('tmn',CRU_file_ext));
+CRU_tmp=readtable(strcat('tmp',CRU_file_ext));
+CRU_tmx=readtable(strcat('tmx',CRU_file_ext));
+CRU_pre=readtable(strcat('pre',CRU_file_ext));
+CRU_wet=readtable(strcat('wet',CRU_file_ext));
+CRU_pet=readtable(strcat('pet',CRU_file_ext));
+CRU_pet_sum=readtable(strcat('pet_sum',CRU_file_ext));
+CRU_dtr=readtable(strcat('dtr',CRU_file_ext));
+CRU_frs=readtable(strcat('frs',CRU_file_ext));
+
+
 %% initialize some variables
 tmn_corrected=0;
 tmp_corrected=0;
@@ -42,6 +55,9 @@ mean_CRUmALT=NaN*ones(height(CC),12);
 CRU_ALT_different=NaN*ones(height(CC),1);
 cons_correct=NaN*ones(height(CC),1);
 
+distrust_T=0*ones(height(CRU_tmn),1);
+distrust_PPT=0*ones(height(CRU_tmn),1);
+
 %% CYCLE THROUGH SITE-VARIABLE COMPARISONS & CORRECTIONS
 for n=1:height(CC)
 if CC.compare(n)==1
@@ -50,25 +66,43 @@ if CC.compare(n)==1
 ClimV_CRU=cell2mat(CC.ClimV_CRU(n)); %identify variables to be used
 Site_CRU=cell2mat(CC.Site_CRU(n)); %CRU site name
 
-if strcmp(ClimV_CRU, 'tmn') + tmn_corrected ==2 %if variable has already been run, select corrected matrix
-    CRU_table=CRU_tmn_corrected_all;
-    CRU_table_cons=CRU_tmn_corrected_conservative;
-elseif strcmp(ClimV_CRU, 'tmp') + tmp_corrected ==2 
-    CRU_table=CRU_tmp_corrected_all;
-    CRU_table_cons=CRU_tmp_corrected_conservative;
-elseif strcmp(ClimV_CRU, 'tmx') + tmx_corrected ==2 
-    CRU_table=CRU_tmx_corrected_all;
-    CRU_table_cons=CRU_tmx_corrected_conservative;
-elseif strcmp(ClimV_CRU, 'pre') + pre_corrected ==2 
-    CRU_table=CRU_pre_corrected_all;
-    CRU_table_cons=CRU_pre_corrected_conservative;
-else % read in CRU data table
-    cd(CRU_data_dir);
-    CRU_table=readtable(strcat(ClimV_CRU,CRU_file_ext));
-    CRU_table_cons=CRU_table;
+if strcmp(ClimV_CRU, 'tmn')==1 
+    if tmn_corrected ==1 %if variable has already been run, select corrected matrix
+        CRU_table=CRU_tmn_corrected_all;
+        CRU_table_cons=CRU_tmn_corrected_conservative;
+    else
+        CRU_table=CRU_tmn;
+        CRU_table_cons=CRU_tmn;
+    end
+elseif strcmp(ClimV_CRU, 'tmp') ==1
+    if tmp_corrected ==1 %if variable has already been run, select corrected matrix
+        CRU_table=CRU_tmp_corrected_all;
+        CRU_table_cons=CRU_tmp_corrected_conservative;
+    else
+        CRU_table=CRU_tmp;
+        CRU_table_cons=CRU_tmp;
+    end
+elseif strcmp(ClimV_CRU, 'tmx') ==1
+    if tmx_corrected ==1 %if variable has already been run, select corrected matrix
+        CRU_table=CRU_tmx_corrected_all;
+        CRU_table_cons=CRU_tmx_corrected_conservative;
+    else
+        CRU_table=CRU_tmx;
+        CRU_table_cons=CRU_tmx;
+    end
+elseif strcmp(ClimV_CRU, 'pre') ==1
+    if pre_corrected ==1 %if variable has already been run, select corrected matrix
+        CRU_table=CRU_pre_corrected_all;
+        CRU_table_cons=CRU_pre_corrected_conservative;
+    else
+        CRU_table=CRU_pre;
+        CRU_table_cons=CRU_pre;
+    end
+
 end
 
-CRU_site_record= CRU_table(strcmp(Site_CRU, CRU_table.sites_sitename)==1, 2:end); % pulls out row corresponding to site of interest
+CRU_site_index=find(strcmp(Site_CRU, CRU_table.sites_sitename)==1);
+CRU_site_record= CRU_table(CRU_site_index, 2:end); % pulls out row corresponding to site of interest
 CRU_matrix=reshape(table2array(CRU_site_record), [12, CRU_end-CRU_start+1]); % creates matrix with months as rows, years as columns
 CRU_year=linspace(CRU_start,CRU_end,CRU_end-CRU_start+1);
 CRU_table2=cell2table(num2cell([CRU_year; CRU_matrix]'),'VariableNames',{'Year' 'Jan' 'Feb' 'Mar' 'Apr' 'May' 'Jun' 'Jul' 'Aug' 'Sep' 'Oct' 'Nov' 'Dec'});
@@ -190,6 +224,7 @@ if strcmp(ClimV_CRU, 'tmn')==1
     CRU_tmn_corrected_all=CRU_table_corrected_all;
     CRU_tmn_corrected_conservative=CRU_table_corrected_conservative;
     tmn_corrected=1;
+    distrust_PET(
 elseif strcmp(ClimV_CRU, 'tmp')==1
     CRU_tmp_corrected_all=CRU_table_corrected_all;
     CRU_tmp_corrected_conservative=CRU_table_corrected_conservative;
@@ -208,7 +243,15 @@ end
 end
 end
 
-%write out corrected matrices
+%% READ IN CRU VARIABLES WITH NO ALTERATIVE SOURCE, REMOVE UNRELIABLE RECORDS
+% Specifically,...
+% - if T variables are substantially off, we don't trust PET, DTR, FRS
+% - if PPT is substantially off, we don't trust WET
+% - not currently making corrected versions of CLD or VAP
+
+
+
+%% WRITE OUT CORRECTED MATRICES
 cd(CRU_corrected_dir)
 if tmn_corrected==1
 writetable(CRU_tmn_corrected_all,'tmn_CRU_corrected_all.csv')
@@ -228,7 +271,7 @@ writetable(CRU_pre_corrected_conservative,'pre_CRU_corrected_conservative.csv')
 end
 
 
-%generate and write out report
+%% GENERATE AND WRITE OUT REPORT 
 meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences
 corrections_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, cons_correct, CRU_ALT_different, meanCRUmALT);
 corrections_report.Properties.VariableNames = {'Site' 'Climate Variable' 'Alternate Source' 'Corrected in _conservative' 'CRU and ALT differ in paired t-test?' 'Mean (CRU_monthly_mean-ALT_monthly_mean)'};

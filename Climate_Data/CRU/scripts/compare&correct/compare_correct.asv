@@ -12,8 +12,8 @@ CC = readtable('variables_sites_for_CC.csv');
 
 %%% Directories
 CRU_data_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_v4_04/';
-PRISM_high_res_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929/';
-El_Claro_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate_Private/PRISM data/';
+PRISM_high_res_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate_Private/PRISM data/';
+El_Claro_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929/';
 CRU_corrected_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_corrected/';
 CRU_corrected_figures_dir='/Users/kteixeira/Dropbox (Smithsonian)/GitHub/ForestGEO/Climate/Climate_Data/CRU/CRU_corrected/figures/';
 
@@ -32,6 +32,8 @@ PRISM_file_ext='_1930-2015.csv';
 %El_Claro (BCI)
 EC_start=1929;
 EC_end=2019;
+
+%% READ IN CRU DATA
 
 %% initialize some variables
 tmn_corrected=0;
@@ -76,7 +78,7 @@ CRU_table2=cell2table(num2cell([CRU_year; CRU_matrix]'),'VariableNames',{'Year' 
 %%% READ IN ALTERNATIVE DATA
 ClimV_alt=cell2mat(CC.ClimV_alt(n));
 Site_alt=cell2mat(CC.Site_alt(n)); %PRISM site name
-if strcmp(CC.Source_alt, "PRISM")==1 %PRISM high-res comparison
+if strcmp(CC.Source_alt(n), "PRISM")==1 %PRISM high-res comparison
     alt_name='PRISM';
     ALT_start=PRISM_start;
     ALT_end=PRISM_end;
@@ -92,7 +94,7 @@ elseif strcmp(CC.Source_alt(n), "El_Claro")==1
     ALT_start=EC_start;
     ALT_end=EC_end;
     % read in El Claro data table
-    cd(PRISM_high_res_dir);
+    cd(El_Claro_dir);
     El_Claro_table=readtable(strcat(ClimV_alt,'_BCI.csv'));
     El_Claro_record=El_Claro_table.climvar_val'; % pull out climate variable column 
     if strcmp(ClimV_alt,'wet')==1
@@ -108,7 +110,7 @@ end
 ALT_CRUyrs=cat(2, NaN*ones(12, ALT_start-CRU_start), ALT_matrix, NaN*ones(12, CRU_end-ALT_end));
 ALT_table2=cell2table(num2cell([CRU_year; ALT_CRUyrs]'),'VariableNames',{'Year' 'Jan' 'Feb' 'Mar' 'Apr' 'May' 'Jun' 'Jul' 'Aug' 'Sep' 'Oct' 'Nov' 'Dec'});
 %%% matrices with ALT years 
-ALT_year=linspace(EC_start,EC_end, EC_end-EC_start+1); %alt_year vector
+ALT_year=linspace(ALT_start,ALT_end, ALT_end-ALT_start+1); %alt_year vector
 CRU_ALTyrs=CRU_matrix(:, ALT_start-CRU_start+1:length(CRU_matrix)-(CRU_end-ALT_end)); %CRU matrix limited to alt years
 
 %%% CREATE CORRECTED MONTHLY RECORD IN CRU FORMAT
@@ -152,7 +154,7 @@ for m=1:12
     plot (ALT_CRUyrs(m,:), CRU_corrected0_matrix(m,:),  'ob')
     OneOneline=refline(1,0);
     OneOneline.Color='b';
-    xlabel (alt_name);
+    xlabel (alt_name, 'Interpreter', 'none');
     ylabel ('CRU');
     title (strcat('month = ',num2str(m)));
 end
@@ -171,7 +173,7 @@ CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=ar
 
 %correct only a subset
 if CRU_ALT_different(n)==1 %only eligible for correction of t-test is sig
-    if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>25 % for pre, replace if off by >25mm/mo
+    if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>20 % for pre, replace if off by >20mm/mo (note that a higher threshold would require force correction of BCI PRE). 
         cons_correct(n)=1;
     elseif strcmp(ClimV_CRU,'pre')~=1 && abs(meanCRUmALT(n))>2 % >2 degrees T difference --> replace
         cons_correct(n)=1;
@@ -208,7 +210,15 @@ end
 end
 end
 
-%write out corrected matrices
+%% READ IN CRU VARIABLES WITH NO ALTERATIVE SOURCE, REMOVE UNRELIABLE RECORDS
+% Specifically,...
+% - if T variables are substantially off, we don't trust PET, DTR, FRS
+% - if PPT is substantially off, we don't trust WET
+% - not currently making corrected versions of CLD or VAP
+
+
+
+%% WRITE OUT CORRECTED MATRICES
 cd(CRU_corrected_dir)
 if tmn_corrected==1
 writetable(CRU_tmn_corrected_all,'tmn_CRU_corrected_all.csv')
@@ -228,10 +238,7 @@ writetable(CRU_pre_corrected_conservative,'pre_CRU_corrected_conservative.csv')
 end
 
 
-
-
-
-%generate and write out report
+%% GENERATE AND WRITE OUT REPORT 
 meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences
 corrections_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, cons_correct, CRU_ALT_different, meanCRUmALT);
 corrections_report.Properties.VariableNames = {'Site' 'Climate Variable' 'Alternate Source' 'Corrected in _conservative' 'CRU and ALT differ in paired t-test?' 'Mean (CRU_monthly_mean-ALT_monthly_mean)'};

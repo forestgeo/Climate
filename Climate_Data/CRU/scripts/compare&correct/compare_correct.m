@@ -33,7 +33,8 @@ PRISM_file_ext='_1930-2015.csv';
 EC_start=1929;
 EC_end=2019;
 
-%% READ IN CRU DATA
+%% READ IN CLIMATE DATA
+%CRU
 cd(CRU_data_dir);
 CRU_tmn=readtable(strcat('tmn',CRU_file_ext));
 CRU_tmp=readtable(strcat('tmp',CRU_file_ext));
@@ -44,7 +45,6 @@ CRU_pet=readtable(strcat('pet',CRU_file_ext));
 CRU_pet_sum=readtable(strcat('pet_sum',CRU_file_ext));
 CRU_dtr=readtable(strcat('dtr',CRU_file_ext));
 CRU_frs=readtable(strcat('frs',CRU_file_ext));
-
 
 %% initialize some variables
 tmn_corrected=0;
@@ -118,7 +118,7 @@ if strcmp(CC.Source_alt(n), "PRISM")==1 %PRISM high-res comparison
     cd(PRISM_high_res_dir);
     PRISM_table=readtable(strcat('PRISM_',ClimV_alt,PRISM_file_ext));
     PRISM_index= strcmp(Site_alt, PRISM_table.Site) + strcmp(CC.cellPosition(n), PRISM_table.cellPosition)==2; %find PRISM record for desired site and cell position
-    PRISM_site_record= PRISM_table(PRISM_index, 3:end); % pull out row corresponding to site of interest
+    PRISM_site_record= PRISM_table(PRISM_index, 5:end); % pull out row corresponding to site of interest
     ALT_matrix=reshape(table2array(PRISM_site_record), [12, ALT_end-ALT_start+1]); % create matrix with months as rows, years as columns
 
 elseif strcmp(CC.Source_alt(n), "El_Claro")==1

@@ -39,8 +39,8 @@ fsites<- gsub(" ", "_", fsites)
 
 #### Climate data -----
 
-path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/CRU/CRU_v4_04/"
-v<- c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")
+path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/CRU/CRU_corrected/"
+v<- c("cld", "dtr", "frs", "pet", "pre", "tmn", "tmp", "tmn", "tmx", "vap", "wet")[-c(1, 10)]
 objs<- vector(mode = "list", length = length(v))
 counter <- 0
 
@@ -48,7 +48,7 @@ for(clim_v in v) { #  clim_v is each climate variable (v)
   
   counter<- counter + 1 
   print(paste0(clim_v, " ", counter))
-  objs[[counter]]<-read.csv(paste0(path_to_climate_data, clim_v, ".1901.2019-ForestGEO_sites-6-03.csv")) 
+  objs[[counter]]<-read.csv(paste0(path_to_climate_data, clim_v, "_CRU_corrected_conservative.csv")) #".1901.2019-ForestGEO_sites-6-03.csv")) 
   names(objs)[counter] <- clim_v # assign names to list 
   
   # adding a col that will show the climate variable (ie cld or pet) 
@@ -72,7 +72,7 @@ for(j in fsites){ # 110 times because 11 clim vars and 10 sites
     counter <- counter +1 # running fsites* clim vars
     print(paste0(j," counter # ", counter, " and clim var ", names(objs[i])))
     
-    CRU_fsites[[counter]] <- objs[[i]][match(j, objs[[i]]$sites.sitename),] #go through each climvar and find the specified J aka site
+    CRU_fsites[[counter]] <- objs[[i]][match(j, objs[[i]]$sites_sitename),] #go through each climvar and find the specified J aka site
     
     #### Transform data to long format
     df<- as.data.frame(CRU_fsites[[counter]]) # make df object
@@ -140,7 +140,7 @@ months_list<- vector(mode="list", length=length(storage.vess)*12) # one for each
         
         # ## arrange for ease of viewing, select only relevent variables
         months_list[[counter]]<-months_list[[counter]] %>% arrange(desc(rep.yrs))
-        months_list[[counter]]<- months_list[[counter]][c('start_sites.sitename', 'start_Date', 'start_climvar.val', 'start_climvar.class', 'start_month', 'end_Date', 'rep.yrs')] 
+        months_list[[counter]]<- months_list[[counter]][c('start_sites_sitename', 'start_Date', 'start_climvar.val', 'start_climvar.class', 'start_month', 'end_Date', 'rep.yrs')] 
         
         # # ## grab years only for start / end dates
         months_list[[counter]]$start_Date<-as.numeric(format(months_list[[counter]]$start_Date,"%Y"))
@@ -167,14 +167,12 @@ sites_reps<- sites_reps[sites_reps$nyears == sites_reps$rep.yrs,]
 ## add col with number of dates missing
 sites_reps$n.missing <- sites_reps$nyears - sites_reps$rep.yrs
 
-##change wd
-setwd(paste0(getwd(), "/Climate_Data/CRU/scripts/CRU_gaps_analysis"))
 
-##write.csv remember to always include row.names = FALSE.
-#write.csv(sites_reps, "all_sites.reps.csv", row.names = FALSE)
+## write.csv remember to always include row.names = FALSE.
+write.csv(sites_reps, "Climate_Data/CRU/scripts/CRU_gaps_analysisall_sites.reps.csv", row.names = FALSE)
 
 ## write csv of problem sites where rep years wont be accurate due to jumps in data 
-#write.csv(problemsites, "problem_sites.csv", row.names=FALSE)
+write.csv(problemsites, "Climate_Data/CRU/scripts/CRU_gaps_analysisproblem_sites.csv", row.names=FALSE)
 
 #site.index<- c(55,18,54,34,45,68,64,61,21,5)
 #fsites<-ForestGEO_sites$Site.name[site.index]

@@ -55,8 +55,8 @@ mean_CRUmALT=NaN*ones(height(CC),12);
 CRU_ALT_different=NaN*ones(height(CC),1);
 cons_correct=NaN*ones(height(CC),1);
 
-distrust_T=0*ones(height(CRU_tmn),1);
-distrust_PPT=0*ones(height(CRU_tmn),1);
+distrust_T=0*ones(height(CRU_tmn),1); %vector to mark distrusted T values (any T variable)
+distrust_PPT=0*ones(height(CRU_tmn),1); %vector to mark distrusted PPT values
 
 %% CYCLE THROUGH SITE-VARIABLE COMPARISONS & CORRECTIONS
 for n=1:height(CC)
@@ -247,14 +247,13 @@ end
 %% READ IN CRU VARIABLES WITH NO ALTERATIVE SOURCE, REMOVE UNRELIABLE RECORDS
 % Specifically,...
 % - if T variables are substantially off, we don't trust PET, DTR, FRS
-%CRU_pet(distrust_T, :)=NaN;
-CRU_pet
-%CRU_pet_sum(distrust_T, :)=NaN;
-%CRU_dtr(distrust_T, :)=NaN;
-%CRU_frs(distrust_T, :)=NaN;
+CRU_pet{logical(distrust_T), 2:end}=NaN;
+CRU_pet_sum{logical(distrust_T), 2:end}=NaN;
+CRU_dtr{logical(distrust_T), 2:end}=NaN;
+CRU_frs{logical(distrust_T), 2:end}=NaN;
 
 % - if PPT is substantially off, we don't trust WET
-%CRU_wet(distrust_PPT, :)=NaN;
+CRU_wet{logical(distrust_PPT), 2:end}=NaN;
 
 % - not currently making corrected versions of CLD or VAP
 
@@ -279,6 +278,12 @@ writetable(CRU_pre_corrected_all,'pre_CRU_corrected_all.csv')
 writetable(CRU_pre_corrected_conservative,'pre_CRU_corrected_conservative.csv')
 end
 
+%Other tables:
+writetable(CRU_pet,'pet_CRU_corrected_conservative.csv')
+writetable(CRU_pet_sum,'pet_sum_CRU_corrected_conservative.csv')
+writetable(CRU_frs,'frs_CRU_corrected_conservative.csv')
+writetable(CRU_dtr,'dtr_CRU_corrected_conservative.csv')
+writetable(CRU_wet,'wet_CRU_corrected_conservative.csv')
 
 %% GENERATE AND WRITE OUT REPORT 
 meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences

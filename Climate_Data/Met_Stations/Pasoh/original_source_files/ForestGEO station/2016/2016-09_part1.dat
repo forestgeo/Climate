@@ -1,0 +1,5 @@
+"TOA5","CR1000","CR1000","39246","CR1000.Std.27","CPU:PSH-Climate_v3.0.CR1","28515","CLData"
+"TIMESTAMP","RECORD","Batt_Volt_Min","AirTC_Avg","AirTC_Std","RH","AirTC_2_Avg","AirTC_2_Std","RH_2","AirTC_3_Avg","AirTC_3_Std","RH_3","SlrW_Avg","SlrW_Std","SlrMJ_Tot","SlrW_2_Avg","SlrW_2_Std","SlrMJ_2_Tot","Rain_mm_Tot","SrlNum","ProgNam","OSVer","StatName","MsgVar","FanStatus","Tach_Tot"
+"TS","RN","Volts","Deg C","Deg C","%","Deg C","Deg C","%","Deg C","Deg C","%","W/m²","W/m²","MJ/m²","W/m²","W/m²","MJ/m²","mm","","","","","","","RPM"
+"","","Min","Avg","Std","Smp","Avg","Std","Smp","Avg","Std","Smp","Avg","Std","Tot","Avg","Std","Tot","Tot","Smp","Smp","Smp","Smp","Smp","Smp","Tot"
+"2016-09-07 10:55:00",0,13.25,28.49,0.399,86.2,28.41,0.41,100,28.09,0.071,77,255.9,5.375,0.02430637,265.5,5.828,0.0252189,0,"39246","CPU:PSH-Climate_v3.0.CR","CR1000.Std.27","CL-PSH-1","Sensors: HMP45C, HMP45C, HC2-S3, LI200X, LIX200X, T","FAN:ON",0

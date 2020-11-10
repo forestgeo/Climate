@@ -1,0 +1,19 @@
+Hoesly, Rachel M., O'Rourke, Patrick R, Smith, Steven J., Feng, Leyang, Klimont, Zbigniew, Janssens-Maenhout, Greet, … Muwan, Presley. (2020). CEDS v_2019_12_23 Emission Data (Version v_2019_12_23) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3606753
+
+https://zenodo.org/record/3606753#.X1kTUmdTk6U
+
+https://github.com/JGCRI/CEDS/wiki/User_Guide#use-instructions
+
+Special thanks to https://github.com/ssmithClimate for guidance in editing and using the G1.1.grid_bulk_emissions.R script 
+
+
+
+Steps: 
+
+1. Downloaded the following files from Zenodo, unzipped, and stored in "C:/Users/GonzalezB2/Desktop/Smithsonian/CEDS/final-emissions/"
+_______ CEDS_NOx_emissions_by_country_CEDS_sector_v_2019_12_23.csv
+_______ CEDS_SO2_emissions_by_country_CEDS_sector_v_2019_12_23.csv
+
+2. Ddited and debugged G1 script to generate NC files from these. Stored these files in intermediate output of CEDS directory 
+
+3. Write script using these files to grab data at forestgeo sites

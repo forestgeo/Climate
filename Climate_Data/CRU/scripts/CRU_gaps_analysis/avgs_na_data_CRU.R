@@ -169,10 +169,10 @@ sites_reps$n.missing <- sites_reps$nyears - sites_reps$rep.yrs
 
 
 ## write.csv remember to always include row.names = FALSE.
-write.csv(sites_reps, "Climate_Data/CRU/scripts/CRU_gaps_analysisall_sites.reps.csv", row.names = FALSE)
+write.csv(sites_reps, "Climate_Data/CRU/CRU_corrected/CRU_gaps_analysisall_sites.reps.csv", row.names = FALSE)
 
 ## write csv of problem sites where rep years wont be accurate due to jumps in data 
-write.csv(problemsites, "Climate_Data/CRU/scripts/CRU_gaps_analysisproblem_sites.csv", row.names=FALSE)
+# write.csv(problemsites, "Climate_Data/CRU/scripts/CRU_gaps_analysisproblem_sites.csv", row.names=FALSE)
 
 #site.index<- c(55,18,54,34,45,68,64,61,21,5)
 #fsites<-ForestGEO_sites$Site.name[site.index]

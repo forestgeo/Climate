@@ -208,7 +208,7 @@ if CRU_ALT_different(n)==1 %only eligible for correction of t-test is sig
     if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>20 % for pre, replace if off by >20mm/mo (note that a higher threshold would require force correction of BCI PRE). 
         cons_correct(n)=1;
         distrust_PPT(CRU_site_index)=1;
-    elseif strcmp(ClimV_CRU,'pre')~=1 && abs(meanCRUmALT(n))>2 % >2 degrees T difference --> replace
+    elseif strcmp(ClimV_CRU,'pre')~=1 && abs(meanCRUmALT(n))>2.5 % >2.5 degrees T difference --> replace
         cons_correct(n)=1;
         distrust_T(CRU_site_index)=1;
     else

@@ -303,21 +303,22 @@ cd(strcat(CRU_corrected_dir,'/summary_statistics/'));
 yrs_to_average=find(CRU_year>=1950);
 
 for s=1 : height(CRU_tmn) %cycle through sites in CRU
-    PRE_matrix=reshape(table2array(CRU_pre_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]); % creates matrix with months as rows, years as columns
-    TMN_matrix=reshape(table2array(CRU_tmn_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]);
-    TMP_matrix=reshape(table2array(CRU_tmp_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]);
-    TMX_matrix=reshape(table2array(CRU_tmx_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]);
+PRE_matrix=reshape(table2array(CRU_pre_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]); % creates matrix with months as rows, years as columns
+TMN_matrix=reshape(table2array(CRU_tmn_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]);
+TMP_matrix=reshape(table2array(CRU_tmp_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]);
+TMX_matrix=reshape(table2array(CRU_tmx_corrected_all(s,2:end)), [12, CRU_end-CRU_start+1]);
 
-    avJulyTMP(s,1)=mean(TMP_matrix(7,yrs_to_average));
-    sdJulyTMP(s,1)=std(TMP_matrix(7,yrs_to_average));
-    avJanTMP(s,1)=mean(TMP_matrix(1,yrs_to_average));
-    sdJanTMP(s,1)=std(TMP_matrix(1,yrs_to_average));
-    AnT=mean(TMP_matrix,1); %mean annual T
-    MAT(s,1)=mean(AnT(yrs_to_average));
-    sdMAT(s,1)=std(AnT(yrs_to_average));
-    AnPRE=sum(PRE_matrix,1); %annual precip
-    avAnPRE(s,1)=mean(AnPRE(yrs_to_average));
-    sdAnPRE(s,1)=std(AnPRE(yrs_to_average));
+
+avJulyTMP(s,1)=mean(TMP_matrix(7,yrs_to_average));
+sdJulyTMP(s,1)=std(TMP_matrix(7,yrs_to_average));
+avJanTMP(s,1)=mean(TMP_matrix(1,yrs_to_average));
+sdJanTMP(s,1)=std(TMP_matrix(1,yrs_to_average));
+AnT=mean(TMP_matrix,1); %mean annual T
+MAT(s,1)=mean(AnT(yrs_to_average));
+sdMAT(s,1)=std(AnT(yrs_to_average));
+AnPRE=sum(PRE_matrix,1); %annual precip
+avAnPRE(s,1)=mean(AnPRE(yrs_to_average));
+sdAnPRE(s,1)=std(AnPRE(yrs_to_average));
 end
 
 montly_stats=table(table2array(CRU_tmn(:,1)), avJulyTMP, sdJulyTMP,avJanTMP, sdJanTMP);
@@ -325,7 +326,7 @@ montly_stats.Properties.VariableNames = {'Site' 'JulyTMP.mean' 'JulyTMP.sd' 'Jan
 writetable(montly_stats,'monthly_stats_1950to2019.csv')
 
 annual_stats=table(table2array(CRU_tmn(:,1)), MAT, sdMAT,avAnPRE, sdAnPRE);
-annual_stats.Properties.VariableNames = {'Site' 'AnTMP.mean' 'AnTMP.sd' 'AnPRE.mean' 'AnPRE.sd'};
+annual_stats.Properties.VariableNames = {'Site' 'A.mean' 'JulyTMP.sd' 'JanTMP.mean' 'JanTMP.sd'};
 writetable(annual_stats,'annual_stats_1950to2019.csv')
 
 

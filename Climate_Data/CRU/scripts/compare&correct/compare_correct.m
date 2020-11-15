@@ -195,7 +195,7 @@ CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=ar
 
 %correct only a subset
 if CRU_ALT_different(n)==1 %only eligible for correction of t-test is sig
-    if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>20 % for pre, replace if off by >20mm/mo (note that a higher threshold would require force correction of BCI PRE). 
+    if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>10 % for pre, replace if off by >10mm/mo (note that a higher threshold would require force correction of BCI PRE). 
         distrust_variable(n)=1;
         distrust_PPT(CRU_site_index)=1;
     elseif (strcmp(ClimV_CRU,'tmn')+ strcmp(ClimV_CRU,'tmp')+ strcmp(ClimV_CRU,'tmx'))==1 && abs(meanCRUmALT(n))>2.5 % >2.5 degrees T difference --> replace

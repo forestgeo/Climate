@@ -53,7 +53,7 @@ tmx_corrected=0;
 pre_corrected=0;
 mean_CRUmALT=NaN*ones(height(CC),12);
 CRU_ALT_different=NaN*ones(height(CC),1);
-distrust_variable=NaN*ones(height(CC),1);
+cons_correct=NaN*ones(height(CC),1);
 
 distrust_T=0*ones(height(CRU_tmn),1); %vector to mark distrusted T values (any T variable)
 distrust_PPT=0*ones(height(CRU_tmn),1); %vector to mark distrusted PPT values
@@ -196,16 +196,16 @@ CRU_table_corrected_all (strcmp(Site_CRU, CRU_table.sites_sitename)==1,2:end)=ar
 %correct only a subset
 if CRU_ALT_different(n)==1 %only eligible for correction of t-test is sig
     if strcmp(ClimV_CRU,'pre')==1 && abs(meanCRUmALT(n))>20 % for pre, replace if off by >20mm/mo (note that a higher threshold would require force correction of BCI PRE). 
-        distrust_variable(n)=1;
+        cons_correct(n)=1;
         distrust_PPT(CRU_site_index)=1;
     elseif (strcmp(ClimV_CRU,'tmn')+ strcmp(ClimV_CRU,'tmp')+ strcmp(ClimV_CRU,'tmx'))==1 && abs(meanCRUmALT(n))>2.5 % >2.5 degrees T difference --> replace
-        distrust_variable(n)=1;
+        cons_correct(n)=1;
         distrust_T(CRU_site_index)=1;
     else
-        distrust_variable(n)=0;
+        cons_correct(n)=0;
     end
 else
-    distrust_variable(n)=0;
+    cons_correct(n)=0;
 end
 
     
@@ -289,7 +289,7 @@ writetable(CRU_wet,'wet_CRU_corrected_conservative.csv')
 
 %% GENERATE AND WRITE OUT REPORT 
 meanCRUmALT=mean(mean_CRUmALT,2); %mean of monthly temp differences
-comparison_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, distrust_variable,  CRU_ALT_different, meanCRUmALT);
+comparison_report=table(CC.Site_CRU,CC.ClimV_CRU,CC.Source_alt, cons_correct,  CRU_ALT_different, meanCRUmALT);
 comparison_report.Properties.VariableNames = {'Site' 'Climate Variable' 'Alternate Source' 'Variable flagged (independently) as untrustworthy?' 'CRU and ALT differ in paired t-test?' 'Mean (CRU_monthly_mean-ALT_monthly_mean)'};
 writetable(comparison_report,'comparison_report.csv')
 

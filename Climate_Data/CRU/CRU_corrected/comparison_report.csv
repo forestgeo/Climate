@@ -1,4 +1,4 @@
-Site,Climate Variable,Alternate Source,Corrected in _conservative,CRU and ALT differ in paired t-test?,Mean (CRU_monthly_mean-ALT_monthly_mean)
+Site,Climate Variable,Alternate Source,Variable flagged (independently) as untrustworthy?,CRU and ALT differ in paired t-test?,Mean (CRU_monthly_mean-ALT_monthly_mean)
 "Barro_Colorado_Island",pre,El_Claro,1,1,-21.1786078311235
 "Barro_Colorado_Island",wet,El_Claro,NaN,NaN,NaN
 "Utah_Forest_Dynamics_Plot",tmn,PRISM,1,1,-2.97177256912008

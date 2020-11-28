@@ -1,4 +1,6 @@
-# Niobrara River Streamflow
+# Niobrara - Local Climate Data
+
+## Niobrara River Streamflow
 
 These data were used in Bumann et al. (2019) and obtained from the authors. Quoting this article,
 

@@ -27,7 +27,7 @@ fsites<-c("Smithsonian Environmental Research Center","Harvard Forest"
 ,"Ordway-Swisher"                             ,"Yosemite National Park"                    
 ,"Wind River"                                 ,"Utah Forest Dynamics Plot"                 
 ,"Huai Kha Khaeng"                            ,"Barro Colorado Island",
-"Zofin", "Scotty Creek")       
+"Zofin", "Scotty Creek", "Niobara")       
 
 ## reconstructing by one to debug
 #fsites <- c("Barro Colorado Island", "Scotty Creek")

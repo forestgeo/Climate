@@ -64,6 +64,7 @@
 "Scotty_Creek",1996,"0.100000001490116","pet",1,2000,5,5,0
 "Scotty_Creek",1935,"0.100000001490116","pet",1,1937,3,3,0
 "Scotty_Creek",1978,"0.100000001490116","pet",1,1980,3,3,0
+"Niobara",1974,"0.900000035762787","pet",1,1976,3,3,0
 "Smithsonian_Environmental_Research_Center",1982,"1.70000004768372","pet",2,1985,4,4,0
 "Smithsonian_Environmental_Research_Center",1967,"1.39999997615814","pet",2,1969,3,3,0
 "Smithsonian_Environmental_Research_Center",1944,"-1.70000004768372","tmn",2,1946,3,3,0
@@ -124,6 +125,11 @@
 "Scotty_Creek",1990,"0.100000001490116","pet",2,1992,3,3,0
 "Scotty_Creek",1994,"0.100000001490116","pet",2,1996,3,3,0
 "Scotty_Creek",1917,"-26.3999996185303","tmp",2,1919,3,3,0
+"Niobara",1980,"1.10000002384186","pet",2,1983,4,4,0
+"Niobara",1940,"0.900000035762787","pet",2,1942,3,3,0
+"Niobara",1947,"0.900000035762787","pet",2,1949,3,3,0
+"Niobara",1984,"0.900000035762787","pet",2,1986,3,3,0
+"Niobara",1996,"0.900000035762787","pet",2,1998,3,3,0
 "Smithsonian_Environmental_Research_Center",1986,"2.79999995231628","pet",3,1988,3,3,0
 "Harvard_Forest",1992,"1.60000002384186","pet",3,1994,3,3,0
 "Smithsonian_Conservation_Biology_Institute",1985,"15.4000005722046","tmx",3,1987,3,3,0
@@ -189,7 +195,7 @@
 "Ordway-Swisher",1957,"4.09999990463257","pet",4,1959,3,3,0
 "Yosemite_National_Park",1901,"NaN","dtr",4,2019,119,119,0
 "Yosemite_National_Park",1901,"NaN","pet",4,2019,119,119,0
-"Yosemite_National_Park",1907,"9.19999980926514","tmp",4,1909,3,3,0
+"Yosemite_National_Park",1907,"7.75913889840659","tmp",4,1909,3,3,0
 "Wind_River",1901,"1.89999997615814","pet",4,1903,3,3,0
 "Wind_River",1901,"NaN","wet",4,2019,119,119,0
 "Utah_Forest_Dynamics_Plot",1901,"NaN","dtr",4,2019,119,119,0
@@ -430,6 +436,8 @@
 "Barro_Colorado_Island",1901,"NaN","wet",8,2019,119,119,0
 "Zofin",1908,"10.1000003814697","dtr",8,1910,3,3,0
 "Scotty_Creek",1901,"2.60000014305115","pet",8,1903,3,3,0
+"Niobara",1989,"15.6999998092651","dtr",8,1991,3,3,0
+"Niobara",1997,"4.80000019073486","pet",8,1999,3,3,0
 "Smithsonian_Environmental_Research_Center",1903,"3.29999995231628","pet",9,1905,3,3,0
 "Smithsonian_Environmental_Research_Center",1976,"3.5","pet",9,1978,3,3,0
 "Harvard_Forest",1924,"2.60000014305115","pet",9,1926,3,3,0
@@ -643,7 +651,6 @@
 "Ordway-Swisher",1986,"2.10000014305115","pet",12,1988,3,3,0
 "Yosemite_National_Park",1901,"NaN","dtr",12,2019,119,119,0
 "Yosemite_National_Park",1901,"NaN","pet",12,2019,119,119,0
-"Yosemite_National_Park",1933,"2.40000009536743","tmp",12,1935,3,3,0
 "Wind_River",2014,"0.400000005960464","pet",12,2017,4,4,0
 "Wind_River",1943,"0.300000011920929","pet",12,1945,3,3,0
 "Wind_River",1964,"0.400000005960464","pet",12,1966,3,3,0
@@ -699,3 +706,4 @@
 "Zofin",1968,"0.100000001490116","pet",12,1970,3,3,0
 "Zofin",2006,"0.400000005960464","pet",12,2008,3,3,0
 "Zofin",2013,"0.5","pet",12,2015,3,3,0
+"Niobara",1929,"1.10000002384186","pet",12,1931,3,3,0

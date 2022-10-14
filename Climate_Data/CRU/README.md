@@ -24,14 +24,14 @@ wet		| wet day frequency	|  days	mo-1
 cld		| cloud cover		| %
 vap		| vapour pressure		| hPa
 pet		| average daily potential evapotranspiration 	| 	mm day-1
-pet_sum		| potential evapotranspiration sum (computed here)	| 	mm mo-1
+pet_sum		| potential evapotranspiration sum (computed [here](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/Calculate_PET_sum.R))	| 	mm mo-1
 
 ## Data description
 
 ### CRU version:
 
 The latest version for tmp, dtr, pre, vap and pet is [**v.4.06**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_06) (released 26 May 2022, covers the period 1901-2021). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
-This version only has tmp, dtr, pre, vap and pet because it is generated with [this script](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/downloading_CRU_scripts/download_and_extract_from_KML_files_for_tmp_pre_dtr_vap.R), which extracts the data from a KML file downloaded [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/) for tmp, dtr, pre, vap and downloads the PET NETCDF file for pet [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/cruts.2205201912.v4.06/pet/)
+This version only has tmp, dtr, pre, vap and pet because it is generated with [this script](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/downloading_CRU_scripts/download_and_extract_from_KML_files_for_tmp_pre_dtr_vap.R), which extracts the data from a KML file downloaded [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/) for tmp, dtr, pre, vap and downloads the PET NETCDF file for pet [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/cruts.2205201912.v4.06/pet/).
 
 
 

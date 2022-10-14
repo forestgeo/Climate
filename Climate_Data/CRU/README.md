@@ -30,7 +30,10 @@ pet_sum		| potential evapotranspiration sum (computed here)	| 	mm mo-1
 
 ### CRU version:
 
-The latest version in this repository is [**v.4.04**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_04) (released 24 April 2020, covers the period 1901-2019). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
+The latest version for tmp, dtr, pre and vap is [**v.4.06**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_06) (released 26 May 2022, covers the period 1901-2021). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
+This version only has tmp, dtr, pre and vap  because it is generated with [this script](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/downloading_CRU_scripts/download_and_extract_from_KML_files_for_tmp_pre_dtr_vap.R), which extracts the data from a KML file downloaded [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/)
+
+The latest version for all variables is [**v.4.04**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_04) (released 24 April 2020, covers the period 1901-2019). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
 
 [*Previous versions*](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/previous_versions) in this repository include:
 - v. 3.10 - Values from this version, including annual and climatic means calculated using Matlab by K. Anderson-Teixeira, are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712). A detailed description of data files and contents is given in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/previous_versions/CRU_v3_10_01/CTFS-ForestGEO_historical_climate_metadata.pdf)
@@ -45,6 +48,21 @@ The latest version in this repository is [**v.4.04**](https://github.com/forestg
 `[xxx].1901.20xx.csv`, where `xxx` is a three-letter abbreviation for the climate variable in table above, and `20xx` indicates the data end year. 
 
 *Data file contents:*
+
+- v. 4.06 
+
+Column|Description
+--|--
+sites.sitename|Site name
+variable|three-letter abbreviation for the climate variable
+Yr|Year
+Mo|Month
+Value|Value
+N.obs|level of station support enjoyed by each datum; 0 (no cover) - 8 (the maximum station count for interpolation)
+
+
+
+- v. 4.04 
 
 Column	| Description
 --|--

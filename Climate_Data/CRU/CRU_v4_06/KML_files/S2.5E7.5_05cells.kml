@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+ <name>Half-Degree Gridboxes</name>
+ <description>CRU TS half-degree gridboxes</description>
+ <Style id="grideven">
+  <PolyStyle>
+   <color>#80A779CC</color>
+   <outline>0</outline>
+  </PolyStyle>
+  <BalloonStyle>
+   <bgColor>#ffffffff</bgColor>
+  </BalloonStyle>
+ </Style>
+ <Style id="gridodd">
+  <PolyStyle>
+   <color>#8042E4F0</color>
+   <outline>0</outline>
+  </PolyStyle>
+    <BalloonStyle>
+   <bgColor>#ffffffff</bgColor>
+  </BalloonStyle>
+ </Style>
+
+<Folder>
+ <name>S2.5E7.5</name>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 2.75 S, 9.75 E</name>
+ <styleUrl>#gridodd</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.75E9.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.75E9.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.75E9.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.75E9.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S2.75E9.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S2.75E9.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S2.75E9.75.dtr.txt">Data</a>
+  :  (No stations within 750km)
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.75E9.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.75E9.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.75E9.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.75E9.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.75E9.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.75E9.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.75E9.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.75E9.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9.5,-3,0
+10,-3,0
+10,-2.5,0
+9.5,-2.5,0
+9.5,-3,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 2.25 S, 9.75 E</name>
+ <styleUrl>#grideven</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.25E9.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.25E9.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.25E9.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S2.25E9.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S2.25E9.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S2.25E9.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S2.25E9.75.dtr.txt">Data</a>
+  :  (No stations within 750km)
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.25E9.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.25E9.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.25E9.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S2.25E9.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.25E9.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.25E9.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.25E9.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S2.25E9.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9.5,-2.5,0
+10,-2.5,0
+10,-2,0
+9.5,-2,0
+9.5,-2.5,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 1.75 S, 9.25 E</name>
+ <styleUrl>#grideven</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.25.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.25.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.25.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.25.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.75E9.25.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.75E9.25.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.75E9.25.dtr.txt">Data</a>
+  :  (No stations within 750km)
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.25.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.25.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.25.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.25.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.25.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.25.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.25.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.25.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9,-2,0
+9.5,-2,0
+9.5,-1.5,0
+9,-1.5,0
+9,-2,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 1.75 S, 9.75 E</name>
+ <styleUrl>#gridodd</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.75E9.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.75E9.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.75E9.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.75E9.75.dtr.txt">Data</a>
+  :  (No stations within 750km)
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.75E9.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.75E9.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9.5,-2,0
+10,-2,0
+10,-1.5,0
+9.5,-1.5,0
+9.5,-2,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 1.25 S, 8.75 E</name>
+ <styleUrl>#grideven</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E8.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E8.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E8.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E8.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E8.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E8.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E8.75.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E8.75.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E8.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E8.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E8.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E8.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E8.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E8.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E8.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E8.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+8.5,-1.5,0
+9,-1.5,0
+9,-1,0
+8.5,-1,0
+8.5,-1.5,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 1.25 S, 9.25 E</name>
+ <styleUrl>#gridodd</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.25.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.25.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.25.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.25.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.25.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.25.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.25.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.25.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.25.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.25.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.25.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.25.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.25.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.25.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.25.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.25.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9,-1.5,0
+9.5,-1.5,0
+9.5,-1,0
+9,-1,0
+9,-1.5,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 1.25 S, 9.75 E</name>
+ <styleUrl>#grideven</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S1.25E9.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.75.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S1.25E9.75.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S1.25E9.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S1.25E9.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9.5,-1.5,0
+10,-1.5,0
+10,-1,0
+9.5,-1,0
+9.5,-1.5,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 0.75 S, 8.75 E</name>
+ <styleUrl>#gridodd</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E8.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E8.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E8.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E8.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E8.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E8.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E8.75.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E8.75.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E8.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E8.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E8.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E8.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E8.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E8.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E8.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E8.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+8.5,-1,0
+9,-1,0
+9,-0.5,0
+8.5,-0.5,0
+8.5,-1,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 0.75 S, 9.25 E</name>
+ <styleUrl>#grideven</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.25.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.25.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.25.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.25.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.25.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.25.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.25.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.25.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.25.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.25.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.25.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.25.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.25.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.25.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.25.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.25.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9,-1,0
+9.5,-1,0
+9.5,-0.5,0
+9,-0.5,0
+9,-1,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 0.75 S, 9.75 E</name>
+ <styleUrl>#gridodd</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.75E9.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.75.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.75E9.75.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.75E9.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.75E9.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9.5,-1,0
+10,-1,0
+10,-0.5,0
+9.5,-0.5,0
+9.5,-1,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 0.25 S, 9.25 E</name>
+ <styleUrl>#gridodd</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.25.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.25.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.25.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.25.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.25.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.25.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.25.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.25.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.25.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.25.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.25.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.25.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.25.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.25.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.25.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.25.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9,-0.5,0
+9.5,-0.5,0
+9.5,0,0
+9,0,0
+9,-0.5,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+<Placemark>
+<name>CRU TS 4.06 grid-box data for 0.25 S, 9.75 E</name>
+ <styleUrl>#grideven</styleUrl>
+ <description>
+  <![CDATA[
+  <table width="600" cellspacing="10">
+  <tr><td align="center" width="50%">
+   <b>TEMPERATURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.75.tmp.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.75.tmp.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.75.tmp.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/tmp/S0.25E9.75.tmp.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>DIURNAL TEMPERATURE RANGE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.75.dtr.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.75.dtr.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.75.dtr.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/dtr/S0.25E9.75.dtr.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" width="50%">
+   <b>PRECIPITATION</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.75.pre.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.75.pre.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.75.pre.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/pre/S0.25E9.75.pre.stn.kml">Show contributing stations</a>
+  </td><td align="center" width="50%">
+   <b>VAPOUR PRESSURE</b>
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.75.vap.sm.png"></p>
+   <p> <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.75.vap.lg.htm">Larger image</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.75.vap.txt">Data</a>
+  :  <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/grid05/cells/S2.5E7.5/vap/S0.25E9.75.vap.stn.kml">Show contributing stations</a>
+  </td></tr>
+<p>
+  <tr><td align="center" colspan="2">
+   <img src="http://crudata.uea.ac.uk/cru/data/hrg/legend_horz2.png">
+  </td</tr>
+<p>
+  <tr><td align="center" colspan="2">
+Please cite Harris, I., Osborn, T.J., Jones, P. & Lister, D.H.
+Version 4 of the CRU TS monthly high-resolution gridded multivariate climate dataset.
+<br>Sci Data 7, 109 (2020). <a href="https://rdcu.be/b3nUI">https://rdcu.be/b3nUI</a>
+   <p>Please read the Release Notes: <a href="http://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/Release_Notes_CRU_TS4.06.txt">Release_Notes_CRU_TS4.06.txt</a>
+and <a href="http://crudata.uea.ac.uk/cru/data/hrg/gefaq2.htm">FAQ</a> as well.
+  </td</tr>
+  </table>
+  ]]>
+ </description>
+ <Polygon> <outerBoundaryIs> <LinearRing>
+  <coordinates>
+9.5,-0.5,0
+10,-0.5,0
+10,0,0
+9.5,0,0
+9.5,-0.5,0
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+</Placemark>
+</Folder>
+</Document>
+</kml>

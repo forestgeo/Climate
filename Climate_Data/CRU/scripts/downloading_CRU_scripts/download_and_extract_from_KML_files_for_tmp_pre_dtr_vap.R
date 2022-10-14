@@ -138,7 +138,7 @@ for (i in colnames(x)) {
 }
 
 # delete nc fil since it is so big
-file.remove("Climate_Data/CRU/CRU_v4_06/nc_files/cru_ts4.06.1901.2021.pet.dat.nc")
+# file.remove("Climate_Data/CRU/CRU_v4_06/nc_files/cru_ts4.06.1901.2021.pet.dat.nc")
 
 # save data ####
 

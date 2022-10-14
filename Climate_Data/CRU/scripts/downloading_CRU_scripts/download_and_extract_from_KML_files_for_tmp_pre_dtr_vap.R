@@ -105,7 +105,7 @@ for (i in 1:nrow(list_XML_to_download)) {
 download.file(
   "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/cruts.2205201912.v4.06/pet/cru_ts4.06.1901.2021.pet.dat.nc.gz",
   destfile = "Climate_Data/CRU/CRU_v4_06/nc_files/cru_ts4.06.1901.2021.pet.dat.nc.gz"
-)
+) # ATTENTION< this may not download the whole file. May need to do it by hand here: https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/cruts.2205201912.v4.06/pet/
 R.utils::gunzip(
   "Climate_Data/CRU/CRU_v4_06/nc_files/cru_ts4.06.1901.2021.pet.dat.nc.gz",
   "Climate_Data/CRU/CRU_v4_06/nc_files/cru_ts4.06.1901.2021.pet.dat.nc"

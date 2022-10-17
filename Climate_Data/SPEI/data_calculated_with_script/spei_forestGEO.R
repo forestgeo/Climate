@@ -25,14 +25,14 @@ path_to_BCI_pre <- "https://raw.githubusercontent.com/forestgeo/Climate/master/C
 path_to_BCI_wet <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929/wet_BCI.csv"
 
 climate_variables <- c( "pre", "wet",
-                        "tmp", "tmn", "tmx", "pet"#,
+                        "tmp", "tmn", "tmx", "pet_sum"#,
                         # "dtr", "cld") # "frs", "vap"
 )
 
 
 clim_var_group <- list(c("pre", "wet"),
-                       c("tmp", "tmn", "tmx", "pet")#,
-                       # c("dtr", "cld", "pet")
+                       c("tmp", "tmn", "tmx", "pet_sum")#,
+                       # c("dtr", "cld", "pet_sum")
 ) # see issue 14, PET is in both the TMP and DTR groups. If it comes out as the best in both groups (should always be for the same time frame), then there are only 2 candidate variables for the GLS
 
 clim_gaps <- read.csv("https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/CRU/scripts/CRU_gaps_analysis/all_sites.reps.csv")
@@ -98,10 +98,11 @@ all_Clim <- all_Clim[complete.cases(all_Clim), ]
 
 ###### Prep Data to Calculate (SPEI) for multiple sites ---------------------------------------------
 clim_prep <- all_Clim %>% 
-  select(sites.sitename, Date, pre, pet)
+  select(sites.sitename, Date, pre, pet_sum)
+
 
 ## calculate water balance before SPEI 
-clim_prep$bal <- clim_prep$pre - clim_prep$pet
+clim_prep$bal <- clim_prep$pre - clim_prep$pet_sum
 
 ## selecting only relevent fields to convert to wide
 clim_prep <- clim_prep %>% 

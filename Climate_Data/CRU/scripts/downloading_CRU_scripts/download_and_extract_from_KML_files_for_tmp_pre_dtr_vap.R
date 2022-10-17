@@ -48,8 +48,6 @@ list_XML_to_download <- extract(CRU_5degree, points)
 
 all_Data <- NULL
 
-download = FALSE # turn to TRUE if this is the first time you download for the newest CRU version
-
 for (i in 1:nrow(list_XML_to_download)) {
   url = list_XML_to_download[i, "Description"]
   url = regmatches(url, regexpr("http.*kml", url))
@@ -58,8 +56,8 @@ for (i in 1:nrow(list_XML_to_download)) {
                 "/KML_files/",
                 rev(strsplit(url, "/")[[1]])[1])
   
-  if (download)
-    download.file(url, destfile = file)
+  if (!file.exists(file)) download.file(url, destfile = file)
+  
   
   # read file and extract data (which is stored in several .txtfiles that are online)
   

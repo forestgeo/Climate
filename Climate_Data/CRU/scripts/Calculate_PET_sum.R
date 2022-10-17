@@ -26,7 +26,7 @@ nb.days.in.month <- days_in_month(as.Date(names(CRU_PET)[-1], format = "X%Y.%m.%
 CRU_PET[, -1] <- CRU_PET[, -1] * matrix(rep(nb.days.in.month, each = nrow(CRU_PET)), nrow = nrow(CRU_PET))
 
 #save ####
-write.csv(CRU_PET, "Climate_Data/CRU/CRU_v4_04/pet_sum.1901.2019-ForestGEO_sites-6-03.csv", row.names = F, quote = F)
+write.csv(CRU_PET, "Climate_Data/CRU/CRU_v4_04/pet_sum.1901.2019-ForestGEO_sites-6-03.csv", row.names = F)
 
 
 

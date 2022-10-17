@@ -20,7 +20,7 @@ library(tidyr)
 ForestGEO_sites <- read.csv("https://raw.githubusercontent.com/forestgeo/Site-Data/master/ForestGEO_site_data.csv")
 
 path_to_climate_data <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/CRU/CRU_v4_04/" # "https://raw.githubusercontent.com/forestgeo/Climate/master/Gridded_Data_Products/Historical%20Climate%20Data/CRU_v4_01/" # 
-path_to_climate_data_NM <- "C:/Users/GonzalezB2/Desktop/Smithsonian/ForestGEO_dendro/data/cores/NM/CRU_climate/"
+path_to_climate_data_NM <- "C:/Users/herrmannV/Dropbox (Smithsonian)/GitHub/EcoClimLab/ForestGEO_dendro/data/climate/NM/CRU_climate/CRU_v4_04/"
 path_to_BCI_pre <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929/pre_BCI.csv"
 path_to_BCI_wet <- "https://raw.githubusercontent.com/forestgeo/Climate/master/Climate_Data/Met_Stations/BCI/El_Claro_precip_starting_1929/wet_BCI.csv"
 
@@ -40,10 +40,19 @@ clim_gaps <- clim_gaps[clim_gaps$start_climvar.class %in% climate_variables, ]
 
 # prepare data ####
 for(clim_v in climate_variables) {
+  x = read.csv(paste0(path_to_climate_data, clim_v,  ".1901.2019-ForestGEO_sites-6-03.csv"))
+  
+  y =  read.csv(paste0(path_to_climate_data_NM, clim_v, ".1901.2019-NM_site-7-10.csv"))
+
+  head(colnames(x))
+  head(colnames(y))
+   
+  colnames(y) <- gsub("_", "\\.", colnames(x))
+
   assign(clim_v, 
          rbind(
-           read.csv(paste0(path_to_climate_data, clim_v,  ".1901.2019-ForestGEO_sites-6-03.csv")), #forestGEO sites
-           read.csv(paste0(path_to_climate_data_NM, clim_v, ".1901.2019-NM_site-7-10.csv")) # NM site
+           x, #forestGEO sites
+           y # NM site
          ) #https://github.com/EcoClimLab/ForestGEO_dendro/blob/master/data/cores/NM/CRU_climate/pre.1901.2019-NM_site-7-10.csv
   )
   
@@ -59,7 +68,7 @@ for(clim_v in climate_variables) {
   x <- get(clim_v)
   
   ### all forestgeo sites
-  x <- x[x$sites.sitename, ]
+  x <- x[x$sites.sitename %in% gsub(" ", "_", ForestGEO_sites$Site.name), ]
   
   ### reshape to long format
   x_long <- reshape(x, 
@@ -71,8 +80,7 @@ for(clim_v in climate_variables) {
   x_long$Date <- as.Date(x_long$Date , format = "%Y.%m.%d")
   
   ### combine all variables in one
-  if(clim_v == climate_variables [1]) all_Clim <- x_long[, c(1:3)]
-  else all_Clim <- merge(all_Clim, x_long[, c(1:3)], by = c("sites.sitename", "Date"), all = T)
+  if(clim_v == climate_variables[1]) all_Clim <- x_long[, c(1:3)]   else all_Clim <- merge(all_Clim, x_long[, c(1:3)], by = c("sites.sitename", "Date"), all = T)
   
 }
 
@@ -93,20 +101,20 @@ clim_prep <- all_Clim %>%
   select(sites.sitename, Date, pre, pet)
 
 ## calculate water balance before SPEI 
-clim_prep$bal<-clim_prep$pre - clim_prep$pet
+clim_prep$bal <- clim_prep$pre - clim_prep$pet
 
 ## selecting only relevent fields to convert to wide
 clim_prep <- clim_prep %>% 
-  select(sites.sitename,Date,bal)
+  select(sites.sitename, Date, bal)
 
 ## convert to wide format & calculate for all sites
 wide_clim_all <- tidyr::spread(clim_prep, sites.sitename, bal)
 
 # drop BCI so can calculate SPEI for all sites (BCI has NA values and SPEI doesn't accept)
-wide_clim<- wide_clim_all %>% select(-Barro_Colorado_Island,-Date)
+wide_clim <- wide_clim_all %>% select(-Barro_Colorado_Island,-Date)
 
 # Convert to a ts (time series) object --- time series iput for SPEI obj
-ts_sites<- ts(wide_clim, start=c(1901,01), end=c(2019,12), frequency = 12)
+ts_sites <- ts(wide_clim, start=c(1901,01), end=c(2019,12), frequency = 12)
 
 ####### Calculating SPEI at all time-scales (1-48 months) ---------------------------------------------
 month_ranges<- 1:48
@@ -118,8 +126,8 @@ for(month in month_ranges){
   
   # then reshape into long format // date // site // value // 
   x_long <- gather(x_df,
-                   sites.sitename, !!paste0("value_month_",month, collapse = '*'), 
-                   Amacayacu:New_Mexico, factor_key = T)
+                   "sites.sitename", !!paste0("value_month_",month, collapse = '*'), 
+                   -Date, factor_key = T)
   
   if(month == month_ranges[1]) 
     all_SPEI <- x_long
@@ -127,7 +135,8 @@ for(month in month_ranges){
     all_SPEI <- merge(all_SPEI, x_long, by = c("sites.sitename","Date"), all =T)
 
 }
-write.csv(all_SPEI, paste0(getwd(), "/spei_all_months.csv"), row.names = F)
+
+write.csv(all_SPEI, "Climate_Data/SPEI/data_calculated_with_script/spei_all_months.csv", row.names = F)
 
 ############ SPEI for BCI for (1-48 months)  -------
 
@@ -163,10 +172,20 @@ for(month in month_ranges){
 ## Now write BCI_SPEI and sites_SPEI as CSV dataframes and put into one dataframe in excel
 ## delete NM dataframe and add to different repo 
 
-write.csv(BCI_SPEI, paste0(getwd(), "/spei_bci.csv"), row.names = F)
+write.csv(BCI_SPEI, "Climate_Data/SPEI/data_calculated_with_script/spei_bci.csv", row.names = F)
 
 
 
 
+# check calculated vs extracted values ####
+x <- all_SPEI[all_SPEI$sites.sitename %in% "Smithsonian_Conservation_Biology_Institute", ]
+y <- read.csv("Climate_Data/SPEI/data_downloaded/SCBI/spei_-78.25_38.75.csv", skip = 1)
 
+range(x$Date)
+y$Date = seq.Date(from = as.Date("1901-01-01"), by = "month", length.out = nrow(y))
+range(y$Date)
 
+png("Climate_Data/SPEI/comparing_extracted_vs_calculated.png", width = 6, height = 5, units = "in", res = 300)
+plot(x$value_month_1[x$Date <= as.Date("2015-12-31")], y$SPEI01, xlab = "calculated", ylab = "extracted", main = "SCBI")
+abline(0,1, col = "red")
+dev.off()

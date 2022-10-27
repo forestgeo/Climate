@@ -2,7 +2,7 @@
 
 **Source**: CRU TS monthly high-resolution gridded multivariate climate dataset, available [here](https://crudata.uea.ac.uk/cru/data/hrg/). The CRU data product is described by Harris et al. (2014, 2020).
 
-**Temporal coverage**: 1901 - 2019 (ongoing)
+**Temporal coverage**: 1901 - 2021 (ongoing)
 
 **Temporal resolution**: monthly
 
@@ -30,14 +30,13 @@ pet_sum		| potential evapotranspiration sum (computed [here](https://github.com/
 
 ### CRU version:
 
-The latest version for tmp, dtr, pre, vap and pet is [**v.4.06**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_06) (released 26 May 2022, covers the period 1901-2021). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
-This version only has tmp, dtr, pre, vap and pet because it is generated with [this script](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/downloading_CRU_scripts/download_and_extract_from_KML_files_for_tmp_pre_dtr_vap.R), which extracts the data from a KML file downloaded [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/) for tmp, dtr, pre, vap and downloads the PET NETCDF file for pet [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/cruts.2205201912.v4.06/pet/).
+The latest version is [**v.4.06**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_06) (released 26 May 2022, covers the period 1901-2021). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
+This version is generated with [this script](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/scripts/downloading_CRU_scripts/download_and_extract_from_KML_files_for_tmp_pre_dtr_vap.R), which extracts the data from a KML file downloaded [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/ge/) for tmp, dtr, pre, vap and downloads the other variables from NETCDF file downloaded [here](https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.06/cruts.2205201912.v4.06/) and saved in a local server.
 
 
-
-The latest version for all variables is [**v.4.04**](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/CRU_v4_04) (released 24 April 2020, covers the period 1901-2019). We recommend that anyone interested in using these data check the [CRU website](https://crudata.uea.ac.uk/cru/data/hrg/) to see if there is a more recent version.
 
 [*Previous versions*](https://github.com/forestgeo/Climate/tree/master/Climate_Data/CRU/previous_versions) in this repository include:
+- v. 4.04 
 - v. 3.10 - Values from this version, including annual and climatic means calculated using Matlab by K. Anderson-Teixeira, are presented in [Anderson-Teixeira et al. (2015)](https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.12712). A detailed description of data files and contents is given in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/previous_versions/CRU_v3_10_01/CTFS-ForestGEO_historical_climate_metadata.pdf)
 - v. 3.23 - Includes annual and climatic means calculated using Matlab by K. Anderson-Teixeira, as detailed in [metadata associated with this version](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/previous_versions/CRU_v3_23/CTFS-ForestGEO_historical_climate_metadata.pdf). 
 - v. 4.01 

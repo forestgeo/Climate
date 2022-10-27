@@ -1,5 +1,7 @@
 # Corrected CRU records
 
+**Currently only for v.4.06**
+
 This folder contains CRU records that have been corrected (using [this script](https://github.com/forestgeo/Climate/blob/master/Climate_Data/CRU/scripts/compare%26correct/compare_correct.m)) based on more accurate local records.
 
 ## Data sets used for correction:

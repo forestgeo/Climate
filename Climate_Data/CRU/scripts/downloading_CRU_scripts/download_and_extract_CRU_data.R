@@ -54,8 +54,10 @@ list_XML_to_download <- extract(CRU_5degree, points)
 all_Data <- NULL
 
 for (i in 1:nrow(list_XML_to_download)) {
+  
   url = list_XML_to_download[i, "Description"]
   url = regmatches(url, regexpr("http.*kml", url))
+  
   file = paste0("Climate_Data/CRU/",
                 CRU_version,
                 "/KML_files/",
@@ -120,7 +122,7 @@ for (v in c("tmn", "tmx", "frs", "wet", "cld", "pet")) {
   
     r <- raster::brick(ncfile, varname = v)  
     
-    x <- raster::extract(r, points)  #maybe ~3mins
+    x <- raster::extract(r, points)  #this takes several minutes, maybe ~3mins
     rownames(x) <- points$Site.name
     
     
@@ -131,7 +133,7 @@ for (v in c("tmn", "tmx", "frs", "wet", "cld", "pet")) {
       all_Data <- rbind(
         all_Data,
         data.frame(
-          sites.sitename = i,
+          sites.sitename = gsub("\\.", " ", i),
           variable = v,
           Yr = as.numeric(substr(rownames(y), 2, 5)),
           Mo = as.numeric(substr(rownames(y), 7, 8)),
